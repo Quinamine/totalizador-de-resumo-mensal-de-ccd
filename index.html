@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="pt-MZ">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Totalizador de Resumo Mensal de CCD</title>
+    <meta name="robots" content="index, follow" />
+    <meta name="description" content="Serviço online gratuito que auxilia na elaboração do resumo mensal de CCD (Consulta de Criança Doente) totalizando-o automaticamente com base nos dados preenchidos pelo usuário (Profissional de Saúde)." />
+    <meta name="keywords" content="Totalizador de Resumo Mensal de CCD, Totalizador de Resumo Mensal de Consulta de Criança Doente, Totalizador de Relatório Mensal de CCD, Ficha de Resumo Mensal de CCD, Ficha de Resumo Mensal de Consulta da Criança Doente" />
+    <meta name="author" content="Adérito Félix Quinamine"/>
+
+    <!-- Partilha nas redes sociais -->
+    <meta property="og:url" content="https://quinamine.github.io/totalizador-de-resumo-mensal-de-ccd/index.html" />
+    <meta property="og:title" content="Totalizador de Resumo Mensal de CCD" />
+    <meta property="og:description" content="Serviço online gratuito que auxilia na elaboração do resumo mensal de CCD (Consulta de Criança Doente) totalizando-o automaticamente com base nos dados preenchidos pelo usuário (Profissional de Saúde)." />
+    <meta property="og:image" content="https://quinamine.github.io/totalizador-de-resumo-mensal-de-ccd/imagens/totalizador-de-resumo-mensal-de-ccd.png" />
+
+    <!-- Design -->
+    <link href=favicon.ico rel="shortcut icon"type=image/x-icon />
+    <link href=estetica/reset.css rel=stylesheet />
+    <link href=estetica/layout.css rel=stylesheet />
+    <link href=estetica/ficha.css rel=stylesheet />
+    <link href=estetica/aside.css rel=stylesheet />
+
+    <!-- Scripts -->
+    <script src=fisiologia/menu.js></script>
+    <script src=fisiologia/inputvalidation.js></script>
+    <script src=fisiologia/totalizador-rmccd.js></script>
+    <script src=fisiologia/referencia.js></script>
+    <script src=fisiologia/webstorage.js></script>
+    
+    <noscript>O seu navegador está com o JavaScript desabilitado e isso bloqueia as funcionalidades do Totalizador. Habilite-o nas configurações do navegador e recarregue a página.</noscript>
+</head>
+
+<body id=ficha ontouchstart="">
+    <header>
+        <div class="linha do-cabecalho">
+            <a href=index.html class=logo>
+                Totalizador de Resumo <span>Mensal</span> de CCD
+            </a>
+
+            <section class=menu role=navigation><ul>
+                <li title="Adicionar um fundo opaco às celulas dos totais"class=destacar-as-celulas-automaticas>
+                    <input type=checkbox id=readonlyinputs-darker> 
+                    <label for=readonlyinputs-darker>Destacar o fundo dos totais</label>
+                <li title="Migrar até uma determinada linha">
+                    <button class=ir-para>Ir para a linha...</button>
+                <li title="Limpar os dados da ficha">
+                    <button class=esvaziar-ficha>Esvaziar a ficha</button>
+                <li title="Imprimir a ficha"class=impressao>
+                    <button class=imprimir>Imprimir</button>
+                <li title=Tutorial>
+                    <button class=salvar-como-pdf>Salvar como PDF <span class=question-mark>?</span></button>
+                <li title="Sobre o totalizador"class=sobre>
+                    <button class=abrir-artigo-sobre>Sobre</button>
+                <li title="Partilhar o endereço do totalizador"class=partilha>
+                    <button class=partilhar>Partilhar...</button></ul>
+            </section>
+        </div>
+    </header>
+                           
+    <main class="linha">
+        <div class=container>
+            <header>
+                <div class="col1 emblema-e-republica">
+                    <figure><img alt="Emblema da República de Moçambique" src=imagens/emblema.png>
+                    </figure>
+                    <div class=republica>                       
+                        <span>República de Moçambique</span> 
+                        <span>Ministério da Sáude</span> 
+                    </div>
+                </div>
+                <div class=geo>
+                        <div>
+                            <label for=provincia>Província</label> 
+                            <input id=provincia>
+                        </div>
+                        
+                        <div>
+                            <label for=distrito>Distrito:</label> 
+                            <input id=distrito>
+                        </div>
+
+                        <div>
+                            <label for=us>US</label> 
+                            <input id=us>
+                        </div>
+
+                        <div>
+                            <label for=mes>Mês</label> 
+                            <input id=mes>
+                        </div>
+                </div>
+
+                <div class="linha-do-titulo">
+                    <span>MOD-SIS B08-B</span>
+                    <h1>SMI-RESUMO MENSAL: CONSULTA da CRIANÇA DOENTE na US e na Brigada Movel</h1>
+                </div>
+            </header>
+                        
+            <div class=ficha>
+                <header class="cabecalho-da-ficha">
+                    <div>
+                        <span>Informação Dados</span>
+                        <span>PF</span>
+                        <span>BM</span>
+                        <span>TOTAL</span>
+                    </div>
+                    
+                </header>
+
+                <div class="body">
+                    <div class="col1 col-de-enumeracao-das-linhas">
+                        <span>1</span>
+                        <span>2</span>
+                        <span>3</span>
+                        <span>4</span>
+                        <span>5</span>
+                        <span>6</span>
+                        <span>7</span>
+                        <span>8</span>
+                        <span>9</span>
+                        <span>10</span>
+                        <span>11</span>
+                        <span>12</span>
+                        <span>13</span>
+                        <span>14</span>
+                        <span>15</span>
+                        <span>16</span>
+                        <span>17</span>
+                        <span>18</span>
+                        <span>19</span>
+                        <span>20</span>
+                        <span>21</span>
+                        <span>22</span>
+                        <span>23</span>
+                        <span>24</span>
+                        <span>25</span>
+                        <span>26</span>
+                        <span>27</span>
+                        <span>28</span>
+                        <span>29</span>
+                        <span>30</span>
+                        <span>31</span>
+                        <span>32</span>
+                        <span>33</span>
+                        <span>34</span>
+                        <span>35</span>
+                        <span>36</span>
+                        <span>37</span>
+                        <span>38</span>
+                        <span>39</span>
+                    </div>
+                    <div class="col2">
+                        <div class="subcol subcol1">
+                            <div>
+                                <span>
+                                    Informação&nbsp;Geral&nbsp;sobre&nbsp;a&nbsp;Criança
+                                </span>
+                            </div>
+                            <div>
+                                <span>Estado&nbsp;Nutricional</span>
+                            </div>
+                            <div>
+                                <span>Estado&nbsp;Nutricional</span>
+                            </div>
+                            <div>
+                                <span>Prevenção&nbsp;de Deficiencias&nbsp;em Micronutrientes</span>
+                            </div>
+                            <div>
+                                <span>
+                                    Rastreio&nbsp;para&nbsp;HIV&nbsp;e Tuberculose
+                                </span>
+                            </div>
+                        </div>
+                        <div class="subcol subcol2">
+                            <div>
+                                <span class="sem-rotacao">Sexo</span>
+                            </div>
+                            <div>
+                                <span>Faixa&nbsp;Etaria&nbsp;e&nbsp;Tipo&nbsp;de&nbsp;Consulta</span>
+                            </div>
+                            <div>
+                                <span>Baixo&nbsp;peso/ idade</span>
+                            </div>
+                            <div>
+                                <span>Desnu&hyphen;<br/>trição<br/>Aguda</span>
+                            </div>
+                            <div>
+                                <span>Anemia</span>
+                            </div>
+                            <div>
+                                <span class="sem-rotacao">Suplemen&hyphen;<br/>tação com <br/> Vit.&nbsp;A</span>
+                            </div>
+                            <div>
+                                <span class="sem-rotacao">Desparasita&hyphen;<br/>ção</span>
+                            </div>
+                            <div>
+                                <span class="sem-rotacao">HIV</span>
+                            </div>
+                            <div>
+                                <span class="sem-rotacao">TB</span>
+                            </div>
+                        </div>
+                        <div class="subcol subcol3">
+                            <div>
+                                <span class="sem-rotacao">Atraso de Desenvolvi&hyphen; <br/>mento Psicomotor</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col3 indicadores">
+                        <span>Total de Masculinos</span>
+                        <span>Total de Femininos</span>
+                        <span class="border2 bgc-graylight">Nº Total de Consultas</span>
+
+                        <span class="bgc-gray">Primeiras Consultas</span>
+                        <span>0-5 Meses</span>
+                        <span>6-11 Meses</span>
+                        <span>12-23 Meses</span>
+                        <span>24-59 Meses</span>
+                        <span>5-14 Anos</span>
+                        <span class="border2 bgc-graylight">Total de Primeiras Consultas</span>
+
+                        <span class="bgc-gray">Consultas Seguintes</span>
+
+                        <span>0-5 Meses</span>
+                        <span>6-11 Meses</span>
+                        <span>12-23 Meses</span>
+                        <span>24-59 Meses</span>
+                        <span>5-14 Anos</span>
+                        <span class="bgc-graylight">Total de Consultas Seguintes</span>
+
+                        <span class="border2 bgc-graylight">TOTAL DE CONSULTAS dos 0-14 anos (1ªs e Consultas Seguintes)</span>
+
+                       <div class="nutricao">
+                            <div class="c1">
+                                <span>Baixo peso/Idade moderado</span>
+                                <span>Baixo peso/Idade grave</span>
+                                <span>Desnutricao Aguda moderada</span>
+                                <span class="border2">Desnutricao Aguda grave</span>
+
+                                <span>Anemia em criancas 0-5 meses por <br/>diagnostico clinico</span>
+                                <span>Anemia em criancas 6-23 meses por <br/>diagnostico clinico</span>
+                                <span>Anemia em criancas 24-59 meses por <br/>diagnostico clinico</span>
+                                <span>Anemia em criancas 5-14 anos por <br/>diagnostico clinico</span>
+
+                                <span class="border2">Tratamento com sal ferroso</span>
+                            </div>
+                            <div class="c2">
+                                <span>Total de criancas observadas na CCD com baixo </br> peso/idade moderado</span>
+
+                                <span>Total de criancas observadas na CCD com baixo </br> peso/idade grave</span>
+
+                                <span>Total de criancas observadas na CCD com </br> desnutricao aguda moderada</span>
+
+                                <span class="border2">Total de criancas observadas na CCD com </br> desnutricao aguda grave</span>
+                                
+                                <span>No de criancas 0-5 meses clinicamente <br/> diagnosticadas com anemia</span>
+                                <span>No de criancas 6-23 meses clinicamente <br/> diagnosticadas com anemia</span>
+                                <span>No de criancas 24-59 meses clinicamente <br/> diagnosticadas com anemia</span>
+                                <span>No de criancas 5-14 anos clinicamente <br/> diagnosticadas com anemia</span>
+                                <span class="border2">Total de criancas com anemia que iniciaram tratamento com sal ferroso</span>
+                            </div>
+                       </div>
+
+                        <span>
+                            Numero de criancas 6-11 meses suplementadas com vitamina A
+                        </span>
+                        <span>Numero de criancas 12-59 meses suplementadas com vitamina A</span>
+                        <span class="border2">Numero de criancas 12-59 meses que receberam desparasitante</span>
+
+                        <span>Total de criancas elegiveis para testagem</span>
+                        <span>Total de criancas testadas</span>
+                        <span>Total de criancas com teste HIV positivo</span>
+                        <span>Total de criancas com teste HIV negativo</span>
+                        <span>Total de criancas com teste HIV indeterminado</span>
+                        <span>Total de criancas que iniciaram profilaxia com CTZ</span>
+                        <span>Total de criancas que referem contacto com TB</span>
+                        <span class="border2">Total de criancas com sinas e sintomas de tuberculose</span>
+                        <span>
+                            Total de criancas de 0-59 meses com atraso de desenvolvimento psicomotor identificado </br> pela 1ª vez.
+                        </span>
+                    </div>
+                    <div class="col-de-celulas-de-entrada pf">
+                        <input type="number" min="0" data-totaleixox="l1-c1c2" data-totaleixoxoutput="l1-c3" data-totaleixoy="l1l2-c1" data-totaleixoyoutput="l3-c1"/>
+                        <input type="number" min="0" data-totaleixox="l2-c1c2" data-totaleixoxoutput="l2-c3" data-totaleixoy="l1l2-c1" data-totaleixoyoutput="l3-c1"/>
+                        
+                        <input type="number" min="0" readonly class="l3-c1 bgc-graylight"/>
+                        <input type="number" min="0" data-totaleixox="l1">
+                        <input type="number" min="0" data-totaleixox="l1">
+                        <input type="number" min="0" id="">
+                        <input type="number" min="0" id="">
+                        <input type="number" min="0" id="">
+                        <input type="number" min="0" id="">
+                        <input type="number" min="0" id="">
+                        <input type="number" min="0" id="" readonly>
+                        <input type="number" min="0" id="">
+                        <input type="number" min="0" id="">
+                        <input type="number" min="0" id="">
+                        <input type="number" min="0" id="">
+                        <input type="number" min="0" id="">
+                        <input type="number" min="0" id="">
+                        <input type="number" min="0" id="" class="border2">
+                        <input type="number" min="0" id="">
+                        <input type="number" min="0" id="">
+                        <input type="number" min="0" id="">
+                        <input type="number" min="0" id="" class="border2">
+                        <input type="number" min="0" id="">
+                        <input type="number" min="0" id="">
+                        <input type="number" min="0" id="">
+                        <input type="number" min="0" id="">
+                        <input type="number" min="0" id="" class="border2">
+                        <input type="number" min="0" id="">
+                        <input type="number" min="0" id="">
+                        <input type="number" min="0" id="" class="border2">
+                        <input type="number" min="0" id="">
+                        <input type="number" min="0" id="">
+                        <input type="number" min="0" id="">
+                        <input type="number" min="0" id="">
+                        <input type="number" min="0" id="">
+                        <input type="number" min="0" id="">
+                        <input type="number" min="0" id="">
+                        <input type="number" min="0" id="" class="border2">
+                        <input type="number" min="0" id="">
+                    </div>
+                    <div class="col-de-celulas-de-entrada bm">
+                        <input type="number" min="0" data-totaleixox="l1-c1c2" data-totaleixoxoutput="l1-c3" data-totaleixoy="l1l2-c2" data-totaleixoyoutput="l3-c2"/>
+                        <input type="number" min="0" data-totaleixox="l2-c1c2" data-totaleixoxoutput="l2-c3" data-totaleixoy="l1l2-c1" data-totaleixoyoutput="l3-c1"/>
+                        <input type="number" min="0" id="">
+                        <input type="number" min="0" id="" readonly>
+                        <input type="number" min="0" id="">
+                        <input type="number" min="0" id="">
+                        <input type="number" min="0" id="">
+                        <input type="number" min="0" id="">
+                        <input type="number" min="0" id="">
+                        <input type="number" min="0" id="">
+                        <input type="number" min="0" id="" readonly>
+                        <input type="number" min="0" id="">
+                        <input type="number" min="0" id="">
+                        <input type="number" min="0" id="">
+                        <input type="number" min="0" id="">
+                        <input type="number" min="0" id="">
+                        <input type="number" min="0" id="">
+                        <input type="number" min="0" id="" class="border2">
+                        <input type="number" min="0" id="">
+                        <input type="number" min="0" id="">
+                        <input type="number" min="0" id="">
+                        <input type="number" min="0" id="" class="border2">
+                        <input type="number" min="0" id="">
+                        <input type="number" min="0" id="">
+                        <input type="number" min="0" id="">
+                        <input type="number" min="0" id="">
+                        <input type="number" min="0" id="" class="border2">
+                        <input type="number" min="0" id="">
+                        <input type="number" min="0" id="">
+                        <input type="number" min="0" id="" class="border2">
+                        <input type="number" min="0" id="">
+                        <input type="number" min="0" id="">
+                        <input type="number" min="0" id="">
+                        <input type="number" min="0" id="">
+                        <input type="number" min="0" id="">
+                        <input type="number" min="0" id="">
+                        <input type="number" min="0" id="">
+                        <input type="number" min="0" id="" class="border2">
+                        <input type="number" min="0" id="">
+                    </div>
+                    <div class="col-de-celulas-de-entrada total">
+                        <input type="number" min="0" class="l1-c3" readonly/>
+                        <input type="number" min="0" class="l2-c3">
+                        <input type="number" min="0" id="">
+                        <input type="number" min="0" id="" readonly>
+                        <input type="number" min="0" id="">
+                        <input type="number" min="0" id="">
+                        <input type="number" min="0" id="">
+                        <input type="number" min="0" id="">
+                        <input type="number" min="0" id="">
+                        <input type="number" min="0" id="">
+                        <input type="number" min="0" id="" readonly>
+                        <input type="number" min="0" id="">
+                        <input type="number" min="0" id="">
+                        <input type="number" min="0" id="">
+                        <input type="number" min="0" id="">
+                        <input type="number" min="0" id="">
+                        <input type="number" min="0" id="">
+                        <input type="number" min="0" id="" class="border2">
+                        <input type="number" min="0" id="">
+                        <input type="number" min="0" id="">
+                        <input type="number" min="0" id="">
+                        <input type="number" min="0" id="" class="border2">
+                        <input type="number" min="0" id="">
+                        <input type="number" min="0" id="">
+                        <input type="number" min="0" id="">
+                        <input type="number" min="0" id="">
+                        <input type="number" min="0" id="" class="border2">
+                        <input type="number" min="0" id="">
+                        <input type="number" min="0" id="">
+                        <input type="number" min="0" id="" class="border2">
+                        <input type="number" min="0" id="">
+                        <input type="number" min="0" id="">
+                        <input type="number" min="0" id="">
+                        <input type="number" min="0" id="">
+                        <input type="number" min="0" id="">
+                        <input type="number" min="0" id="">
+                        <input type="number" min="0" id="">
+                        <input type="number" min="0" id="" class="border2">
+                        <input type="number" min="0" id="">
+                    </div>
+                </div>
+            </div>
+            </div><div class="linha nota"><textarea id=nota placeholder="Adicionar uma nota..."rows=3></textarea></div><div class=linha-de-referencia><div class=coluna-de-referencia><div><span>Linha:</span><output class=ref-de-linha></output></div><div><span>Faixa etária:</span><output class=ref-de-faixa-etaria></output></div><div><span>Sexo:</span><output class=ref-de-sexo></output></div></div></div></div><aside class=manipulacao-do-menu><div class=pesquisa><div class=caixa-de-pesquisa><input type=number min=1 class=pesquisar-linha max=63 placeholder="Introduza o número da linha"> <button class=fechar title=Fechar>×</button></div><div class="caixa-de-alerta query-out-of-range"><p><b class=entered-num></b> não corresponde à nenhuma linha. A ficha tem no máximo 63 linhas a partir de 1.</p><button>OK</button></div></div><div class=esvaziamento><div class=caixa-de-confirmacao><h3>Esvaziar a ficha</h3><p>Tem certeza de que pretende esvaziar a ficha?<div class=alerta><svg style=width:40px;height:40px><linearGradient id=meuGradiente x1=0% x2=0% y1=0% y2=100%><stop offset=0% style=stop-color:gray></stop><stop offset=100% style=stop-color:#ff0></stop></linearGradient><polygon fill=url(#meuGradiente) points="20,0 40,40, 0,40"stroke=#333 stroke-width=1></polygon><text style=font-weight:700;font-size:28px x=15.335 y=35.5>!</text></svg><p>Esta acção não pode ser desfeita.</div><h4>Dados adicionais</h4><ul class=limpadores-de-dados-adicionais><li><input type=checkbox id=nome-da-provincia checked data-for=provincia> <label for=nome-da-provincia>Província</label><li><input type=checkbox id=nome-do-distrito checked data-for=distrito> <label for=nome-do-distrito>Distrito</label><li><input type=checkbox id=nome-da-us checked data-for=us> <label for=nome-da-us>US</label><li><input type=checkbox id=month checked data-for=mes> <label for=month>Mês</label><li><input type=checkbox id=nome-do-dc checked data-for=dc> <label for=nome-do-dc>Nome do Director Clínico</label><li><input type=checkbox id=data-de-elaboracao checked data-for=data> <label for=data-de-elaboracao>Data de elaboração</label><li><input type=checkbox id=nome-do-compilador checked data-for=compilador> <label for=nome-do-compilador>Nome do Responsável pelo<br>compilamento</label><li><input type=checkbox id=assinatura-do-compilador checked data-for=assinatura> <label for=assinatura-do-compilador>Assinatura do Responsável pelo<br>compilamento</label><li><input type=checkbox id=nota-do-resumo checked data-for=nota> <label for=nota-do-resumo>Nota do resumo</label></ul><div class=botoes-de-confirmacao><button class=cancelar>Cancelar</button> <button class=confirmar>Confirmar</button></div></div><div class="caixa-de-alerta ficha-vazia"><p>A ficha não está preenchida.</p><button>OK</button></div></div><div class="caixa-de-alerta restricao-de-acesso-celular"><p>As células dos totais têm o acesso interdito para evitar que os resultados sejam acidentalmente modificados.</p><button>OK</button></div><div class="caixa-de-alerta indicador-nao-aplicavel"><p>Indicador não aplicável para o sexo <span class=sexo-output></span>.</p><button>OK</button></div><div class=razao-pelas-celulas-com-fundo-vermelho><h2>Por que algumas células ficaram com o fundo vermelho?</h2><p class="destaque obs">Toda célula cujo fundo está vermelho tem um ou mais algarismos omissos por indisponibilidade de espaço na respectiva célula.<p>As células de entrada de dados do Totalizador têm uma largura para 6 algarismos no máximo, portanto, só podem mostrar valores até <strong>999 999</strong>. A partir de 1 000 000, ficam visíveis somente os primeiros 6 algarismos e do 7º em diante, ficam fora da área visível da célula, com excepção das dos totais, que mostram até 7 algarismos (<strong>9 999 999</strong>).<p class="destaque suposicao">Presumo que actualmente (2022) não haja uma Unidade Sanitária em Moçambique com um número de consultas do CCD maior que 999 999.<div class=seccao-de-interatividade><div><input type=checkbox id=nao-mostrar-mais> <label for=nao-mostrar-mais>Não mostrar mais esta mensagem</label></div><button class=close-redcels-obs>Fechar</button></div></div><div class=aviso-de-uso-de-cookies><p>Ao utilizar o Totalizador de Resumo Mensal de CCD, o usuário concorda com o armazenamento local de dados, a fim de melhorar a sua experiência de utilização. <button class=abrir-artigo-cookies>Saiba mais...</button></p><button class=aceitar-cookies>Prosseguir</button></div></aside>
+        </main>
+        <article><section id=sobre><h1>Sobre o totalizador</h1><figure><img alt="Totalizador de Resumo Mensal de CCD"src=imagens/totalizador-de-resumo-mensal-de-ccd.png></figure><p>O <b>Totalizador de Resumo Mensal de CCD</b> é um serviço online gratuito que auxilia na elaboração do resumo mensal de Consulta da Criança Doente (CCD) totalizando-o automaticamente com base nos dados preenchidos pelo usuário (Profissional de Saúde). A sua estrutura é baseada na da ficha de resumo mensal de CCD actualmente (2022) vigente no Serviço Nacional de Saúde em Moçambique.<p>O propósito é de flexibilizar a elaboração do resumo através do cálculo automático dos totais.<p>O Totalizador de Resumo Mensal de CCD reúne os seguintes recursos:<ul><li>Calcula e autopreenche as células dos totais;<li>Fornece resultados verdadeiros;<li>Flexibiliza a elaboração do resumo;<li>Salva os dados no navegador do usuário até este excluí-los;<li>Pode ser impresso.</ul><button class=fechar-artigo title=Fechar>×</button></section><section id=cookies><h1>Política de Armazenamento de dados</h1><p><b>Web Storage</b> é um recurso para armazenamento local (no navegador do usuário) de informações por meio de pequenos arquivos de texto, útil para guardar predefinições.<p class=mb-10>Existem 2 tipos de Web Storage:<ul><li><b>Session Storage (Armazenamento de Sessão)</b> – elimina os dados gravados quando a janela da página é fechada.<li><b>Local Storage (Armazenamento Local)</b> – mantém os dados salvos por um período determinado ou até que o usuário exclua.</ul><p>O Totalizador de Resumo Mensal de CCD utiliza o primeiro para guardar o consentimento do usuário à Política de Armazenamento e o último pelas razões do subtítulo a seguir.<h2>Por que armazeno dados?</h2><p class=mb-10>Por 3 razões, enumeradamente:<dl><dt id=um>Fazer um backup local<dd class=mb-10>Fazer uma cópia de segurança dos dados da ficha no navegador do usuário. Se forem preenchidos, os dados que são salvos incluem:</dd><ul><li><b>Os dados da ficha propriamente dita.</b><li><b>Dados adicionais como:</b><ul><li>Província;<li>Distrito;<li>Unidade Sanitária;<li>Mês;<li>Nome do Director da US;<li>Data de elaboração;<li>Nome do Responsável pelo compilamento;<li>Assinatura do Responsável pelo compilamento.</ul></ul><dt id=dois>Durabilidade dos dados<dd>Manter salvos os dados previamente inseridos no acto de preenchimento da ficha por tempo suficiente para serem aproveitáveis. Isso é importante, pois possibilita o Profissional interromper sem o risco de voltar à estaca zero, a elaboração do resumo para continuar num outro momento oportuno, sobretudo se ainda lhe faltar dados de alguns indicadores para preencher nas respectivas células da ficha.<dt id=tres>Salvar preferências<dd>Por exemplo, quando o usuário marca a opção <b>“Destacar o fundo dos totais"</b>, essa escolha é salva na Web Storage para manter nas suas próximas visitas à plataforma.</dl><h2>Destino dos dados</h2><p>Todos os dados são salvos localmente (no navegador do usuário). O armazenamento local é para fins de memorização e com isso tornar os dados suficientemente duráveis.<h2>Gerenciamento dos dados pelo usuário</h2><p>No menu do Totalizador, existe a opção <strong>“Esvaziar a ficha”</strong>, que permite ao usuário apagar todos os dados da ficha salvos pelo Totalizador na Web Storage.<div class=consentimento><p class=destaque>A aceitação dos termos de armazenamento apresentados neste bloco é dada pela utilização do Totalizador de Resumo Mensal de CCD.</div><button class=fechar-artigo title=Fechar><span class=times>× </span><svg style=width:16px;height:16px><line stroke=#333 stroke-width=2px x1=0% x2=50% y1=50% y2=0></line><line stroke=#333 stroke-width=2px x1=0% x2=50% y1=50% y2=100%></line><line stroke=#333 stroke-width=2px x1=-1 x2=100% y1=50% y2=50%></line></svg></button></section><section id=conversao-pdf><h1>Como salvar a ficha em PDF?</h1><ol><li>Clique na opção "<b>Imprimir</b>".<li>Na janela que abrirá, no campo de <b>Impressora</b> ou <b>Destino</b> selecione a opção “<b>Salvar como PDF</b>”.<li>No campo de <b>Layout</b> ou <b>Orientação</b>, selecione "<b>Paisagem</b>". Isso é para que toda ficha caiba no papel A4 e não haja omissão das últimas colunas.<li>Por fim, clique em <b>salvar</b> e escolha o destino no seu computador.</ol><p class=destaque>Se no navegador Firefox haver omissão das últimas colunas no modo paisagem, teste no modo retrato.</p><button class=fechar-artigo title=Fechar>×</button></section></article><footer><div class="linha do-rodape"><div class=hiperligacoes><h4>Links para outros serviços afins</h4><ul><li><a href=https://quinamine.github.io/totalizador-de-resumo-mensal-de-hiv-e-sida/index.html target=_blank>Totalizador de Resumo Mensal de HIV/SIDA</a><li><a href=https://quinamine.github.io/totalizador-de-resumo-mensal-de-consultas/index.html target=_blank>Totalizador de Resumo Mensal de Consultas</a><li><a href=https://quinamine.github.io/tarv-pediatrico/index.html target=_blank>Doseador Pediátrico de Antirretrovirais</a><li><a href=https://quinamine.github.io/calculadora-de-doses-pediatricas/index.html target=_blank>Calculadora de Doses Pediátricas</a></ul></div><p>Desenvolvido com 💙 por <a href=https://quinamine.github.io/aderito-felix-quinamine/index.html>Adérito Félix Quinamine</a> | © 2022 - Totalizador de Resumo Mensal de CCD</p><a href=#ficha class=voltar>Voltar ao topo</a></div></footer><div class=desfoque></div>
+    </body>
+</html>
