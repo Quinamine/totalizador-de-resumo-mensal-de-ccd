@@ -16,6 +16,28 @@ const totalizador = {
             const celula_de_saida = document.querySelector(`.${cel.dataset.totaleixoyoutput}`);
             this.totalizarCelulas(celulasPorTotalizar, celula_de_saida);
         }
+
+        if(cel.dataset.totaldeconsultasgeraiseixoy) {
+            cel.classList.add(`${cel.dataset.totaldeconsultasgeraiseixoy}`);
+            const celulasPorTotalizar = document.querySelectorAll(`.${cel.dataset.totaldeconsultasgeraiseixoy}`);
+            const celula_de_saida = document.querySelector(`.${cel.dataset.totaldeconsultasgeraiseixoyoutput}`);
+            this.totalizarCelulas(celulasPorTotalizar, celula_de_saida);
+        }
+
+        if(cel.dataset.totaldostotais) {
+            cel.classList.add(`${cel.dataset.totaldostotais}`);
+            const celulasPorTotalizar = document.querySelectorAll(`.${cel.dataset.totaldostotais}`);
+            const celula_de_saida = document.querySelector(`.${cel.dataset.totaldostotaisoutput}`);
+            this.totalizarCelulas(celulasPorTotalizar, celula_de_saida);
+        }
+
+        if(cel.dataset.totaldetotalgeral) {
+            cel.classList.add(`${cel.dataset.totaldetotalgeral}`);
+            const celulasPorTotalizar = document.querySelectorAll(`.${cel.dataset.totaldetotalgeral}`);
+            const celula_de_saida = document.querySelector(`.${cel.dataset.totaldetotalgeraloutput}`);
+            this.totalizarCelulas(celulasPorTotalizar, celula_de_saida);
+        }
+       
     },
 
     totalizarCelulas(celulasPorTotalizar, celula_de_saida) {

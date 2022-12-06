@@ -1,6 +1,9 @@
 ﻿input,textarea{border:none;border-radius:0;outline:0;color:var(--text-color);font-family:sans-serif,Arial,Helvetica!important;font-size:14px}input::-webkit-inner-spin-button,input::-webkit-outer-spin-button{-webkit-appearance:none;margin:0}input[type=number]{-moz-appearance:textfield;padding:0;max-width:50px}input[type=number].fs-12{font-size:12px}input[type=number].fs-11{font-size:11px}input[readonly],input[type=date],input[type=text]{font-weight:700!important}input[readonly]{cursor:default;transition:background-color .4s ease-out}.bgc-gray,input[readonly].bg-gray{background-color:var(--gray-c)!important}input[type=number].fundo-vermelho{background-color:var(--danger-color)!important;color:var(--yt)}
 
-
+body > * {
+    background-color: #000;
+    color: #d4d8da;
+}
 input {
     border-bottom: 1px solid var(--border-color);
 }
@@ -212,7 +215,8 @@ div.col-de-celulas-de-entrada input.bgc-graylight {
     background-color: var(--gray-light) !important;
 }
 
-div.body div.col3.indicadores span.bgc-gray {
+div.body div.col3.indicadores span.bgc-graydark,
+div.body div.col-de-celulas-de-entrada span.bgc-graydark {
     background-color: var(--gray) !important;
     color: var(--yt);
     justify-content: center;
@@ -240,7 +244,8 @@ div.col-de-celulas-de-entrada {
     grid-template-columns: 50px;
 }
 
-div.col-de-celulas-de-entrada input {
+div.col-de-celulas-de-entrada input,
+div.col-de-celulas-de-entrada span {
     border-bottom: 1px solid var(--gray);
     border-left: 2px solid var(--border-color);
     text-align: center;

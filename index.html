@@ -214,7 +214,7 @@
                         <span>Total de Femininos</span>
                         <span class="border2 bgc-graylight">Nº Total de Consultas</span>
 
-                        <span class="bgc-gray">Primeiras Consultas</span>
+                        <span class="bgc-graydark">Primeiras Consultas</span>
                         <span>0-5 Meses</span>
                         <span>6-11 Meses</span>
                         <span>12-23 Meses</span>
@@ -222,7 +222,7 @@
                         <span>5-14 Anos</span>
                         <span class="border2 bgc-graylight">Total de Primeiras Consultas</span>
 
-                        <span class="bgc-gray">Consultas Seguintes</span>
+                        <span class="bgc-graydark">Consultas Seguintes</span>
 
                         <span>0-5 Meses</span>
                         <span>6-11 Meses</span>
@@ -243,7 +243,7 @@
                                 <span>Anemia em criancas 0-5 meses por <br/>diagnostico clinico</span>
                                 <span>Anemia em criancas 6-23 meses por <br/>diagnostico clinico</span>
                                 <span>Anemia em criancas 24-59 meses por <br/>diagnostico clinico</span>
-                                <span>Anemia em criancas 5-14 anos por <br/>diagnostico clinico</span>
+                                <span>Anemia em criancas 5-14 anos por diag&hyphen;<br/>nóstico clinico</span>
 
                                 <span class="border2">Tratamento com sal ferroso</span>
                             </div>
@@ -260,7 +260,7 @@
                                 <span>No de criancas 6-23 meses clinicamente <br/> diagnosticadas com anemia</span>
                                 <span>No de criancas 24-59 meses clinicamente <br/> diagnosticadas com anemia</span>
                                 <span>No de criancas 5-14 anos clinicamente <br/> diagnosticadas com anemia</span>
-                                <span class="border2">Total de criancas com anemia que iniciaram tratamento com sal ferroso</span>
+                                <span class="border2">Total de criancas com anemia que iniciaram <br/> tratamento com sal ferroso</span>
                             </div>
                        </div>
 
@@ -283,128 +283,165 @@
                         </span>
                     </div>
                     <div class="col-de-celulas-de-entrada pf">
-                        <input type="number" min="0" data-totaleixox="l1-c1c2" data-totaleixoxoutput="l1-c3" data-totaleixoy="l1l2-c1" data-totaleixoyoutput="l3-c1"/>
-                        <input type="number" min="0" data-totaleixox="l2-c1c2" data-totaleixoxoutput="l2-c3" data-totaleixoy="l1l2-c1" data-totaleixoyoutput="l3-c1"/>
+                        <input type="number" min="0" data-totaleixox="l1-c1c2" data-totaleixoxoutput="l1-c3" data-totaleixoy="l1l2-c1" data-totaleixoyoutput="l3-c1" data-totaldostotais="l1l2-c1c2" data-totaldostotaisoutput="l3-c3" />
+
+                        <input type="number" min="0" data-totaleixox="l2-c1c2" data-totaleixoxoutput="l2-c3" data-totaleixoy="l1l2-c1" data-totaleixoyoutput="l3-c1" data-totaldostotais="l1l2-c1c2" data-totaldostotaisoutput="l3-c3" />
                         
-                        <input type="number" min="0" readonly class="l3-c1 bgc-graylight"/>
-                        <input type="number" min="0" data-totaleixox="l1">
-                        <input type="number" min="0" data-totaleixox="l1">
-                        <input type="number" min="0" id="">
-                        <input type="number" min="0" id="">
-                        <input type="number" min="0" id="">
-                        <input type="number" min="0" id="">
-                        <input type="number" min="0" id="">
-                        <input type="number" min="0" id="" readonly>
-                        <input type="number" min="0" id="">
-                        <input type="number" min="0" id="">
-                        <input type="number" min="0" id="">
-                        <input type="number" min="0" id="">
-                        <input type="number" min="0" id="">
-                        <input type="number" min="0" id="">
-                        <input type="number" min="0" id="" class="border2">
-                        <input type="number" min="0" id="">
-                        <input type="number" min="0" id="">
-                        <input type="number" min="0" id="">
-                        <input type="number" min="0" id="" class="border2">
-                        <input type="number" min="0" id="">
-                        <input type="number" min="0" id="">
-                        <input type="number" min="0" id="">
-                        <input type="number" min="0" id="">
-                        <input type="number" min="0" id="" class="border2">
-                        <input type="number" min="0" id="">
-                        <input type="number" min="0" id="">
-                        <input type="number" min="0" id="" class="border2">
-                        <input type="number" min="0" id="">
-                        <input type="number" min="0" id="">
-                        <input type="number" min="0" id="">
-                        <input type="number" min="0" id="">
-                        <input type="number" min="0" id="">
-                        <input type="number" min="0" id="">
-                        <input type="number" min="0" id="">
-                        <input type="number" min="0" id="" class="border2">
-                        <input type="number" min="0" id="">
+                        <input type="number" min="0" readonly class="l3-c1 border2 bgc-graylight" />
+                        
+                        <span class="bgc-graydark"></span>
+
+                        <!-- Primeiras Consultas -->
+                        <input type="number" min="0" data-totaleixox="l5-c1c2" data-totaleixoxoutput="l5-c3" data-totaleixoy="l5l6l7l8l9-c1" data-totaleixoyoutput="l10-c1" data-totaldeconsultasgeraiseixoy="l5l6l7l8l9l12l13l14l15l16-c1" data-totaldeconsultasgeraiseixoyoutput="l18-c1" data-totaldostotais="l5l6l7l8l9-c1c2" data-totaldostotaisoutput="l10-c3" data-totaldetotalgeral="l5l6l7l8l9l12l13l14l15l16-c1" data-totaldetotalgeraloutput="l18-c3" />
+
+                        <input type="number" min="0" data-totaleixox="l6-c1c2" data-totaleixoxoutput="l6-c3" data-totaleixoy="l5l6l7l8l9-c1" data-totaleixoyoutput="l10-c1" data-totaldeconsultasgeraiseixoy="l5l6l7l8l9l12l13l14l15l16-c1" data-totaldeconsultasgeraiseixoyoutput="l18-c1" data-totaldostotais="l5l6l7l8l9-c1c2" data-totaldostotaisoutput="l10-c3" data-totaldetotalgeral="l5l6l7l8l9l12l13l14l15l16-c1" data-totaldetotalgeraloutput="l18-c3" />
+
+                        <input type="number" min="0" data-totaleixox="l7-c1c2" data-totaleixoxoutput="l7-c3" data-totaleixoy="l5l6l7l8l9-c1" data-totaleixoyoutput="l10-c1" data-totaldeconsultasgeraiseixoy="l5l6l7l8l9l12l13l14l15l16-c1" data-totaldeconsultasgeraiseixoyoutput="l18-c1" data-totaldostotais="l5l6l7l8l9-c1c2" data-totaldostotaisoutput="l10-c3" data-totaldetotalgeral="l5l6l7l8l9l12l13l14l15l16-c1" data-totaldetotalgeraloutput="l18-c3" />
+
+                        <input type="number" min="0" data-totaleixox="l8-c1c2" data-totaleixoxoutput="l8-c3" data-totaleixoy="l5l6l7l8l9-c1" data-totaleixoyoutput="l10-c1" data-totaldeconsultasgeraiseixoy="l5l6l7l8l9l12l13l14l15l16-c1" data-totaldeconsultasgeraiseixoyoutput="l18-c1" data-totaldostotais="l5l6l7l8l9-c1c2" data-totaldostotaisoutput="l10-c3" data-totaldetotalgeral="l5l6l7l8l9l12l13l14l15l16-c1" data-totaldetotalgeraloutput="l18-c3" />
+
+                        <input type="number" min="0" data-totaleixox="l9-c1c2" data-totaleixoxoutput="l9-c3" data-totaleixoy="l5l6l7l8l9-c1" data-totaleixoyoutput="l10-c1" data-totaldeconsultasgeraiseixoy="l5l6l7l8l9l12l13l14l15l16-c1" data-totaldeconsultasgeraiseixoyoutput="l18-c1" data-totaldostotais="l5l6l7l8l9-c1c2" data-totaldostotaisoutput="l10-c3" data-totaldetotalgeral="l5l6l7l8l9l12l13l14l15l16-c1" data-totaldetotalgeraloutput="l18-c3" />
+
+                        <input type="number" min="0" readonly class="l10-c1 border2 bgc-graylight" />
+                        <span class="bgc-graydark"></span>
+
+                        <!-- Consultas seguintes -->
+
+                        <input type="number" min="0" data-totaleixox="l12-c1c2" data-totaleixoxoutput="l12-c3" data-totaleixoy="l12l13l14l15l16-c1" data-totaleixoyoutput="l17-c1" data-totaldeconsultasgeraiseixoy="l5l6l7l8l9l12l13l14l15l16-c1" data-totaldeconsultasgeraiseixoyoutput="l18-c1" data-totaldostotais="l12l13l14l15l16-c1c2" data-totaldostotaisoutput="l17-c3" data-totaldetotalgeral="l5l6l7l8l9l12l13l14l15l16-c1" data-totaldetotalgeraloutput="l18-c3" />
+
+                        <input type="number" min="0" data-totaleixox="l13-c1c2" data-totaleixoxoutput="l13-c3" data-totaleixoy="l12l13l14l15l16-c1" data-totaleixoyoutput="l17-c1" data-totaldeconsultasgeraiseixoy="l5l6l7l8l9l12l13l14l15l16-c1" data-totaldeconsultasgeraiseixoyoutput="l18-c1" data-totaldostotais="l12l13l14l15l16-c1c2" data-totaldostotaisoutput="l17-c3" data-totaldetotalgeral="l5l6l7l8l9l12l13l14l15l16-c1" data-totaldetotalgeraloutput="l18-c3" />
+
+                        <input type="number" min="0" data-totaleixox="l14-c1c2" data-totaleixoxoutput="l14-c3" data-totaleixoy="l12l13l14l15l16-c1" data-totaleixoyoutput="l17-c1" data-totaldeconsultasgeraiseixoy="l5l6l7l8l9l12l13l14l15l16-c1" data-totaldeconsultasgeraiseixoyoutput="l18-c1" data-totaldostotais="l12l13l14l15l16-c1c2" data-totaldostotaisoutput="l17-c3" data-totaldetotalgeral="l5l6l7l8l9l12l13l14l15l16-c1" data-totaldetotalgeraloutput="l18-c3" /> 
+
+                        <input type="number" min="0" data-totaleixox="l15-c1c2" data-totaleixoxoutput="l15-c3" data-totaleixoy="l12l13l14l15l16-c1" data-totaleixoyoutput="l17-c1" data-totaldeconsultasgeraiseixoy="l5l6l7l8l9l12l13l14l15l16-c1" data-totaldeconsultasgeraiseixoyoutput="l18-c1" data-totaldostotais="l12l13l14l15l16-c1c2" data-totaldostotaisoutput="l17-c3" data-totaldetotalgeral="l5l6l7l8l9l12l13l14l15l16-c1" data-totaldetotalgeraloutput="l18-c3" />
+
+                        <input type="number" min="0" data-totaleixox="l16-c1c2" data-totaleixoxoutput="l16-c3" data-totaleixoy="l12l13l14l15l16-c1" data-totaleixoyoutput="l17-c1" data-totaldeconsultasgeraiseixoy="l5l6l7l8l9l12l13l14l15l16-c1" data-totaldeconsultasgeraiseixoyoutput="l18-c1" data-totaldostotais="l12l13l14l15l16-c1c2" data-totaldostotaisoutput="l17-c3" data-totaldetotalgeral="l5l6l7l8l9l12l13l14l15l16-c1" data-totaldetotalgeraloutput="l18-c3" />
+
+                        <input type="number" min="0" readonly class="l17-c1 bgc-graylight" />
+                        <input type="number" min="0" readonly class="l18-c1 border2 bgc-graylight" />
+
+                        <input type="number" min="0" data-totaleixox="l19-c1c2" data-totaleixoxoutput="l19-c3" />
+                        <input type="number" min="0" data-totaleixox="l20-c1c2" data-totaleixoxoutput="l20-c3" />
+                        <input type="number" min="0" data-totaleixox="l21-c1c2" data-totaleixoxoutput="l21-c3" />
+                        <input type="number" min="0" data-totaleixox="l22-c1c2" data-totaleixoxoutput="l22-c3" class="border2"/>
+                        <input type="number" min="0" data-totaleixox="l23-c1c2" data-totaleixoxoutput="l23-c3" />
+                        <input type="number" min="0" data-totaleixox="l24-c1c2" data-totaleixoxoutput="l24-c3" />
+                        <input type="number" min="0" data-totaleixox="l25-c1c2" data-totaleixoxoutput="l25-c3" />
+                        <input type="number" min="0" data-totaleixox="l26-c1c2" data-totaleixoxoutput="l26-c3" />
+                        <input type="number" min="0" data-totaleixox="l27-c1c2" data-totaleixoxoutput="l27-c3" class="border2"/>
+                        <input type="number" min="0" data-totaleixox="l28-c1c2" data-totaleixoxoutput="l28-c3" />
+                        <input type="number" min="0" data-totaleixox="l29-c1c2" data-totaleixoxoutput="l29-c3" />
+                        <input type="number" min="0" data-totaleixox="l30-c1c2" data-totaleixoxoutput="l30-c3" class="border2"/>
+                        <input type="number" min="0" data-totaleixox="l31-c1c2" data-totaleixoxoutput="l31-c3" />
+                        <input type="number" min="0" data-totaleixox="l32-c1c2" data-totaleixoxoutput="l32-c3" />
+                        <input type="number" min="0" data-totaleixox="l33-c1c2" data-totaleixoxoutput="l33-c3" />
+                        <input type="number" min="0" data-totaleixox="l34-c1c2" data-totaleixoxoutput="l34-c3" />
+                        <input type="number" min="0" data-totaleixox="l35-c1c2" data-totaleixoxoutput="l35-c3" />
+                        <input type="number" min="0" data-totaleixox="l36-c1c2" data-totaleixoxoutput="l36-c3" />
+                        <input type="number" min="0" data-totaleixox="l37-c1c2" data-totaleixoxoutput="l37-c3" />
+                        <input type="number" min="0" data-totaleixox="l38-c1c2" data-totaleixoxoutput="l38-c3" class="border2"/>
+                        <input type="number" min="0" data-totaleixox="l39-c1c2" data-totaleixoxoutput="l39-c3" />
                     </div>
                     <div class="col-de-celulas-de-entrada bm">
-                        <input type="number" min="0" data-totaleixox="l1-c1c2" data-totaleixoxoutput="l1-c3" data-totaleixoy="l1l2-c2" data-totaleixoyoutput="l3-c2"/>
-                        <input type="number" min="0" data-totaleixox="l2-c1c2" data-totaleixoxoutput="l2-c3" data-totaleixoy="l1l2-c1" data-totaleixoyoutput="l3-c1"/>
-                        <input type="number" min="0" id="">
-                        <input type="number" min="0" id="" readonly>
-                        <input type="number" min="0" id="">
-                        <input type="number" min="0" id="">
-                        <input type="number" min="0" id="">
-                        <input type="number" min="0" id="">
-                        <input type="number" min="0" id="">
-                        <input type="number" min="0" id="">
-                        <input type="number" min="0" id="" readonly>
-                        <input type="number" min="0" id="">
-                        <input type="number" min="0" id="">
-                        <input type="number" min="0" id="">
-                        <input type="number" min="0" id="">
-                        <input type="number" min="0" id="">
-                        <input type="number" min="0" id="">
-                        <input type="number" min="0" id="" class="border2">
-                        <input type="number" min="0" id="">
-                        <input type="number" min="0" id="">
-                        <input type="number" min="0" id="">
-                        <input type="number" min="0" id="" class="border2">
-                        <input type="number" min="0" id="">
-                        <input type="number" min="0" id="">
-                        <input type="number" min="0" id="">
-                        <input type="number" min="0" id="">
-                        <input type="number" min="0" id="" class="border2">
-                        <input type="number" min="0" id="">
-                        <input type="number" min="0" id="">
-                        <input type="number" min="0" id="" class="border2">
-                        <input type="number" min="0" id="">
-                        <input type="number" min="0" id="">
-                        <input type="number" min="0" id="">
-                        <input type="number" min="0" id="">
-                        <input type="number" min="0" id="">
-                        <input type="number" min="0" id="">
-                        <input type="number" min="0" id="">
-                        <input type="number" min="0" id="" class="border2">
-                        <input type="number" min="0" id="">
-                    </div>
+                        <input type="number" min="0" data-totaleixox="l1-c1c2" data-totaleixoxoutput="l1-c3" data-totaleixoy="l1l2-c2" data-totaleixoyoutput="l3-c2" data-totaldostotais="l1l2-c1c2" data-totaldostotaisoutput="l3-c3" />
+                    
+                        <input type="number" min="0" data-totaleixox="l2-c1c2" data-totaleixoxoutput="l2-c3" data-totaleixoy="l1l2-c2" data-totaleixoyoutput="l3-c2" data-totaldostotais="l1l2-c1c2" data-totaldostotaisoutput="l3-c3"/>
+                        
+                        <input type="number" min="0" readonly class="l3-c2 border2 bgc-graylight"/>
+                        
+                        <!-- Primeiras consultas -->
+                        <span class="bgc-graydark"></span>
+                    
+                        <input type="number" min="0" data-totaleixox="l5-c1c2" data-totaleixoxoutput="l5-c3" data-totaleixoy="l5l6l7l8l9-c2" data-totaleixoyoutput="l10-c2" data-totaldeconsultasgeraiseixoy="l5l6l7l8l9l12l13l14l15l16-c2" data-totaldeconsultasgeraiseixoyoutput="l18-c2" data-totaldostotais="l5l6l7l8l9-c1c2" data-totaldostotaisoutput="l10-c3" data-totaldetotalgeral="l5l6l7l8l9l12l13l14l15l16-c1" data-totaldetotalgeraloutput="l18-c3" />
+                    
+                        <input type="number" min="0" data-totaleixox="l6-c1c2" data-totaleixoxoutput="l6-c3" data-totaleixoy="l5l6l7l8l9-c2" data-totaleixoyoutput="l10-c2" data-totaldeconsultasgeraiseixoy="l5l6l7l8l9l12l13l14l15l16-c2" data-totaldeconsultasgeraiseixoyoutput="l18-c2" data-totaldostotais="l5l6l7l8l9-c1c2" data-totaldostotaisoutput="l10-c3" data-totaldetotalgeral="l5l6l7l8l9l12l13l14l15l16-c1" data-totaldetotalgeraloutput="l18-c3" />
+                    
+                        <input type="number" min="0" data-totaleixox="l7-c1c2" data-totaleixoxoutput="l7-c3" data-totaleixoy="l5l6l7l8l9-c2" data-totaleixoyoutput="l10-c2" data-totaldeconsultasgeraiseixoy="l5l6l7l8l9l12l13l14l15l16-c2" data-totaldeconsultasgeraiseixoyoutput="l18-c2" data-totaldostotais="l5l6l7l8l9-c1c2" data-totaldostotaisoutput="l10-c3" data-totaldetotalgeral="l5l6l7l8l9l12l13l14l15l16-c1" data-totaldetotalgeraloutput="l18-c3" />
+                    
+                        <input type="number" min="0" data-totaleixox="l8-c1c2" data-totaleixoxoutput="l8-c3" data-totaleixoy="l5l6l7l8l9-c2" data-totaleixoyoutput="l10-c2" data-totaldeconsultasgeraiseixoy="l5l6l7l8l9l12l13l14l15l16-c2" data-totaldeconsultasgeraiseixoyoutput="l18-c2" data-totaldostotais="l5l6l7l8l9-c1c2" data-totaldostotaisoutput="l10-c3" data-totaldetotalgeral="l5l6l7l8l9l12l13l14l15l16-c1" data-totaldetotalgeraloutput="l18-c3" />
+                    
+                        <input type="number" min="0" data-totaleixox="l9-c1c2" data-totaleixoxoutput="l9-c3" data-totaleixoy="l5l6l7l8l9-c2" data-totaleixoyoutput="l10-c2" data-totaldeconsultasgeraiseixoy="l5l6l7l8l9l12l13l14l15l16-c2" data-totaldeconsultasgeraiseixoyoutput="l18-c2" data-totaldostotais="l5l6l7l8l9-c1c2" data-totaldostotaisoutput="l10-c3" data-totaldetotalgeral="l5l6l7l8l9l12l13l14l15l16-c1" data-totaldetotalgeraloutput="l18-c3" />
+                    
+                        <input type="number" min="0" readonly class="l10-c2 border2 bgc-graylight" />
+
+                        <!-- Consultas seguintes -->
+                        <span class="bgc-graydark"></span>
+                    
+                        <input type="number" min="0" data-totaleixox="l12-c1c2" data-totaleixoxoutput="l12-c3" data-totaleixoy="l12l13l14l15l16-c2" data-totaleixoyoutput="l17-c2" data-totaldeconsultasgeraiseixoy="l5l6l7l8l9l12l13l14l15l16-c2" data-totaldeconsultasgeraiseixoyoutput="l18-c2" data-totaldostotais="l12l13l14l15l16-c1c2" data-totaldostotaisoutput="l17-c3" data-totaldetotalgeral="l5l6l7l8l9l12l13l14l15l16-c1" data-totaldetotalgeraloutput="l18-c3" />
+                    
+                        <input type="number" min="0" data-totaleixox="l13-c1c2" data-totaleixoxoutput="l13-c3" data-totaleixoy="l12l13l14l15l16-c2" data-totaleixoyoutput="l17-c2" data-totaldeconsultasgeraiseixoy="l5l6l7l8l9l12l13l14l15l16-c2" data-totaldeconsultasgeraiseixoyoutput="l18-c2" data-totaldostotais="l12l13l14l15l16-c1c2" data-totaldostotaisoutput="l17-c3" data-totaldetotalgeral="l5l6l7l8l9l12l13l14l15l16-c1" data-totaldetotalgeraloutput="l18-c3" />
+                    
+                        <input type="number" min="0" data-totaleixox="l14-c1c2" data-totaleixoxoutput="l14-c3" data-totaleixoy="l12l13l14l15l16-c2" data-totaleixoyoutput="l17-c2" data-totaldeconsultasgeraiseixoy="l5l6l7l8l9l12l13l14l15l16-c2" data-totaldeconsultasgeraiseixoyoutput="l18-c2" data-totaldostotais="l12l13l14l15l16-c1c2" data-totaldostotaisoutput="l17-c3" data-totaldetotalgeral="l5l6l7l8l9l12l13l14l15l16-c1" data-totaldetotalgeraloutput="l18-c3" />
+                    
+                        <input type="number" min="0" data-totaleixox="l15-c1c2" data-totaleixoxoutput="l15-c3" data-totaleixoy="l12l13l14l15l16-c2" data-totaleixoyoutput="l17-c2" data-totaldeconsultasgeraiseixoy="l5l6l7l8l9l12l13l14l15l16-c2" data-totaldeconsultasgeraiseixoyoutput="l18-c2" data-totaldostotais="l12l13l14l15l16-c1c2" data-totaldostotaisoutput="l17-c3" data-totaldetotalgeral="l5l6l7l8l9l12l13l14l15l16-c1" data-totaldetotalgeraloutput="l18-c3" />
+                    
+                        <input type="number" min="0" data-totaleixox="l16-c1c2" data-totaleixoxoutput="l16-c3" data-totaleixoy="l12l13l14l15l16-c2" data-totaleixoyoutput="l17-c2" data-totaldeconsultasgeraiseixoy="l5l6l7l8l9l12l13l14l15l16-c2" data-totaldeconsultasgeraiseixoyoutput="l18-c2" data-totaldostotais="l12l13l14l15l16-c1c2" data-totaldostotaisoutput="l17-c3" data-totaldetotalgeral="l5l6l7l8l9l12l13l14l15l16-c1" data-totaldetotalgeraloutput="l18-c3"/>
+                    
+                        <input type="number" min="0" readonly class="l17-c2 bgc-graylight" />
+                        <input type="number" min="0" readonly class="l18-c2 border2 bgc-graylight" />
+                    
+                        <input type="number" min="0" data-totaleixox="l19-c1c2" data-totaleixoxoutput="l19-c3" />
+                        <input type="number" min="0" data-totaleixox="l20-c1c2" data-totaleixoxoutput="l20-c3" />
+                        <input type="number" min="0" data-totaleixox="l21-c1c2" data-totaleixoxoutput="l21-c3" />
+                        <input type="number" min="0" data-totaleixox="l22-c1c2" data-totaleixoxoutput="l22-c3" class="border2"/>
+                        <input type="number" min="0" data-totaleixox="l23-c1c2" data-totaleixoxoutput="l23-c3" />
+                        <input type="number" min="0" data-totaleixox="l24-c1c2" data-totaleixoxoutput="l24-c3" />
+                        <input type="number" min="0" data-totaleixox="l25-c1c2" data-totaleixoxoutput="l25-c3" />
+                        <input type="number" min="0" data-totaleixox="l26-c1c2" data-totaleixoxoutput="l26-c3" />
+                        <input type="number" min="0" data-totaleixox="l27-c1c2" data-totaleixoxoutput="l27-c3" class="border2"/>
+                        <input type="number" min="0" data-totaleixox="l28-c1c2" data-totaleixoxoutput="l28-c3" />
+                        <input type="number" min="0" data-totaleixox="l29-c1c2" data-totaleixoxoutput="l29-c3" />
+                        <input type="number" min="0" data-totaleixox="l30-c1c2" data-totaleixoxoutput="l30-c3" class="border2"/>
+                        <input type="number" min="0" data-totaleixox="l31-c1c2" data-totaleixoxoutput="l31-c3" />
+                        <input type="number" min="0" data-totaleixox="l32-c1c2" data-totaleixoxoutput="l32-c3" />
+                        <input type="number" min="0" data-totaleixox="l33-c1c2" data-totaleixoxoutput="l33-c3" />
+                        <input type="number" min="0" data-totaleixox="l34-c1c2" data-totaleixoxoutput="l34-c3" />
+                        <input type="number" min="0" data-totaleixox="l35-c1c2" data-totaleixoxoutput="l35-c3" />
+                        <input type="number" min="0" data-totaleixox="l36-c1c2" data-totaleixoxoutput="l36-c3" />
+                        <input type="number" min="0" data-totaleixox="l37-c1c2" data-totaleixoxoutput="l37-c3" />
+                        <input type="number" min="0" data-totaleixox="l38-c1c2" data-totaleixoxoutput="l38-c3" class="border2"/>
+                        <input type="number" min="0" data-totaleixox="l39-c1c2" data-totaleixoxoutput="l39-c3" />
+                    </div> 
                     <div class="col-de-celulas-de-entrada total">
-                        <input type="number" min="0" class="l1-c3" readonly/>
-                        <input type="number" min="0" class="l2-c3">
-                        <input type="number" min="0" id="">
-                        <input type="number" min="0" id="" readonly>
-                        <input type="number" min="0" id="">
-                        <input type="number" min="0" id="">
-                        <input type="number" min="0" id="">
-                        <input type="number" min="0" id="">
-                        <input type="number" min="0" id="">
-                        <input type="number" min="0" id="">
-                        <input type="number" min="0" id="" readonly>
-                        <input type="number" min="0" id="">
-                        <input type="number" min="0" id="">
-                        <input type="number" min="0" id="">
-                        <input type="number" min="0" id="">
-                        <input type="number" min="0" id="">
-                        <input type="number" min="0" id="">
-                        <input type="number" min="0" id="" class="border2">
-                        <input type="number" min="0" id="">
-                        <input type="number" min="0" id="">
-                        <input type="number" min="0" id="">
-                        <input type="number" min="0" id="" class="border2">
-                        <input type="number" min="0" id="">
-                        <input type="number" min="0" id="">
-                        <input type="number" min="0" id="">
-                        <input type="number" min="0" id="">
-                        <input type="number" min="0" id="" class="border2">
-                        <input type="number" min="0" id="">
-                        <input type="number" min="0" id="">
-                        <input type="number" min="0" id="" class="border2">
-                        <input type="number" min="0" id="">
-                        <input type="number" min="0" id="">
-                        <input type="number" min="0" id="">
-                        <input type="number" min="0" id="">
-                        <input type="number" min="0" id="">
-                        <input type="number" min="0" id="">
-                        <input type="number" min="0" id="">
-                        <input type="number" min="0" id="" class="border2">
-                        <input type="number" min="0" id="">
+                        <input type="number"  readonly class="l1-c3" />
+                        <input type="number"  readonly class="l2-c3" />
+                        <input type="number"  readonly class="l3-c3 bgc-graylight border2" />
+                        <span class="bgc-graydark"></span>
+                        <input type="number"  readonly class="l5-c3" />
+                        <input type="number"  readonly class="l6-c3" />
+                        <input type="number"  readonly class="l7-c3" />
+                        <input type="number"  readonly class="l8-c3" />
+                        <input type="number"  readonly class="l9-c3" />
+                        <input type="number"  readonly class="l10-c3 bgc-graylight border2">
+                        <span class="bgc-graydark"></span>
+                        <input type="number"  readonly class="l12-c3" />
+                        <input type="number"  readonly class="l13-c3" />
+                        <input type="number"  readonly class="l14-c3" />
+                        <input type="number"  readonly class="l15-c3" />
+                        <input type="number"  readonly class="l16-c3" />
+                        <input type="number"  readonly class="l17-c3 bgc-graylight"/>
+                        <input type="number"  readonly class="l18-c3 bgc-graylight border2" />
+                        <input type="number"  readonly class="l19-c3" />
+                        <input type="number"  readonly class="l20-c3" />
+                        <input type="number"  readonly class="l21-c3" />
+                        <input type="number"  readonly class="l22-c3 border2" />
+                        <input type="number"  readonly class="l23-c3" />
+                        <input type="number"  readonly class="l24-c3" />
+                        <input type="number"  readonly class="l25-c3" />
+                        <input type="number"  readonly class="l26-c3" />
+                        <input type="number"  readonly class="l27-c3 border2" />
+                        <input type="number"  readonly class="l28-c3" />
+                        <input type="number"  readonly class="l29-c3" />
+                        <input type="number"  readonly class="l30-c3 border2" />
+                        <input type="number"  readonly class="l31-c3" />
+                        <input type="number"  readonly class="l32-c3" />
+                        <input type="number"  readonly class="l33-c3" />
+                        <input type="number"  readonly class="l34-c3" />
+                        <input type="number"  readonly class="l35-c3" />
+                        <input type="number"  readonly class="l36-c3" />
+                        <input type="number"  readonly class="l37-c3" />
+                        <input type="number"  readonly class="l38-c3 border2" />
+                        <input type="number"  readonly class="l39-c3" />
                     </div>
                 </div>
             </div>
