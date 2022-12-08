@@ -118,18 +118,18 @@ header.cabecalho-da-ficha div span {
 }
 
 /* CORPO DA FICHA */
-div.body {
+div.corpo-da-ficha {
     display: grid;
     grid-template-columns: 50px 160px 636px repeat(3, 50px);
     border-right: 2px solid var(--border-color);
     border-bottom: 2px solid var(--border-color);
 }
 
-div.body span {
+div.corpo-da-ficha span {
     line-height: 1.2;
 }
 
-div.body div.col-de-enumeracao-das-linhas {
+div.corpo-da-ficha div.col-de-enumeracao-das-linhas {
     display: grid;
     grid-template-rows: repeat(18, 24px) repeat(12, 44px) repeat(8, 24px) 44px;
 }
@@ -142,7 +142,7 @@ div.col-de-enumeracao-das-linhas span {
     align-items: center;
 }
 
-div.body div.col2 {
+div.corpo-da-ficha div.col2 {
     display: grid;
     grid-template-columns: 50px 1fr;
     grid-template-rows: 1fr 44px;
@@ -183,17 +183,17 @@ div.col2 div.subcol span {
     font-weight: bold;
 }
 
-div.col2 div.subcol span.sem-rotacao {
-    transform: none;
-    letter-spacing: initial;
+span.sem-rotacao {
+    transform: none !important;
+    letter-spacing: initial !important;
 }
 
-div.body div.col3.indicadores {
+div.corpo-da-ficha div.col3.indicadores {
     display: grid;
     grid-template-rows: repeat(18, 24px) calc(44px*9) repeat(3, 44px) repeat(8, 24px);
 } 
 
-div.body div.col3.indicadores span {
+div.corpo-da-ficha div.col3.indicadores span {
     display: flex;
     align-items: center;
     padding-left: 4px;
@@ -201,18 +201,17 @@ div.body div.col3.indicadores span {
     border-left: 2px solid var(--border-color);
 }
 
-div.body div.col3.indicadores span.border2,
-div.body div.col-de-celulas-de-entrada input.border2 {
+.border2 {
     border-bottom: 2px solid var(--border-color) !important;
 }
 
-div.body div.col3.indicadores span.bgc-graylight,
+div.corpo-da-ficha div.col3.indicadores span.bgc-graylight,
 div.col-de-celulas-de-entrada input.bgc-graylight {
     background-color: var(--gray-light) !important;
 }
 
-div.body div.col3.indicadores span.bgc-graydark,
-div.body div.col-de-celulas-de-entrada span.bgc-graydark {
+div.corpo-da-ficha div.col3.indicadores span.bgc-graydark,
+div.corpo-da-ficha div.col-de-celulas-de-entrada span.bgc-graydark {
     background-color: var(--gray) !important;
     color: var(--yt);
     justify-content: center;
@@ -257,101 +256,121 @@ div.col-de-celulas-de-entrada input:last-child {
     border-bottom: none !important;
 }
 
-/* Pagina 1 - fronte da ficha */
-
-div.ficha.page1 {
+/* PAGINA 1 - FRONTE */
+div.ficha {
     display: none;
 }
-
-/* Pagina verso - verso da ficha */
-
-div.ficha.page2 div.body {
-    display: grid;
-    grid-template-columns: repeat(2, 50px) calc(160px + 636px) repeat(3, 50px);
+div.ficha.verso {
+    display: block;
 }
 
+/* PAGINA VERSO */
 
-div.body div.col-de-enumeracao-das-linhas {
+div.corpo-da-ficha.verso {
+    display: grid;
+    grid-template-columns: repeat(2, 50px) calc(110px + 636px) repeat(3, 50px);
+}
+
+div.corpo-da-ficha.verso div.col-de-enumeracao-das-linhas {
     display: grid;
     grid-template-rows: repeat(4, 24px) repeat(8, 44px) 24px repeat(3, 44px) 24px repeat(2, 44px) repeat(2, 24px) repeat(3,44px 24px) 44px repeat(6, 24px);
 }
 
-
-div.body.page2 div.col2 {
+div.corpo-da-ficha.verso div.col2 {
     display: grid;
     grid-template-columns: 50px; 
-    grid-template-rows: 1fr 44px;
+    grid-template-rows: 1fr calc(24px*4);
+    border-left: 2px solid var(--border-color);
 }
 
-div.col2 div.subcol > div {
+div.col2.verso > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div.col2.verso > div:first-child {
     border-bottom: 2px solid var(--border-color);
+}
+
+div.col2.verso span {
+    transform: rotate(-90deg);
+}
+
+/* COL 3 - COL DE MALARIA CONFIRMADA (TDR/HTZ) E INDICADORES */
+
+div.col3.verso {
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    grid-template-rows: 1fr calc(24px*4);
+}
+
+div.col3.verso div.subcol {
     border-left: 2px solid var(--border-color);
+}
+
+div.col3.verso div.subcol1 {
+    display: grid;
+    grid-template-columns: 110px;
+    grid-template-rows: calc(24px*4) calc(44px*8) 292px repeat(2, 136px) 48px;
+}
+
+div.col3.verso div.subcol1 > div {
+    border-bottom: 2px solid var(--border-color);
     display: flex;
     align-items: center;
     justify-content: center;
+    padding-left: 4px;
 }
 
-div.col2 div.subcol1 {
-    display: grid;
-    grid-template-rows: calc(24px * 18) calc(44px * 4) calc(44px * 5) calc(44px * 3) calc(24px * 8);
-    grid-template-columns: 50px;
+div.col3.verso div.subcol div.flex-start {
+    justify-content: flex-start;
 }
 
-div.col2 div.subcol2 {
-    display: grid;
-    grid-template-columns: 110px;
-    grid-template-rows: calc(24px*3) calc(24px*15) repeat(2, calc(44px*2)) calc(44px*5) calc(44px*2) 44px calc(24px*6) calc(24px*2);
-}
-
-div.col2 div.subcol3 {
-    grid-column: 1/3;
-    display: grid;
-    grid-template-rows: 1fr;
-    grid-template-columns: 1fr;
-}
-
-div.col2 div.subcol span {
+div.col3.verso div.subcol1 span {
     transform: rotate(-90deg);
-    letter-spacing: 0.5px;
-    text-align: center;
-    font-size: 14px;
     font-weight: bold;
 }
 
-div.col2 div.subcol span.sem-rotacao {
-    transform: none;
-    letter-spacing: initial;
+div.col3.verso div.subcol.indicadores {
+    display: grid;
+    grid-template-rows: repeat(4, 24px) repeat(8, 44px) 24px repeat(3, 44px) 24px repeat(2, 44px) repeat(2, 24px) repeat(3,44px 24px) 44px repeat(2, 24px);
 }
 
-div.body div.col3.indicadores {
-    display: grid;
-    grid-template-rows: repeat(18, 24px) calc(44px*9) repeat(3, 44px) repeat(8, 24px);
-} 
-
-div.body div.col3.indicadores span {
+div.col3.verso div.subcol.indicadores span {
+    border-bottom: 1px solid var(--gray);
     display: flex;
     align-items: center;
     padding-left: 4px;
-    border-bottom: 1px solid var(--gray);
-    border-left: 2px solid var(--border-color);
 }
 
-div.body div.col3.indicadores span.border2,
-div.body div.col-de-celulas-de-entrada input.border2 {
-    border-bottom: 2px solid var(--border-color) !important;
+div.col3.verso div.subcol.referencia {
+    grid-column: 1/3;
+    display: grid;
+    grid-template-rows: repeat(4, 24px);
 }
 
-div.body div.col3.indicadores span.bgc-graylight,
-div.col-de-celulas-de-entrada input.bgc-graylight {
-    background-color: var(--gray-light) !important;
+div.col3.verso div.subcol.referencia span {
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    padding-left: 4px;
 }
 
-div.body div.col3.indicadores span.bgc-graydark,
-div.body div.col-de-celulas-de-entrada span.bgc-graydark {
-    background-color: var(--gray) !important;
-    color: var(--yt);
-    justify-content: center;
+div.col3.verso div.subcol.referencia span:last-child {
+    border-bottom: none;
 }
 
+/* COLUNA DE CELULAS DE ENTRADA */
+div.corpo-da-ficha.verso div.col-de-celulas-de-entrada {
+    display: grid;
+    grid-template-rows: repeat(4, 24px) repeat(8, 44px) 24px repeat(3, 44px) 24px repeat(2, 44px) repeat(2, 24px) repeat(3,44px 24px) 44px repeat(6, 24px);
+}
+
+div.corpo-da-ficha.verso div.col-de-enumeracao-das-linhas,
+div.corpo-da-ficha.verso div.col-de-celulas-de-entrada {
+    display: grid;
+    grid-template-rows: repeat(4, 24px) repeat(8, 44px) 24px repeat(3, 44px) 24px repeat(2, 44px) repeat(2, 24px) repeat(3,44px 24px) 44px repeat(6, 24px);
+}
 
 div.nota{margin-bottom:20px;min-height:79px}@-moz-document url-prefix(){div.nota{min-height:96px}}@media screen and (max-width:998px){div.linha.nota{padding-left:0;padding-right:0}}div.nota textarea{font-family:san-serif,Arial,Helvetica;width:965px;margin-left:20px;padding:5px;line-height:1.5;border:1px solid var(--border-color)}@media print{div.col1.emblema-e-republica,div.container{visibility:visible}div.nota.no-print{display:none}div.nota textarea{padding:0}}div.nota textarea.bold{font-weight:700;border-color:transparent}div.nota textarea:focus{border:2px solid var(--blue)}
