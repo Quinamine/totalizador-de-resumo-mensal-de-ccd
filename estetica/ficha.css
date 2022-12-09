@@ -251,15 +251,15 @@ div.col-de-celulas-de-entrada.bm input {
 }
 
 div.col-de-enumeracao-das-linhas span:last-child,
-div.col2 div.subcol3 div, div.col3.indicadores span:last-child,
+div.col2 div.subcol3 div, div.col3.indicadores > span:last-child,
 div.col-de-celulas-de-entrada input:last-child {
     border-bottom: none !important;
 }
 
 /* PAGINA 1 - FRONTE */
-div.ficha {
+/*div.ficha {
     display: none;
-}
+}*/
 div.ficha.verso {
     display: block;
 }
@@ -295,6 +295,8 @@ div.col2.verso > div:first-child {
 
 div.col2.verso span {
     transform: rotate(-90deg);
+    font-weight: bold;
+    letter-spacing: 0.5px;
 }
 
 /* COL 3 - COL DE MALARIA CONFIRMADA (TDR/HTZ) E INDICADORES */
@@ -330,6 +332,7 @@ div.col3.verso div.subcol div.flex-start {
 div.col3.verso div.subcol1 span {
     transform: rotate(-90deg);
     font-weight: bold;
+    letter-spacing: 0.5px;
 }
 
 div.col3.verso div.subcol.indicadores {
@@ -372,5 +375,30 @@ div.corpo-da-ficha.verso div.col-de-celulas-de-entrada {
     display: grid;
     grid-template-rows: repeat(4, 24px) repeat(8, 44px) 24px repeat(3, 44px) 24px repeat(2, 44px) repeat(2, 24px) repeat(3,44px 24px) 44px repeat(6, 24px);
 }
+
+
+/* RODAPE DA FICHA */
+
+footer.rodape-da-ficha {
+    display: grid;
+    grid-template-columns: repeat(2, 332px) calc(998px - 332px*2);
+    margin-top: 20px;
+}
+
+footer.rodape-da-ficha div:last-child {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+footer.rodape-da-ficha div:last-child label {
+    margin-right: 4px;
+}
+
+footer.rodape-da-ficha label,
+footer.rodape-da-ficha input {
+    font-size: 14px;
+}
+
 
 div.nota{margin-bottom:20px;min-height:79px}@-moz-document url-prefix(){div.nota{min-height:96px}}@media screen and (max-width:998px){div.linha.nota{padding-left:0;padding-right:0}}div.nota textarea{font-family:san-serif,Arial,Helvetica;width:965px;margin-left:20px;padding:5px;line-height:1.5;border:1px solid var(--border-color)}@media print{div.col1.emblema-e-republica,div.container{visibility:visible}div.nota.no-print{display:none}div.nota textarea{padding:0}}div.nota textarea.bold{font-weight:700;border-color:transparent}div.nota textarea:focus{border:2px solid var(--blue)}
