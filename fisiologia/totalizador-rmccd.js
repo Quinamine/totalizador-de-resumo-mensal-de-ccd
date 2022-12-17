@@ -53,10 +53,6 @@ const totalizador = {
 }
 
 
-
-
-
-
 let celulas_de_entrada;
 window.addEventListener("load", () => {
     celulas_de_entrada = document.querySelectorAll("div.col-de-celulas-de-entrada input");

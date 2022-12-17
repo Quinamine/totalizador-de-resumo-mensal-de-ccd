@@ -79,7 +79,7 @@ header div.linha-do-titulo {
     padding: 0 50px 0 8px;
 }
 
-div.linha-do-titulo span, h1 {
+div.linha-do-titulo span, div.linha-do-titulo h1 {
     font-size: 17.5px;
     margin: 0;
     color: var(--text-color);
