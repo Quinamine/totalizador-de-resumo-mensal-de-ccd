@@ -12,7 +12,7 @@ window.addEventListener("load", () => {
 
     // Omissão do cabeçalho do verso da ficha
     const cabecalho_fichaVerso =  document.querySelectorAll("div.container > header")[1];
-    //cabecalho_fichaVerso.classList.add("hidden");
+    cabecalho_fichaVerso.classList.add("hidden");
 
 
     // Cópia dos dados inseridos nas células de entrada do cabeçalho 

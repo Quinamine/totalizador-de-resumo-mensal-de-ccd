@@ -55,4 +55,6 @@ window.addEventListener("load", () => {
         });
 
     });
+
+    window.addEventListener("scroll",()=>{let e=document.querySelector("div.linha-de-referencia"),t=document.querySelector(".bounding-reference");t.getBoundingClientRect().bottom<0?e.classList.add("off"):e.classList.remove("off")});
 })
