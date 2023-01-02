@@ -25,7 +25,10 @@ const armazenamento = {
             })
             dadosAdicionais[i].value = localStorage.getItem(`trmccd-${dadosAdicionais[i].id}`);
         }
-    }
+    },
+
+    salvarDestaqueDeTotais(){
+        readonlyCelsDarker.addEventListener("change",()=>{readonlyCelsDarker.checked?localStorage.setItem("trmccd-destaque","on"):localStorage.removeItem("trmccd-destaque")}),localStorage.getItem("trmccd-destaque")&&(readonlyCelsDarker.setAttribute("checked",""),menu.destacarFundoDeTotais())}
 }
 
 
@@ -87,6 +90,7 @@ window.addEventListener("load", () => {
     // INSTANCIAMENTO
     armazenamento.salvarFicha();
     armazenamento.salvarDadosAdicionais();
+    armazenamento.salvarDestaqueDeTotais();
     celulas_de_entrada.forEach ( cel => {
         cel.addEventListener("input", () => totalizador.filtrarCelulas(cel));
         
