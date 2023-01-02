@@ -1,3 +1,34 @@
+const armazenamento = {
+    salvarFicha() {
+
+        for(let i=0; i<celulas_de_entrada.length; i++) {
+            celulas_de_entrada[i].addEventListener("input", () => {
+                localStorage.setItem(`trmccd-cel${i}`, `${celulas_de_entrada[i].value}`);
+            });
+            celulas_de_entrada[i].value = localStorage.getItem(`trmccd-cel${i}`);
+        }
+    },
+
+    salvarDadosAdicionais() {
+        const dadosAdicionais = document.querySelectorAll("div.container > header input, footer.rodape-da-ficha input, input[type=date], textArea");
+
+        for (let i=0; i<dadosAdicionais.length; i++) {
+
+            dadosAdicionais[i].addEventListener("input", () => {             
+                localStorage.setItem(`trmccd-${dadosAdicionais[i].id}`, `${dadosAdicionais[i].value}`);
+
+                if(dadosAdicionais[i].matches("#nota")) {
+                    let dado = dadosAdicionais[i];
+                    
+                    dado.value.length > 0 ? dado.classList.add("bold") : dado.classList.remove("bold");
+                }
+            })
+            dadosAdicionais[i].value = localStorage.getItem(`trmccd-${dadosAdicionais[i].id}`);
+        }
+    }
+}
+
+
 
 const totalizador = {
 
@@ -52,14 +83,15 @@ const totalizador = {
     }
 }
 
-
-let celulas_de_entrada;
 window.addEventListener("load", () => {
-    celulas_de_entrada = document.querySelectorAll("div.col-de-celulas-de-entrada input");
-
+    // INSTANCIAMENTO
+    armazenamento.salvarFicha();
+    armazenamento.salvarDadosAdicionais();
     celulas_de_entrada.forEach ( cel => {
-        cel.addEventListener("input", () => {
+        cel.addEventListener("input", () => totalizador.filtrarCelulas(cel));
+        
+        if(cel.value !== "") {
             totalizador.filtrarCelulas(cel);
-        });
-    })
+        }
+    });
 })

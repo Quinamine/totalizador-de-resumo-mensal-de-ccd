@@ -11,5 +11,7 @@ window.addEventListener("load", () => {
     verso_da_ficha.insertAdjacentElement("afterbegin", cabecalho_da_ficha.cloneNode(true));
 
     // Omissão do cabecalho do verso da ficha
-    document.querySelectorAll("div.container > header")[1].classList.add("hidden");
+    const cabecalho_da_fichaVerso =  document.querySelectorAll("div.container > header")[1];
+    cabecalho_da_fichaVerso.classList.add("hidden");
+
 })
