@@ -1,9 +1,1008 @@
-<!doctypehtml><html dir=ltr lang=pt-MZ><meta charset=UTF-8><meta content="width=device-width,initial-scale=1"name=viewport><title>Totalizador de Resumo Mensal de CCD</title><meta content="index, follow"name=robots><meta content="Serviço online gratuito que auxilia na elaboração do resumo mensal de CCD (Consulta de Criança Doente) totalizando-o automaticamente com base nos dados preenchidos pelo usuário (Profissional de Saúde)."name=description><meta content="Totalizador de Resumo Mensal de CCD, Totalizador de Resumo Mensal de Consulta de Criança Doente, Totalizador de Relatório Mensal de CCD, Ficha de Resumo Mensal de CCD, Ficha de Resumo Mensal de Consulta da Criança Doente"name=keywords><meta content="Adérito Félix Quinamine"name=author><meta content=https://quinamine.github.io/totalizador-de-resumo-mensal-de-ccd/index.html property=og:url><meta content="Totalizador de Resumo Mensal de CCD"property=og:title><meta content="Serviço online gratuito que auxilia na elaboração do resumo mensal de CCD (Consulta de Criança Doente) totalizando-o automaticamente com base nos dados preenchidos pelo usuário (Profissional de Saúde)."property=og:description><meta content=https://quinamine.github.io/totalizador-de-resumo-mensal-de-ccd/imagens/totalizador-de-resumo-mensal-de-ccd.png property=og:image><link href=favicon.ico rel="shortcut icon"type=image/x-icon><link href=estetica/reset.css rel=stylesheet><link href=estetica/layout.css rel=stylesheet><link href=estetica/ficha.css rel=stylesheet><link href=estetica/aside.css rel=stylesheet><script src=fisiologia/menu.js></script><script src=fisiologia/clonagem-header.js></script><script src=fisiologia/inputvalidation.js></script><script src=fisiologia/totalizador-rmccd.js></script><script src=fisiologia/referencia.js></script><script src=fisiologia/webstorage.js></script><!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-KFTJDFWWPQ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+<!doctypehtml>
+<html dir=ltr lang=pt-MZ id="root">
+    <meta charset=UTF-8>
+    <meta content="IE=edge" http-equiv=X-UA-Compatible>
+    <meta content="width=device-width,initial-scale=1" name=viewport>
+    <title>Totalizador de Resumo Mensal de CCD</title>
+    <meta content="index, follow" name=robots>
+    <meta content="Serviço online gratuito, que auxilia na elaboração, como o nome sugere, do resumo mensal de CCD, por meio do cálculo automático dos totais, com base nos dados preenchidos pelo usuário. Foi criado de acordo com o modelo da ficha de resumo mensal de CCD actualmente vigente no Serviço Nacional de Saúde em Moçambique." name=description>
+    <meta content="Totalizador de Resumo Mensal de CCD, Totalizador de Relatório Mensal de CCD, Ficha de Resumo Mensal de CCD." name=keywords>
+    <meta content="Adérito Félix Quinamine" name=author>
+    <meta content=https://quinamine.github.io/totalizador-de-resumo-mensal-de-ccd/index.html property=og:url>
+    <meta content="Totalizador de Resumo Mensal de CCD" property=og:title>
+    <meta content="Serviço online gratuito, que auxilia na elaboração, como o nome sugere, do resumo mensal de CCD, por meio do cálculo automático dos totais, com base nos dados preenchidos pelo usuário. Foi criado de acordo com o modelo da ficha de resumo mensal de CCD actualmente vigente no Serviço Nacional de Saúde em Moçambique." property=og:description>
+    <meta content=https://quinamine.github.io/totalizador-de-resumo-mensal-de-ccd/imagens/totalizador-de-resumo-mensal-de-ccd.png property=og:image>
+    <link href=favicon.ico rel="shortcut icon" type=image/x-icon>
+    <link href=anatomia/reset.css rel=stylesheet>
+    <link href=anatomia/layout.css rel=stylesheet>
+    <link href=anatomia/ficha.css rel=stylesheet>
+    <script src="fisiologia/menu.js"></script>
+    <script src="fisiologia/main.js"></script>
+    <script src="fisiologia/multifuncoes.js"></script>
+    <script src="fisiologia/db.js"></script>
+    <script src="fisiologia/referencia.js"></script>
+    
+    <script src="https://www.googletagmanager.com/gtag/js?id=G-0WQ21LVG42" async></script>
+    <script>
+        function gtag() {
+            dataLayer.push(arguments)
+        }
+        window.dataLayer = window.dataLayer || [],
+        gtag("js", new Date),
+        gtag("config", "G-0WQ21LVG42")
+    </script>
+    <noscript>O seu navegador está com o JavaScript desabilitado e isso bloqueia as funcionalidades do Totalizador. Habilite-o nas configurações do navegador e recarregue a página.</noscript>
 
-  gtag('config', 'G-KFTJDFWWPQ');
-</script><noscript>O seu navegador está com o JavaScript desabilitado e isso bloqueia as funcionalidades do Totalizador. Habilite-o nas configurações do navegador e recarregue a página.</noscript><body id=ficha ontouchstart=""><header><div class="linha do-cabecalho"><a href=index.html class=logo>Totalizador de Resumo <span>Mensal</span> de CCD</a><section class=menu role=navigation><ul><li title="Adicionar um fundo opaco às celulas dos totais"class=destacar-as-celulas-automaticas><input type=checkbox id=readonlyinputs-darker> <label for=readonlyinputs-darker>Destacar o fundo dos totais</label><li title="Migrar até uma determinada linha"><button class=ir-para>Ir para a linha...</button><li title="Limpar os dados da ficha"><button class=esvaziar-ficha>Esvaziar a ficha</button><li title="Imprimir a ficha"class=impressao><button class=imprimir>Imprimir</button><li title=Tutorial><button class=salvar-como-pdf>Salvar como PDF <span class=question-mark>?</span></button><li title="Sobre o totalizador"class=sobre><button class=abrir-artigo-sobre>Sobre</button><li title="Partilhar o endereço do totalizador"class=partilha><button class=partilhar>Partilhar...</button></ul></section></div></header><main class=linha><div class=container><header><div class="col1 emblema-e-republica"><figure><img alt="Emblema da República de Moçambique"src=imagens/emblema.png></figure><div class=republica><span>República de Moçambique</span> <span>Ministério da Sáude</span></div></div><div class=geo><div><label for=provincia>Província:</label> <input id=provincia></div><div><label for=distrito>Distrito:</label> <input id=distrito></div><div><label for=us>US:</label> <input id=us></div><div><label for=mes>Mês:</label> <input id=mes></div></div><div class=linha-do-titulo><span>MOD-SIS B08-B</span><h1>SMI-RESUMO MENSAL: CONSULTA da CRIANÇA DOENTE na US e na Brigada Móvel</h1></div></header><div class="ficha fronte"><header class=cabecalho-da-ficha><div><span>Informação Dados</span> <span>PF</span> <span>BM</span> <span>TOTAL</span></div></header><div class=corpo-da-ficha><div class="col1 col-de-enumeracao-das-linhas"><span>1</span> <span>2</span> <span>3</span> <span>4</span> <span>5</span> <span>6</span> <span>7</span> <span>8</span> <span>9</span> <span>10</span> <span>11</span> <span>12</span> <span>13</span> <span>14</span> <span>15</span> <span>16</span> <span>17</span> <span>18</span> <span>19</span> <span>20</span> <span>21</span> <span>22</span> <span>23</span> <span>24</span> <span>25</span> <span>26</span> <span>27</span> <span>28</span> <span>29</span> <span>30</span> <span>31</span> <span>32</span> <span>33</span> <span>34</span> <span>35</span> <span>36</span> <span>37</span> <span>38</span> <span>39</span></div><div class=col2><div class="subcol subcol1"><div><span>Informação Geral sobre a Criança</span></div><div><span>Estado Nutricional</span></div><div><span>Estado Nutricional</span></div><div><span>Prevenção de Deficiências em Micronutrientes</span></div><div><span>Rastreio para HIV e Tuberculose</span></div></div><div class="subcol subcol2"><div><span class=sem-rotacao>Sexo</span></div><div><span>Faixa Etária e Tipo de Consulta</span></div><div><span>Baixo peso/<br>idade</span></div><div><span>Desnu‐<br>trição<br>Aguda</span></div><div><span>Anemia</span></div><div><span class=sem-rotacao>Suplemen‐<br>tação com<br>Vit. A</span></div><div><span class=sem-rotacao>Desparasita‐<br>ção</span></div><div><span class=sem-rotacao>HIV</span></div><div><span class=sem-rotacao>TB</span></div></div><div class="subcol subcol3"><div><span class=sem-rotacao>Atraso de Desenvolvi‐<br>mento Psicomotor</span></div></div></div><div class="col3 indicadores"><span>Total de Masculinos</span> <span>Total de Femininos</span> <span class="border2 bgc-graylight">Nº Total de Consultas</span> <span class=bgc-graydark>Primeiras Consultas</span> <span>0-5 Meses</span> <span>6-11 Meses</span> <span>12-23 Meses</span> <span>24-59 Meses</span> <span>5-14 Anos</span> <span class="border2 bgc-graylight">Total de Primeiras Consultas</span> <span class=bgc-graydark>Consultas Seguintes</span> <span>0-5 Meses</span> <span>6-11 Meses</span> <span>12-23 Meses</span> <span>24-59 Meses</span> <span>5-14 Anos</span> <span class=bgc-graylight>Total de Consultas Seguintes</span> <span class="border2 bgc-graylight">TOTAL DE CONSULTAS dos 0-14 anos (1ªs e Consultas Seguintes)</span><div class=nutricao><div class=c1><span>Baixo peso/Idade moderado</span> <span>Baixo peso/Idade grave</span> <span>Desnutrição Aguda moderada</span> <span class=border2>Desnutrição Aguda grave</span> <span>Anemia em crianças 0-5 meses por<br>diagnóstico clínico</span> <span>Anemia em crianças 6-23 meses por<br>diagnóstico clínico</span> <span>Anemia em crianças 24-59 meses por<br>diagnóstico clínico</span> <span>Anemia em crianças 5-14 anos por diag‐<br>nóstico clínico</span> <span class=border2>Tratamento com sal ferroso</span></div><div class=c2><span>Total de crianças observadas na CCD com baixo<br>peso/idade moderado</span> <span>Total de crianças observadas na CCD com baixo<br>peso/idade grave</span> <span>Total de crianças observadas na CCD com<br>desnutrição aguda moderada</span> <span class=border2>Total de crianças observadas na CCD com<br>desnutrição aguda grave</span> <span>No de crianças 0-5 meses clinicamente<br>diagnosticadas com anemia</span> <span>No de crianças 6-23 meses clinicamente<br>diagnosticadas com anemia</span> <span>No de crianças 24-59 meses clinicamente<br>diagnosticadas com anemia</span> <span>No de crianças 5-14 anos clinicamente<br>diagnosticadas com anemia</span> <span class=border2>Total de crianças com anemia que iniciaram<br>tratamento com sal ferroso</span></div></div><span>Número de crianças 6-11 meses suplementadas com vitamina A </span><span>Número de crianças 12-59 meses suplementadas com vitamina A</span> <span class=border2>Número de crianças 12-59 meses que receberam desparasitante</span> <span>Total de crianças elegíveis para testagem</span> <span>Total de crianças testadas</span> <span>Total de crianças com teste HIV positivo</span> <span>Total de crianças com teste HIV negativo</span> <span>Total de crianças com teste HIV indeterminado</span> <span>Total de crianças que iniciaram profilaxia com CTZ</span> <span>Total de crianças que referem contacto com TB</span> <span class=border2>Total de crianças com sinas e sintomas de tuberculose</span> <span>Total de crianças de 0-59 meses com atraso de desenvolvimento psicomotor identificado<br>pela 1ª vez.</span></div><div class="col-de-celulas-de-entrada pf"><input type=number min=0 data-totaleixox=l1-c1c2 data-totaleixoxoutput=l1-c3 data-totaldostotais=l1l2-c1c2 data-totaldostotaisoutput=l3-c3 data-totaleixoy=l1l2-c1 data-totaleixoyoutput=l3-c1> <input type=number min=0 data-totaleixox=l2-c1c2 data-totaleixoxoutput=l2-c3 data-totaldostotais=l1l2-c1c2 data-totaldostotaisoutput=l3-c3 data-totaleixoy=l1l2-c1 data-totaleixoyoutput=l3-c1> <input type=number min=0 class="border2 bgc-graylight l3-c1"readonly> <span class=bgc-graydark></span><input type=number min=0 data-totaleixox=l5-c1c2 data-totaleixoxoutput=l5-c3 data-totaldostotais=l5l6l7l8l9-c1c2 data-totaldostotaisoutput=l10-c3 data-totaleixoy=l5l6l7l8l9-c1 data-totaleixoyoutput=l10-c1 data-totaldeconsultasgeraiseixoy=l5l6l7l8l9l12l13l14l15l16-c1 data-totaldeconsultasgeraiseixoyoutput=l18-c1 data-totaldetotalgeral=l5l6l7l8l9l12l13l14l15l16-c1c2 data-totaldetotalgeraloutput=l18-c3> <input type=number min=0 data-totaleixox=l6-c1c2 data-totaleixoxoutput=l6-c3 data-totaldostotais=l5l6l7l8l9-c1c2 data-totaldostotaisoutput=l10-c3 data-totaleixoy=l5l6l7l8l9-c1 data-totaleixoyoutput=l10-c1 data-totaldeconsultasgeraiseixoy=l5l6l7l8l9l12l13l14l15l16-c1 data-totaldeconsultasgeraiseixoyoutput=l18-c1 data-totaldetotalgeral=l5l6l7l8l9l12l13l14l15l16-c1c2 data-totaldetotalgeraloutput=l18-c3> <input type=number min=0 data-totaleixox=l7-c1c2 data-totaleixoxoutput=l7-c3 data-totaldostotais=l5l6l7l8l9-c1c2 data-totaldostotaisoutput=l10-c3 data-totaleixoy=l5l6l7l8l9-c1 data-totaleixoyoutput=l10-c1 data-totaldeconsultasgeraiseixoy=l5l6l7l8l9l12l13l14l15l16-c1 data-totaldeconsultasgeraiseixoyoutput=l18-c1 data-totaldetotalgeral=l5l6l7l8l9l12l13l14l15l16-c1c2 data-totaldetotalgeraloutput=l18-c3> <input type=number min=0 data-totaleixox=l8-c1c2 data-totaleixoxoutput=l8-c3 data-totaldostotais=l5l6l7l8l9-c1c2 data-totaldostotaisoutput=l10-c3 data-totaleixoy=l5l6l7l8l9-c1 data-totaleixoyoutput=l10-c1 data-totaldeconsultasgeraiseixoy=l5l6l7l8l9l12l13l14l15l16-c1 data-totaldeconsultasgeraiseixoyoutput=l18-c1 data-totaldetotalgeral=l5l6l7l8l9l12l13l14l15l16-c1c2 data-totaldetotalgeraloutput=l18-c3> <input type=number min=0 data-totaleixox=l9-c1c2 data-totaleixoxoutput=l9-c3 data-totaldostotais=l5l6l7l8l9-c1c2 data-totaldostotaisoutput=l10-c3 data-totaleixoy=l5l6l7l8l9-c1 data-totaleixoyoutput=l10-c1 data-totaldeconsultasgeraiseixoy=l5l6l7l8l9l12l13l14l15l16-c1 data-totaldeconsultasgeraiseixoyoutput=l18-c1 data-totaldetotalgeral=l5l6l7l8l9l12l13l14l15l16-c1c2 data-totaldetotalgeraloutput=l18-c3> <input type=number min=0 class="border2 bgc-graylight l10-c1"readonly> <span class=bgc-graydark></span><input type=number min=0 data-totaleixox=l12-c1c2 data-totaleixoxoutput=l12-c3 data-totaldostotais=l12l13l14l15l16-c1c2 data-totaldostotaisoutput=l17-c3 data-totaleixoy=l12l13l14l15l16-c1 data-totaleixoyoutput=l17-c1 data-totaldeconsultasgeraiseixoy=l5l6l7l8l9l12l13l14l15l16-c1 data-totaldeconsultasgeraiseixoyoutput=l18-c1 data-totaldetotalgeral=l5l6l7l8l9l12l13l14l15l16-c1c2 data-totaldetotalgeraloutput=l18-c3> <input type=number min=0 data-totaleixox=l13-c1c2 data-totaleixoxoutput=l13-c3 data-totaldostotais=l12l13l14l15l16-c1c2 data-totaldostotaisoutput=l17-c3 data-totaleixoy=l12l13l14l15l16-c1 data-totaleixoyoutput=l17-c1 data-totaldeconsultasgeraiseixoy=l5l6l7l8l9l12l13l14l15l16-c1 data-totaldeconsultasgeraiseixoyoutput=l18-c1 data-totaldetotalgeral=l5l6l7l8l9l12l13l14l15l16-c1c2 data-totaldetotalgeraloutput=l18-c3> <input type=number min=0 data-totaleixox=l14-c1c2 data-totaleixoxoutput=l14-c3 data-totaldostotais=l12l13l14l15l16-c1c2 data-totaldostotaisoutput=l17-c3 data-totaleixoy=l12l13l14l15l16-c1 data-totaleixoyoutput=l17-c1 data-totaldeconsultasgeraiseixoy=l5l6l7l8l9l12l13l14l15l16-c1 data-totaldeconsultasgeraiseixoyoutput=l18-c1 data-totaldetotalgeral=l5l6l7l8l9l12l13l14l15l16-c1c2 data-totaldetotalgeraloutput=l18-c3> <input type=number min=0 data-totaleixox=l15-c1c2 data-totaleixoxoutput=l15-c3 data-totaldostotais=l12l13l14l15l16-c1c2 data-totaldostotaisoutput=l17-c3 data-totaleixoy=l12l13l14l15l16-c1 data-totaleixoyoutput=l17-c1 data-totaldeconsultasgeraiseixoy=l5l6l7l8l9l12l13l14l15l16-c1 data-totaldeconsultasgeraiseixoyoutput=l18-c1 data-totaldetotalgeral=l5l6l7l8l9l12l13l14l15l16-c1c2 data-totaldetotalgeraloutput=l18-c3> <input type=number min=0 data-totaleixox=l16-c1c2 data-totaleixoxoutput=l16-c3 data-totaldostotais=l12l13l14l15l16-c1c2 data-totaldostotaisoutput=l17-c3 data-totaleixoy=l12l13l14l15l16-c1 data-totaleixoyoutput=l17-c1 data-totaldeconsultasgeraiseixoy=l5l6l7l8l9l12l13l14l15l16-c1 data-totaldeconsultasgeraiseixoyoutput=l18-c1 data-totaldetotalgeral=l5l6l7l8l9l12l13l14l15l16-c1c2 data-totaldetotalgeraloutput=l18-c3> <input type=number min=0 class="bgc-graylight l17-c1"readonly> <input type=number min=0 class="border2 bgc-graylight l18-c1"readonly> <input type=number min=0 data-totaleixox=l19-c1c2 data-totaleixoxoutput=l19-c3> <input type=number min=0 data-totaleixox=l20-c1c2 data-totaleixoxoutput=l20-c3> <input type=number min=0 data-totaleixox=l21-c1c2 data-totaleixoxoutput=l21-c3> <input type=number min=0 data-totaleixox=l22-c1c2 data-totaleixoxoutput=l22-c3 class=border2> <input type=number min=0 data-totaleixox=l23-c1c2 data-totaleixoxoutput=l23-c3> <input type=number min=0 data-totaleixox=l24-c1c2 data-totaleixoxoutput=l24-c3> <input type=number min=0 data-totaleixox=l25-c1c2 data-totaleixoxoutput=l25-c3> <input type=number min=0 data-totaleixox=l26-c1c2 data-totaleixoxoutput=l26-c3> <input type=number min=0 data-totaleixox=l27-c1c2 data-totaleixoxoutput=l27-c3 class=border2> <input type=number min=0 data-totaleixox=l28-c1c2 data-totaleixoxoutput=l28-c3> <input type=number min=0 data-totaleixox=l29-c1c2 data-totaleixoxoutput=l29-c3> <input type=number min=0 data-totaleixox=l30-c1c2 data-totaleixoxoutput=l30-c3 class=border2> <input type=number min=0 data-totaleixox=l31-c1c2 data-totaleixoxoutput=l31-c3> <input type=number min=0 data-totaleixox=l32-c1c2 data-totaleixoxoutput=l32-c3> <input type=number min=0 data-totaleixox=l33-c1c2 data-totaleixoxoutput=l33-c3> <input type=number min=0 data-totaleixox=l34-c1c2 data-totaleixoxoutput=l34-c3> <input type=number min=0 data-totaleixox=l35-c1c2 data-totaleixoxoutput=l35-c3> <input type=number min=0 data-totaleixox=l36-c1c2 data-totaleixoxoutput=l36-c3> <input type=number min=0 data-totaleixox=l37-c1c2 data-totaleixoxoutput=l37-c3> <input type=number min=0 data-totaleixox=l38-c1c2 data-totaleixoxoutput=l38-c3 class=border2> <input type=number min=0 data-totaleixox=l39-c1c2 data-totaleixoxoutput=l39-c3></div><div class="col-de-celulas-de-entrada bm"><input type=number min=0 data-totaleixox=l1-c1c2 data-totaleixoxoutput=l1-c3 data-totaldostotais=l1l2-c1c2 data-totaldostotaisoutput=l3-c3 data-totaleixoy=l1l2-c2 data-totaleixoyoutput=l3-c2> <input type=number min=0 data-totaleixox=l2-c1c2 data-totaleixoxoutput=l2-c3 data-totaldostotais=l1l2-c1c2 data-totaldostotaisoutput=l3-c3 data-totaleixoy=l1l2-c2 data-totaleixoyoutput=l3-c2> <input type=number min=0 class="border2 bgc-graylight l3-c2"readonly> <span class=bgc-graydark></span> <input type=number min=0 data-totaleixox=l5-c1c2 data-totaleixoxoutput=l5-c3 data-totaldostotais=l5l6l7l8l9-c1c2 data-totaldostotaisoutput=l10-c3 data-totaleixoy=l5l6l7l8l9-c2 data-totaleixoyoutput=l10-c2 data-totaldeconsultasgeraiseixoy=l5l6l7l8l9l12l13l14l15l16-c2 data-totaldeconsultasgeraiseixoyoutput=l18-c2 data-totaldetotalgeral=l5l6l7l8l9l12l13l14l15l16-c1c2 data-totaldetotalgeraloutput=l18-c3> <input type=number min=0 data-totaleixox=l6-c1c2 data-totaleixoxoutput=l6-c3 data-totaldostotais=l5l6l7l8l9-c1c2 data-totaldostotaisoutput=l10-c3 data-totaleixoy=l5l6l7l8l9-c2 data-totaleixoyoutput=l10-c2 data-totaldeconsultasgeraiseixoy=l5l6l7l8l9l12l13l14l15l16-c2 data-totaldeconsultasgeraiseixoyoutput=l18-c2 data-totaldetotalgeral=l5l6l7l8l9l12l13l14l15l16-c1c2 data-totaldetotalgeraloutput=l18-c3> <input type=number min=0 data-totaleixox=l7-c1c2 data-totaleixoxoutput=l7-c3 data-totaldostotais=l5l6l7l8l9-c1c2 data-totaldostotaisoutput=l10-c3 data-totaleixoy=l5l6l7l8l9-c2 data-totaleixoyoutput=l10-c2 data-totaldeconsultasgeraiseixoy=l5l6l7l8l9l12l13l14l15l16-c2 data-totaldeconsultasgeraiseixoyoutput=l18-c2 data-totaldetotalgeral=l5l6l7l8l9l12l13l14l15l16-c1c2 data-totaldetotalgeraloutput=l18-c3> <input type=number min=0 data-totaleixox=l8-c1c2 data-totaleixoxoutput=l8-c3 data-totaldostotais=l5l6l7l8l9-c1c2 data-totaldostotaisoutput=l10-c3 data-totaleixoy=l5l6l7l8l9-c2 data-totaleixoyoutput=l10-c2 data-totaldeconsultasgeraiseixoy=l5l6l7l8l9l12l13l14l15l16-c2 data-totaldeconsultasgeraiseixoyoutput=l18-c2 data-totaldetotalgeral=l5l6l7l8l9l12l13l14l15l16-c1c2 data-totaldetotalgeraloutput=l18-c3> <input type=number min=0 data-totaleixox=l9-c1c2 data-totaleixoxoutput=l9-c3 data-totaldostotais=l5l6l7l8l9-c1c2 data-totaldostotaisoutput=l10-c3 data-totaleixoy=l5l6l7l8l9-c2 data-totaleixoyoutput=l10-c2 data-totaldeconsultasgeraiseixoy=l5l6l7l8l9l12l13l14l15l16-c2 data-totaldeconsultasgeraiseixoyoutput=l18-c2 data-totaldetotalgeral=l5l6l7l8l9l12l13l14l15l16-c1c2 data-totaldetotalgeraloutput=l18-c3> <input type=number min=0 class="border2 bgc-graylight l10-c2"readonly> <span class=bgc-graydark></span> <input type=number min=0 data-totaleixox=l12-c1c2 data-totaleixoxoutput=l12-c3 data-totaldostotais=l12l13l14l15l16-c1c2 data-totaldostotaisoutput=l17-c3 data-totaleixoy=l12l13l14l15l16-c2 data-totaleixoyoutput=l17-c2 data-totaldeconsultasgeraiseixoy=l5l6l7l8l9l12l13l14l15l16-c2 data-totaldeconsultasgeraiseixoyoutput=l18-c2 data-totaldetotalgeral=l5l6l7l8l9l12l13l14l15l16-c1c2 data-totaldetotalgeraloutput=l18-c3> <input type=number min=0 data-totaleixox=l13-c1c2 data-totaleixoxoutput=l13-c3 data-totaldostotais=l12l13l14l15l16-c1c2 data-totaldostotaisoutput=l17-c3 data-totaleixoy=l12l13l14l15l16-c2 data-totaleixoyoutput=l17-c2 data-totaldeconsultasgeraiseixoy=l5l6l7l8l9l12l13l14l15l16-c2 data-totaldeconsultasgeraiseixoyoutput=l18-c2 data-totaldetotalgeral=l5l6l7l8l9l12l13l14l15l16-c1c2 data-totaldetotalgeraloutput=l18-c3> <input type=number min=0 data-totaleixox=l14-c1c2 data-totaleixoxoutput=l14-c3 data-totaldostotais=l12l13l14l15l16-c1c2 data-totaldostotaisoutput=l17-c3 data-totaleixoy=l12l13l14l15l16-c2 data-totaleixoyoutput=l17-c2 data-totaldeconsultasgeraiseixoy=l5l6l7l8l9l12l13l14l15l16-c2 data-totaldeconsultasgeraiseixoyoutput=l18-c2 data-totaldetotalgeral=l5l6l7l8l9l12l13l14l15l16-c1c2 data-totaldetotalgeraloutput=l18-c3> <input type=number min=0 data-totaleixox=l15-c1c2 data-totaleixoxoutput=l15-c3 data-totaldostotais=l12l13l14l15l16-c1c2 data-totaldostotaisoutput=l17-c3 data-totaleixoy=l12l13l14l15l16-c2 data-totaleixoyoutput=l17-c2 data-totaldeconsultasgeraiseixoy=l5l6l7l8l9l12l13l14l15l16-c2 data-totaldeconsultasgeraiseixoyoutput=l18-c2 data-totaldetotalgeral=l5l6l7l8l9l12l13l14l15l16-c1c2 data-totaldetotalgeraloutput=l18-c3> <input type=number min=0 data-totaleixox=l16-c1c2 data-totaleixoxoutput=l16-c3 data-totaldostotais=l12l13l14l15l16-c1c2 data-totaldostotaisoutput=l17-c3 data-totaleixoy=l12l13l14l15l16-c2 data-totaleixoyoutput=l17-c2 data-totaldeconsultasgeraiseixoy=l5l6l7l8l9l12l13l14l15l16-c2 data-totaldeconsultasgeraiseixoyoutput=l18-c2 data-totaldetotalgeral=l5l6l7l8l9l12l13l14l15l16-c1c2 data-totaldetotalgeraloutput=l18-c3> <input type=number min=0 class="bgc-graylight l17-c2"readonly> <input type=number min=0 class="border2 bgc-graylight l18-c2"readonly> <input type=number min=0 data-totaleixox=l19-c1c2 data-totaleixoxoutput=l19-c3> <input type=number min=0 data-totaleixox=l20-c1c2 data-totaleixoxoutput=l20-c3> <input type=number min=0 data-totaleixox=l21-c1c2 data-totaleixoxoutput=l21-c3> <input type=number min=0 data-totaleixox=l22-c1c2 data-totaleixoxoutput=l22-c3 class=border2> <input type=number min=0 data-totaleixox=l23-c1c2 data-totaleixoxoutput=l23-c3> <input type=number min=0 data-totaleixox=l24-c1c2 data-totaleixoxoutput=l24-c3> <input type=number min=0 data-totaleixox=l25-c1c2 data-totaleixoxoutput=l25-c3> <input type=number min=0 data-totaleixox=l26-c1c2 data-totaleixoxoutput=l26-c3> <input type=number min=0 data-totaleixox=l27-c1c2 data-totaleixoxoutput=l27-c3 class=border2> <input type=number min=0 data-totaleixox=l28-c1c2 data-totaleixoxoutput=l28-c3> <input type=number min=0 data-totaleixox=l29-c1c2 data-totaleixoxoutput=l29-c3> <input type=number min=0 data-totaleixox=l30-c1c2 data-totaleixoxoutput=l30-c3 class=border2> <input type=number min=0 data-totaleixox=l31-c1c2 data-totaleixoxoutput=l31-c3> <input type=number min=0 data-totaleixox=l32-c1c2 data-totaleixoxoutput=l32-c3> <input type=number min=0 data-totaleixox=l33-c1c2 data-totaleixoxoutput=l33-c3> <input type=number min=0 data-totaleixox=l34-c1c2 data-totaleixoxoutput=l34-c3> <input type=number min=0 data-totaleixox=l35-c1c2 data-totaleixoxoutput=l35-c3> <input type=number min=0 data-totaleixox=l36-c1c2 data-totaleixoxoutput=l36-c3> <input type=number min=0 data-totaleixox=l37-c1c2 data-totaleixoxoutput=l37-c3> <input type=number min=0 data-totaleixox=l38-c1c2 data-totaleixoxoutput=l38-c3 class=border2> <input type=number min=0 data-totaleixox=l39-c1c2 data-totaleixoxoutput=l39-c3></div><div class="col-de-celulas-de-entrada total"><input type=number class=l1-c3 readonly> <input type=number class=l2-c3 readonly> <input type=number class="border2 bgc-graylight l3-c3"readonly> <span class=bgc-graydark></span> <input type=number class=l5-c3 readonly> <input type=number class=l6-c3 readonly> <input type=number class=l7-c3 readonly> <input type=number class=l8-c3 readonly> <input type=number class=l9-c3 readonly> <input type=number class="border2 bgc-graylight l10-c3"readonly> <span class=bgc-graydark></span> <input type=number class=l12-c3 readonly> <input type=number class=l13-c3 readonly> <input type=number class=l14-c3 readonly> <input type=number class=l15-c3 readonly> <input type=number class=l16-c3 readonly> <input type=number class="bgc-graylight l17-c3"readonly> <input type=number class="border2 bgc-graylight l18-c3"readonly> <input type=number class=l19-c3 readonly> <input type=number class=l20-c3 readonly> <input type=number class=l21-c3 readonly> <input type=number class="border2 l22-c3"readonly> <input type=number class=l23-c3 readonly> <input type=number class=l24-c3 readonly> <input type=number class=l25-c3 readonly> <input type=number class=l26-c3 readonly> <input type=number class="border2 l27-c3"readonly> <input type=number class=l28-c3 readonly> <input type=number class=l29-c3 readonly> <input type=number class="border2 l30-c3"readonly> <input type=number class=l31-c3 readonly> <input type=number class=l32-c3 readonly> <input type=number class=l33-c3 readonly> <input type=number class=l34-c3 readonly> <input type=number class=l35-c3 readonly> <input type=number class=l36-c3 readonly> <input type=number class=l37-c3 readonly> <input type=number class="border2 l38-c3"readonly> <input type=number class=l39-c3 readonly></div></div></div><div class="verso ficha"><div class="verso corpo-da-ficha"><div class="col1 col-de-enumeracao-das-linhas"><span>40</span> <span>41</span> <span>42</span> <span>43</span> <span>44</span> <span>45</span> <span>46</span> <span>47</span> <span>48</span> <span>49</span> <span>50</span> <span>51</span> <span>52</span> <span>53</span> <span>54</span> <span>55</span> <span>56</span> <span>57</span> <span>58</span> <span>59</span> <span>60</span> <span>61</span> <span>62</span> <span>63</span> <span>64</span> <span>65</span> <span>66</span> <span>67</span> <span>68</span> <span>69</span> <span>70</span> <span>71</span> <span>72</span> <span class=bounding-reference>73</span></div><div class="verso col2"><div><span>Novos casos</span></div><div><span>Referência</span></div></div><div class="verso col3"><div class="subcol subcol1"><div class=flex-start><span class=sem-rotacao>Malária<br>confirmada<br>(TDR/HTZ)</span></div><div><span>Malária confirmada e tratada</span></div><div><span>Diarreia</span></div><div><span>Disenteria</span></div><div><span>Pneumonia</span></div><div class=flex-start><span class=sem-rotacao>Outras<br>doenças</span></div></div><div class="subcol subcol2 indicadores"><span>Total de crianças de 0-59M com resultado do Teste de Malária Positivo (TDR ou HTZ)</span> <span>Total de crianças de 0-59M com resultado do Teste de Malária Negativo (TDR ou HTZ)</span> <span>Total de crianças de 5-14A com resultado do Teste para Malária Positivo (TDR ou HTZ)</span> <span>Total de crianças de 5-14A com resultado do Teste para Malária Negativo (TDR ou HTZ)</span><span>Total de crianças de 0-59 meses com diagnóstico de novo caso de Malária confirmada e<br>tratadas com AL (Coartem)</span> <span>Total de crianças de 0-59 meses com diagnóstico de novo caso de Malária confirmada e<br>tratadas com Artesunato+Amodiaquina (ASAQ)</span> <span>Total de crianças de 0-59 meses com diagnóstico de novo caso de Malária confirmada e<br>tratadas com Artesunato (AS)</span> <span>Total de crianças de 0-59 meses com diagnóstico de novo caso de Malária confirmada e<br>tratadas com Quinino</span><span>Total de crianças de 5-14 anos com diagnóstico de novo caso de Malária confirmada e trata‐<br>das com AL (Coartem)</span> <span>Total de crianças de 5-14 anos com diagnóstico de novo caso de Malária confirmada e trata‐<br>das com Artesunato+Amodiaquina (ASAQ)</span> <span>Total de crianças de 5-14 anos com diagnóstico de novo caso de Malária confirmada e<br>tratadas com Artesunato (AS)</span> <span>Total de crianças de 5-14 anos meses com diagnóstico de novo caso de Malária confirmada e trata‐<br>das com Quinino</span><span>Total de crianças de 0-59 meses diagnosticadas como novo caso de Diarreia</span> <span>Total de crianças de 0-59 meses diagnosticadas como novo caso de Diarreia e tratadas com<br>SRO e ZINCO</span> <span>Total de crianças de 0-59 meses diagnosticadas como novo caso de Diarreia e tratadas só<br>com ZINCO</span> <span>Total de crianças de 0-59 meses diagnosticadas como novo caso de Diarreia e tratadas só<br>com SRO</span><span>Total de crianças de 5-14A diagnosticadas como novo caso de Diarreia</span> <span>Total de crianças de 5-14A diagnosticadas como novo caso de Diarreia e tratadas com SRO e<br>ZINCO</span> <span>Total de crianças de 5-14A diagnosticadas como novo caso de Diarreia e tratadas só com<br>ZINCO</span> <span>Total de crianças de 5-14A diagnosticadas como novo caso de Diarreia e tratadas só com SRO</span><span>Total de crianças de 0-59 meses diagnosticadas como novo caso de Disenteria</span> <span>Total de crianças de 0-59 meses diagnosticadas como novo caso de Disenteria e tratadas com<br>Ciprofloxacina</span><span>Total de crianças 5-14A diagnosticadas como novo caso de Disenteria</span> <span>Total de crianças 5-14A diagnosticadas como novo caso de Disenteria e tratadas com<br>Ciprofloxacina</span><span>Total de crianças de 0-59 meses diagnosticadas como novo caso de Pneumonia</span> <span>Total de crianças de 0-59 meses diagnosticadas como novo caso de Pneumonia e tratadas<br>com Amoxicilina</span><span>Total de crianças 5-14A diagnosticadas como novo caso de Pneumonia</span> <span>Total de crianças 5-14A diagnosticadas como novo caso de Pneumonia e tratadas com<br>Amoxicilina</span><span>Total de crianças de 0-59 meses diagnosticadas como novo caso de outras doenças</span> <span class=border2>Total de crianças de 5-14A diagnosticadas como novo caso de outras doenças</span></div><div class="subcol subcol3 referencia"><span>Total de crianças referidas</span> <span>Total de crianças referidas para Consulta de criança em risco</span> <span>Total de crianças referidas para Urgência de Pediatria ou Banco de Socorros/Internamento</span> <span>Total de crianças referidas para Consulta Médica/Especializada/Doença crónica</span></div></div><div class="col-de-celulas-de-entrada pf"><input type=number min=0 data-totaleixox=l40-c1c2 data-totaleixoxoutput=l40-c3> <input type=number min=0 data-totaleixox=l41-c1c2 data-totaleixoxoutput=l41-c3> <input type=number min=0 data-totaleixox=l42-c1c2 data-totaleixoxoutput=l42-c3> <input type=number min=0 data-totaleixox=l43-c1c2 data-totaleixoxoutput=l43-c3> <input type=number min=0 data-totaleixox=l44-c1c2 data-totaleixoxoutput=l44-c3> <input type=number min=0 data-totaleixox=l45-c1c2 data-totaleixoxoutput=l45-c3> <input type=number min=0 data-totaleixox=l46-c1c2 data-totaleixoxoutput=l46-c3> <input type=number min=0 data-totaleixox=l47-c1c2 data-totaleixoxoutput=l47-c3> <input type=number min=0 data-totaleixox=l48-c1c2 data-totaleixoxoutput=l48-c3> <input type=number min=0 data-totaleixox=l49-c1c2 data-totaleixoxoutput=l49-c3> <input type=number min=0 data-totaleixox=l50-c1c2 data-totaleixoxoutput=l50-c3> <input type=number min=0 data-totaleixox=l51-c1c2 data-totaleixoxoutput=l51-c3> <input type=number min=0 data-totaleixox=l52-c1c2 data-totaleixoxoutput=l52-c3> <input type=number min=0 data-totaleixox=l53-c1c2 data-totaleixoxoutput=l53-c3> <input type=number min=0 data-totaleixox=l54-c1c2 data-totaleixoxoutput=l54-c3> <input type=number min=0 data-totaleixox=l55-c1c2 data-totaleixoxoutput=l55-c3> <input type=number min=0 data-totaleixox=l56-c1c2 data-totaleixoxoutput=l56-c3> <input type=number min=0 data-totaleixox=l57-c1c2 data-totaleixoxoutput=l57-c3> <input type=number min=0 data-totaleixox=l58-c1c2 data-totaleixoxoutput=l58-c3> <input type=number min=0 data-totaleixox=l59-c1c2 data-totaleixoxoutput=l59-c3> <input type=number min=0 data-totaleixox=l60-c1c2 data-totaleixoxoutput=l60-c3> <input type=number min=0 data-totaleixox=l61-c1c2 data-totaleixoxoutput=l61-c3> <input type=number min=0 data-totaleixox=l62-c1c2 data-totaleixoxoutput=l62-c3> <input type=number min=0 data-totaleixox=l63-c1c2 data-totaleixoxoutput=l63-c3> <input type=number min=0 data-totaleixox=l64-c1c2 data-totaleixoxoutput=l64-c3> <input type=number min=0 data-totaleixox=l65-c1c2 data-totaleixoxoutput=l65-c3> <input type=number min=0 data-totaleixox=l66-c1c2 data-totaleixoxoutput=l66-c3> <input type=number min=0 data-totaleixox=l67-c1c2 data-totaleixoxoutput=l67-c3> <input type=number min=0 data-totaleixox=l68-c1c2 data-totaleixoxoutput=l68-c3> <input type=number min=0 data-totaleixox=l69-c1c2 data-totaleixoxoutput=l69-c3 class=border2> <input type=number min=0 data-totaleixox=l70-c1c2 data-totaleixoxoutput=l70-c3> <input type=number min=0 data-totaleixox=l71-c1c2 data-totaleixoxoutput=l71-c3> <input type=number min=0 data-totaleixox=l72-c1c2 data-totaleixoxoutput=l72-c3> <input type=number min=0 data-totaleixox=l73-c1c2 data-totaleixoxoutput=l73-c3></div><div class="col-de-celulas-de-entrada bm"><input type=number min=0 data-totaleixox=l40-c1c2 data-totaleixoxoutput=l40-c3> <input type=number min=0 data-totaleixox=l41-c1c2 data-totaleixoxoutput=l41-c3> <input type=number min=0 data-totaleixox=l42-c1c2 data-totaleixoxoutput=l42-c3> <input type=number min=0 data-totaleixox=l43-c1c2 data-totaleixoxoutput=l43-c3> <input type=number min=0 data-totaleixox=l44-c1c2 data-totaleixoxoutput=l44-c3> <input type=number min=0 data-totaleixox=l45-c1c2 data-totaleixoxoutput=l45-c3> <input type=number min=0 data-totaleixox=l46-c1c2 data-totaleixoxoutput=l46-c3> <input type=number min=0 data-totaleixox=l47-c1c2 data-totaleixoxoutput=l47-c3> <input type=number min=0 data-totaleixox=l48-c1c2 data-totaleixoxoutput=l48-c3> <input type=number min=0 data-totaleixox=l49-c1c2 data-totaleixoxoutput=l49-c3> <input type=number min=0 data-totaleixox=l50-c1c2 data-totaleixoxoutput=l50-c3> <input type=number min=0 data-totaleixox=l51-c1c2 data-totaleixoxoutput=l51-c3> <input type=number min=0 data-totaleixox=l52-c1c2 data-totaleixoxoutput=l52-c3> <input type=number min=0 data-totaleixox=l53-c1c2 data-totaleixoxoutput=l53-c3> <input type=number min=0 data-totaleixox=l54-c1c2 data-totaleixoxoutput=l54-c3> <input type=number min=0 data-totaleixox=l55-c1c2 data-totaleixoxoutput=l55-c3> <input type=number min=0 data-totaleixox=l56-c1c2 data-totaleixoxoutput=l56-c3> <input type=number min=0 data-totaleixox=l57-c1c2 data-totaleixoxoutput=l57-c3> <input type=number min=0 data-totaleixox=l58-c1c2 data-totaleixoxoutput=l58-c3> <input type=number min=0 data-totaleixox=l59-c1c2 data-totaleixoxoutput=l59-c3> <input type=number min=0 data-totaleixox=l60-c1c2 data-totaleixoxoutput=l60-c3> <input type=number min=0 data-totaleixox=l61-c1c2 data-totaleixoxoutput=l61-c3> <input type=number min=0 data-totaleixox=l62-c1c2 data-totaleixoxoutput=l62-c3> <input type=number min=0 data-totaleixox=l63-c1c2 data-totaleixoxoutput=l63-c3> <input type=number min=0 data-totaleixox=l64-c1c2 data-totaleixoxoutput=l64-c3> <input type=number min=0 data-totaleixox=l65-c1c2 data-totaleixoxoutput=l65-c3> <input type=number min=0 data-totaleixox=l66-c1c2 data-totaleixoxoutput=l66-c3> <input type=number min=0 data-totaleixox=l67-c1c2 data-totaleixoxoutput=l67-c3> <input type=number min=0 data-totaleixox=l68-c1c2 data-totaleixoxoutput=l68-c3> <input type=number min=0 data-totaleixox=l69-c1c2 data-totaleixoxoutput=l69-c3 class=border2> <input type=number min=0 data-totaleixox=l70-c1c2 data-totaleixoxoutput=l70-c3> <input type=number min=0 data-totaleixox=l71-c1c2 data-totaleixoxoutput=l71-c3> <input type=number min=0 data-totaleixox=l72-c1c2 data-totaleixoxoutput=l72-c3> <input type=number min=0 data-totaleixox=l73-c1c2 data-totaleixoxoutput=l73-c3></div><div class="col-de-celulas-de-entrada total"><input type=number class=l40-c3 readonly> <input type=number class=l41-c3 readonly> <input type=number class=l42-c3 readonly> <input type=number class=l43-c3 readonly> <input type=number class=l44-c3 readonly> <input type=number class=l45-c3 readonly> <input type=number class=l46-c3 readonly> <input type=number class=l47-c3 readonly> <input type=number class=l48-c3 readonly> <input type=number class=l49-c3 readonly> <input type=number class=l50-c3 readonly> <input type=number class=l51-c3 readonly> <input type=number class=l52-c3 readonly> <input type=number class=l53-c3 readonly> <input type=number class=l54-c3 readonly> <input type=number class=l55-c3 readonly> <input type=number class=l56-c3 readonly> <input type=number class=l57-c3 readonly> <input type=number class=l58-c3 readonly> <input type=number class=l59-c3 readonly> <input type=number class=l60-c3 readonly> <input type=number class=l61-c3 readonly> <input type=number class=l62-c3 readonly> <input type=number class=l63-c3 readonly> <input type=number class=l64-c3 readonly> <input type=number class=l65-c3 readonly> <input type=number class=l66-c3 readonly> <input type=number class=l67-c3 readonly> <input type=number class=l68-c3 readonly> <input type=number class="border2 l69-c3"readonly> <input type=number class=l70-c3 readonly> <input type=number class=l71-c3 readonly> <input type=number class=l72-c3 readonly> <input type=number class=l73-c3 readonly></div></div><footer class=rodape-da-ficha><div><label for=data>Data:</label> <input type=date id=data></div><div><label for=compilador>Compilado por:</label> <input id=compilador></div><div><label for=assinatura>Assinatura:</label> <input id=assinatura></div></footer></div><div class="linha nota"><textarea id=nota placeholder="Adicionar uma nota..."rows=3></textarea></div><div class=linha-de-referencia><div class=coluna-de-referencia><div><span>Linha:</span><output class=ref-de-linha></output></div><div><span>Coluna:</span><output class=ref-de-sexo></output></div></div></div></div><aside class=manipulacao-do-menu><div class=pesquisa><div class=caixa-de-pesquisa><input type=number min=1 class=pesquisar-linha max=63 placeholder="Introduza o número da linha"> <button class=fechar title=Fechar>×</button></div><div class="caixa-de-alerta query-out-of-range"><p><b class=entered-num></b> não corresponde à nenhuma linha. A ficha tem no máximo 73 linhas a partir de 1.</p><button>OK</button></div></div><div class=esvaziamento><div class=caixa-de-confirmacao><h3>Esvaziar a ficha</h3><p>Tem certeza de que pretende esvaziar a ficha?<div class=alerta><svg style=width:40px;height:40px><linearGradient id=meuGradiente x1=0% x2=0% y1=0% y2=100%><stop offset=0% style=stop-color:gray></stop><stop offset=100% style=stop-color:#ff0></stop></linearGradient><polygon fill=url(#meuGradiente) points="20,0 40,40, 0,40"stroke=#333 stroke-width=1></polygon><text style=font-weight:700;font-size:28px x=15.335 y=35.5>!</text></svg><p>Esta acção não pode ser desfeita.</div><h4>Dados adicionais</h4><ul class=limpadores-de-dados-adicionais><li><input type=checkbox id=nome-da-provincia checked data-for=provincia> <label for=nome-da-provincia>Província</label><li><input type=checkbox id=nome-do-distrito checked data-for=distrito> <label for=nome-do-distrito>Distrito</label><li><input type=checkbox id=nome-da-us checked data-for=us> <label for=nome-da-us>US</label><li><input type=checkbox id=month checked data-for=mes> <label for=month>Mês</label><li><input type=checkbox id=data-de-elaboracao checked data-for=data> <label for=data-de-elaboracao>Data de elaboração</label><li><input type=checkbox id=nome-do-compilador checked data-for=compilador> <label for=nome-do-compilador>Nome do Responsável pelo<br>compilamento</label><li><input type=checkbox id=assinatura-do-compilador checked data-for=assinatura> <label for=assinatura-do-compilador>Assinatura do Responsável pelo<br>compilamento</label><li><input type=checkbox id=nota-do-resumo checked data-for=nota> <label for=nota-do-resumo>Nota do resumo</label></ul><div class=botoes-de-confirmacao><button class=cancelar>Cancelar</button> <button class=confirmar>Confirmar</button></div></div><div class="caixa-de-alerta ficha-vazia"><p>A ficha não está preenchida.</p><button>OK</button></div></div><div class="caixa-de-alerta restricao-de-acesso-celular"><p>As células dos totais têm o acesso interdito para assegurar que os seus valores não sejam acidentalmente modificados.</p><button>OK</button></div><div class="caixa-de-alerta indicador-nao-aplicavel"><p>Indicador não aplicável para o sexo <span class=sexo-output></span>.</p><button>OK</button></div><div class=razao-pelas-celulas-com-fundo-vermelho><h2>Por que algumas células ficaram com o fundo vermelho?</h2><p class="destaque obs">Toda célula cujo fundo está vermelho tem um ou mais algarismos omissos por indisponibilidade de espaço na respectiva célula.<p>As células de entrada de dados do totalizador têm uma largura para 6 algarismos no máximo, portanto, só podem mostrar valores até <strong>999 999</strong>. A partir de 1 000 000, ficam visíveis somente os primeiros 6 algarismos e do 7º em diante, ficam fora da área visível da célula.<p class="destaque suposicao">Presumo que actualmente (2023) não haja uma Unidade Sanitária em Moçambique com um número de consultas de CCD maior que 999 999.<div class=seccao-de-interatividade><div><input type=checkbox id=nao-mostrar-mais> <label for=nao-mostrar-mais>Não volte a mostrar esta mensagem</label></div><button class=close-redcels-obs>Fechar</button></div></div><div class=aviso-de-uso-de-cookies><p>Ao utilizar o Totalizador de Resumo Mensal de CCD, o usuário concorda com o armazenamento local de dados, a fim de melhorar a sua experiência de utilização. <button class=abrir-artigo-cookies>Saiba mais...</button></p><button class=aceitar-cookies>Prosseguir</button></div></aside></main><article><section id=sobre><h1>Sobre o totalizador</h1><figure><img alt="Totalizador de Resumo Mensal de CCD"src=imagens/totalizador-de-resumo-mensal-de-ccd.png></figure><p>O <b>Totalizador de Resumo Mensal de CCD</b> é um serviço online gratuito que auxilia na elaboração do resumo mensal de Consultas da Criança Doente (CCD) totalizando-o automaticamente com base nos dados preenchidos pelo usuário (Profissional de Saúde). A sua estrutura é baseada na da ficha de resumo mensal de CCD actualmente (2023) vigente no Serviço Nacional de Saúde em Moçambique.<p>O propósito é de flexibilizar a elaboração do resumo através do cálculo automático dos totais.<p>O Totalizador de Resumo Mensal de CCD reúne os seguintes recursos:<ul><li>Calcula e autopreenche as células dos totais;<li>Fornece resultados verdadeiros;<li>Flexibiliza a elaboração do resumo;<li>Salva os dados no navegador do usuário até este excluí-los;<li>Pode ser impresso.</ul><button class=fechar-artigo title=Fechar>×</button></section><section id=cookies><h1>Política de Armazenamento de dados</h1><p><b>Web Storage</b> é um recurso para armazenamento local (no navegador do usuário) de informações por meio de pequenos arquivos de texto, útil para guardar predefinições.<p class=mb-10>Existem 2 tipos de Web Storage:<ul><li><b>Session Storage (Armazenamento de Sessão)</b> – elimina os dados gravados quando a janela da página é fechada.<li><b>Local Storage (Armazenamento Local)</b> – mantém os dados salvos por um período determinado ou até que o usuário exclua.</ul><p>O Totalizador de Resumo Mensal de CCD utiliza o primeiro para guardar o consentimento do usuário à Política de Armazenamento e o último pelas razões do subtítulo a seguir.<h2>Por que armazeno dados?</h2><p class=mb-10>Por 3 razões, enumeradamente:<dl><dt id=um>Fazer um backup local<dd class=mb-10>Fazer uma cópia de segurança dos dados da ficha no navegador do usuário. Se forem preenchidos, os dados que são salvos incluem:</dd><ul><li><b>Os dados da ficha propriamente dita.</b><li><b>Dados adicionais como:</b><ul><li>Província;<li>Distrito;<li>Unidade Sanitária;<li>Mês;<li>Data de elaboração;<li>Nome do Responsável pelo compilamento;<li>Assinatura do Responsável pelo compilamento;<li>Nota do resumo.</ul></ul><dt id=dois>Durabilidade dos dados<dd>Manter salvos os dados previamente inseridos no acto de preenchimento da ficha por tempo suficiente para serem aproveitáveis. Isso é importante, pois possibilita o Profissional interromper sem o risco de voltar à estaca zero, a elaboração do resumo para continuar num outro momento oportuno, sobretudo se ainda lhe faltar dados de alguns indicadores para preencher nas respectivas células da ficha.<dt id=tres>Salvar preferências<dd>Por exemplo, quando o usuário marca a opção <b>“Destacar o fundo dos totais"</b>, essa escolha é salva na Web Storage para manter nas suas próximas visitas à plataforma.</dl><h2>Destino dos dados</h2><p>Todos os dados são salvos localmente (no navegador do usuário). O armazenamento local é para fins de memorização e com isso tornar os dados suficientemente duráveis.<h2>Gerenciamento dos dados pelo usuário</h2><p>No menu do Totalizador, existe a opção <strong>“Esvaziar a ficha”</strong>, que permite ao usuário apagar todos os dados da ficha salvos pelo Totalizador na Web Storage.<div class=consentimento><p class=destaque>A aceitação dos termos de armazenamento apresentados neste bloco é dada pela utilização do Totalizador de Resumo Mensal de CCD.</div><button class=fechar-artigo title=Fechar><span class=times>× </span><svg style=width:16px;height:16px><line stroke=#333 stroke-width=2px x1=0% x2=50% y1=50% y2=0></line><line stroke=#333 stroke-width=2px x1=0% x2=50% y1=50% y2=100%></line><line stroke=#333 stroke-width=2px x1=-1 x2=100% y1=50% y2=50%></line></svg></button></section><section id=conversao-pdf><h1>Como salvar a ficha em PDF?</h1><ol><li>Clique na opção "<b>Imprimir</b>".<li>Na janela que abrirá, no campo de <b>Impressora</b> ou <b>Destino</b> selecione a opção “<b>Salvar como PDF</b>”.<li>Por fim, clique em <b>salvar</b> e escolha o destino no seu computador.</ol><button class=fechar-artigo title=Fechar>×</button></section></article><footer><div class="linha do-rodape"><div class=hiperligacoes><h4>Links para outros serviços afins</h4><ul><li><a href=https://quinamine.github.io/totalizador-de-resumo-mensal-de-consultas/index.html target=_blank>Totalizador de Resumo Mensal de Consultas</a><li><a href=https://quinamine.github.io/totalizador-de-resumo-mensal-de-hiv-e-sida/index.html target=_blank>Totalizador de Resumo Mensal de HIV/SIDA</a><li><a href=https://quinamine.github.io/totalizador-de-resumo-mensal-de-malaria/index.html target=_blank>Totalizador de Resumo Mensal de Malária</a><li><a href=https://quinamine.github.io/totalizador-de-resumo-mensal-de-prn-ii/index.html target=_blank>Totalizador de Resumo Mensal de PRN II</a><li><a href=https://quinamin.github.io/totalizador-de-resumo-mensal-de-prn-i/index.html target=_blank>Totalizador de Resumo Mensal de PRN I</a><li><a href=https://quinamine.github.io/totalizador-de-resumo-mensal-de-saaj/index.html target=_blank>Totalizador de Resumo Mensal de SAAJ</a><li><a href=https://quinamine.github.io/totalizador-de-resumo-mensal-de-ats/index.html target=_blank>Totalizador de Resumo Mensal de ATS</a><li><a href=https://quinamine.github.io/calculadora-de-doses-pediatricas/index.html target=_blank>Calculadora de Doses Pediátricas</a><li><a href=https://quinamine.github.io/tarv-pediatrico/index.html target=_blank>Doseador de Antirretrovirais</a><li class=sem-margem><a href=https://quinamin.github.io/requisicao-balancete/index.html target=_blank>Requisição/Balancete</a></ul></div><p>Desenvolvido com 💙 por <a href=https://quinamine.github.io/aderito-felix-quinamine/index.html>Adérito Félix Quinamine</a> | © 2023 - Totalizador de Resumo Mensal de CCD</p><a href=#ficha class=voltar>Voltar ao topo</a></div></footer><div class=desfoque></div>
+    <body class="body" ontouchstart="">
+        <header class="header --no-print">
+            <div class="layout-row header__row --display-flex-y-center">
+                <a href=index.html class=header__logo>
+                    Totalizador de Resumo <span class="logo-word--hide-on-screen-s">Mensal</span>
+                    de CCD
+                </a>
+                <div role="navigation" class="header__nav --display-flex-y-center">
+                    <ul class="header__nav__ul --display-flex-y-center">
+                        <li class="header__nav__li header__nav__li-realcartotais">
+                            <input type=checkbox id="checkbox-realcar-totais" class="header__checkbox header__child--cursor">
+                            <label for="checkbox-realcar-totais" class="header__label --display-flex-y-center header__child--cursor">
+                                Realçar&nbsp;totais
+                            </label>
+                        <li class="header__nav__li">
+                            <button class="header__nav__btn header__nav__btn-ir-para">Ir para a linha...</button>
+                        <li class="header__nav__li">
+                            <button class="header__nav__btn header__nav__btn-esvaziar-ficha">Esvaziar ficha</button>
+                        <li class="header__nav__li">
+                            <button class="header__nav__btn header__nav__btn-imprimir">
+                                <span class="--hide-on-mobile header__child--cursor">Imprimir</span>
+                                <span class="--hide-on-desktop header__child--cursor">Salvar&nbsp;como&nbsp;PDF</span>
+                            </button>
+                        <li class="header__nav__li header__li--hide-on-mobile">
+                            <button class="header__nav__btn header__nav__btn-sobre">Sobre</button>
+                        <li class="header__nav__li">
+                            <button class="header__nav__btn header__nav__btn-ajuda">
+                                Ajuda
+                            </button>
+                        <li class="header__nav__li header__li--hide-on-desktop">
+                            <button class="header__nav__btn header__nav__btn-partilhar">Partilhar...</button>
+                    </ul>
+                </div>
+            </div>
+        </header>
+        <main class="main">
+          <div class="ficha">
+            <header class="ficha__header">
+              <div class="ficha__col-de-emblema">
+                  <figure>
+                      <img alt="Emblema da República de Moçambique" src=imagens/emblema.png>
+                  </figure>
+                  <div class=ficha__box-descricao-de-emblema>
+                      <span class="ficha__span-descricao-de-emblema">República de Moçambique</span>
+                      <span class="ficha__span-descricao-de-emblema">Ministério da Sáude</span>
+                  </div>
+              </div>
+              <div class=ficha__col-de-localizacao>
+                  <div class="ficha__col-de-localizacao__subcol">
+                      <label for=provincia>Província:</label>
+                      <input id=provincia class="--border-b">
+                  </div>
+                  <div class="ficha__col-de-localizacao__subcol">
+                      <label for=distrito>Distrito:</label>
+                      <input id=distrito class="--border-b">
+                  </div>
+                  <div class="ficha__col-de-localizacao__subcol">
+                      <label for=us>US:</label>
+                      <input id=us class="--border-b">
+                  </div>
+                  <div class="ficha__col-de-localizacao__subcol">
+                      <label for=mes>Mês:</label>
+                      <input id=mes class="--border-b">
+                  </div>
+              </div>
+              <div class=ficha__container-do-titulo>
+                  <span class="ficha__mod-sis">MOD-SIS B08-B</span>
+                  <h1 class="ficha__titulo">SMI-RESUMO MENSAL: CONSULTA da CRIANÇA DOENTE na US e na Brigada Móvel</h1>
+              </div>
+            </header>
+            <div class="ficha-fronte">
+                <header class="header-info-dados --border-2">
+                    <div class="header-info-dados__col --border-l-grossa">
+                        <div class="--display-flex-xy-center --border-b-grossa">
+                            <span>Informação Dados</span>
+                        </div>
+                        <div class="header-info-dados__grid-template-col-3">
+                            <span class="--display-flex-xy-center">PF</span>
+                            <span class="--border-l-grossa --display-flex-xy-center">BM</span>
+                            <span class="--border-l-grossa --display-flex-xy-center">TOTAL</span>
+                        </div>
+                    </div>
+                </header>
+                <div class="ficha__body">
+                    <div class="ficha__col-de-nums-de-linhas --border-l-grossa">
+                        <span>1</span>
+                        <span>2</span>
+                        <span>3</span>
+                        <span>4</span>
+                        <span>5</span>
+                        <span>6</span>
+                        <span>7</span>
+                        <span>8</span>
+                        <span>9</span>
+                        <span>10</span>
+                        <span>11</span>
+                        <span>12</span>
+                        <span>13</span>
+                        <span>14</span>
+                        <span>15</span>
+                        <span>16</span>
+                        <span>17</span>
+                        <span>18</span>
+                        <span>19</span>
+                        <span>20</span>
+                        <span>21</span>
+                        <span>22</span>
+                        <span>23</span>
+                        <span>24</span>
+                        <span>25</span>
+                        <span>26</span>
+                        <span>27</span>
+                        <span>28</span>
+                        <span>29</span>
+                        <span>30</span>
+                        <span>31</span>
+                        <span>32</span>
+                        <span>33</span>
+                        <span>34</span>
+                        <span>35</span>
+                        <span>36</span>
+                        <span>37</span>
+                        <span>38</span>
+                        <span>39</span>
+                    </div>
+                    <div class="ficha__col-row-groups --border-l-grossa">
+                        <div class="ficha__col-row-groups__col-1">
+                            <div class="--display-flex-xy-center --border-b-grossa">
+                                <span class="ficha__span--rotate">Informação Geral sobre a Criança</span>
+                            </div>
+                            <div class="--display-flex-xy-center --border-b-grossa">
+                                <span class="ficha__span--rotate">Estado Nutricional</span>
+                            </div>
+                            <div class="--display-flex-xy-center --border-b-grossa">
+                                <span class="ficha__span--rotate">Estado Nutricional</span>
+                            </div>
+                            <div class="--display-flex-xy-center --border-b-grossa">
+                                <span class="ficha__span--rotate">Prevenção de Deficiências em Micronutrientes</span>
+                            </div>
+                            <div class="--display-flex-xy-center --border-b-grossa">
+                                <span class="ficha__span--rotate">Rastreio para HIV e Tuberculose</span>
+                            </div>
+                        </div>
+                        <div class="ficha__col-row-groups__col-2 --border-l-grossa">
+                            <div class="--display-flex-xy-center --border-b-grossa">
+                                <span class=sem-rotacao>Sexo</span>
+                            </div>
+                            <div class="--display-flex-xy-center --border-b-grossa">
+                                <span class="ficha__span--rotate">Faixa Etária e Tipo de Consulta</span>
+                            </div>
+                            <div class="--display-flex-xy-center --border-b-grossa">
+                                <span class="ficha__span--rotate">
+                                    Baixo peso/<br>idade
+                                </span>
+                            </div>
+                            <div class="--display-flex-xy-center --border-b-grossa">
+                                <span class="ficha__span--rotate">
+                                    Desnu‐<br>
+                                    trição<br>Aguda
+                                </span>
+                            </div>
+                            <div class="--display-flex-xy-center --border-b-grossa">
+                                <span class="ficha__span--rotate">Anemia</span>
+                            </div>
+                            <div class="--display-flex-xy-center --border-b-grossa">
+                                <span>
+                                    Suplemen‐<br>
+                                    tação com<br>Vit. A
+                                </span>
+                            </div>
+                            <div class="--display-flex-xy-center --border-b-grossa">
+                                <span class=sem-rotacao>
+                                    Desparasita‐<br>ção
+                                </span>
+                            </div>
+                            <div class="--display-flex-xy-center --border-b-grossa">
+                                <span class=sem-rotacao>HIV</span>
+                            </div>
+                            <div class="--display-flex-xy-center --border-b-grossa">
+                                <span class=sem-rotacao>TB</span>
+                            </div>
+                        </div>
+                        <div class="ficha__col-row-groups__col-3">
+                            <div class="--display-flex-xy-center --border-b-grossa">
+                                <span class=--no-transform-rotate>
+                                    Atraso de Desenvolvi‐<br>mento Psicomotor
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ficha__col-de-indicadores --border-l-grossa">
+                        <span class="ficha__indicador --display-flex-y-center --border-b">Total de Masculinos</span>
+                        <span class="ficha__indicador --display-flex-y-center --border-b">Total de Femininos</span>
+                        <span class="ficha__indicador ficha__indicador--realce-gray-light --display-flex-y-center --border-b-grossa">Nº Total de Consultas</span>
+                        <span class="ficha__indicador ficha__indicador--realce-gray-dark --display-flex-xy-center --border-b">Primeiras Consultas</span>
+                        <span class="ficha__indicador --display-flex-y-center --border-b">0-5 Meses</span>
+                        <span class="ficha__indicador --display-flex-y-center --border-b">6-11 Meses</span>
+                        <span class="ficha__indicador --display-flex-y-center --border-b">12-23 Meses</span>
+                        <span class="ficha__indicador --display-flex-y-center --border-b">24-59 Meses</span>
+                        <span class="ficha__indicador --display-flex-y-center --border-b">5-14 Anos</span>
+                        <span class="ficha__indicador ficha__indicador--realce-gray-light --display-flex-y-center --border-b-grossa">Total de Primeiras Consultas</span>
+                        <span class="ficha__indicador ficha__indicador--realce-gray-dark --display-flex-xy-center --border-b">Consultas Seguintes</span>
+                        <span class="ficha__indicador --display-flex-y-center --border-b">0-5 Meses</span>
+                        <span class="ficha__indicador --display-flex-y-center --border-b">6-11 Meses</span>
+                        <span class="ficha__indicador --display-flex-y-center --border-b">12-23 Meses</span>
+                        <span class="ficha__indicador --display-flex-y-center --border-b">24-59 Meses</span>
+                        <span class="ficha__indicador --display-flex-y-center --border-b">5-14 Anos</span>
+                        <span class="ficha__indicador ficha__indicador--realce-gray-light --display-flex-y-center --border-b">Total de Consultas Seguintes</span>
+                        <span class="ficha__indicador ficha__indicador--realce-gray-light --display-flex-y-center --border-b-grossa">TOTAL DE CONSULTAS dos 0-14 anos (1ªs e Consultas Seguintes)</span>
+
+                        <div class=col-de-indicadores__sessao-de-nutricao>
+                            <div class=col-de-indicadores__sessao-de-nutricao__col>
+                                <span class="ficha__indicador --display-flex-y-center --border-b">Baixo peso/Idade moderado</span>
+                                <span class="ficha__indicador --display-flex-y-center --border-b">Baixo peso/Idade grave</span>
+                                <span class="ficha__indicador --display-flex-y-center --border-b">Desnutrição Aguda moderada</span>
+                                <span class="ficha__indicador --display-flex-y-center --border-b-grossa">Desnutrição Aguda grave</span>
+                                <span class="ficha__indicador --display-flex-y-center --border-b">
+                                    Anemia em crianças 0-5 meses por<br>diagnóstico clínico
+                                </span>
+                                <span class="ficha__indicador --display-flex-y-center --border-b">
+                                    Anemia em crianças 6-23 meses por<br>diagnóstico clínico
+                                </span>
+                                <span class="ficha__indicador --display-flex-y-center --border-b">
+                                    Anemia em crianças 24-59 meses por<br>diagnóstico clínico
+                                </span>
+                                <span class="ficha__indicador --display-flex-y-center --border-b">
+                                    Anemia em crianças 5-14 anos por diag‐<br>nóstico clínico
+                                </span>
+                                <span class="ficha__indicador --display-flex-y-center --border-b-grossa">Tratamento com sal ferroso</span>
+                            </div>
+                            <div class="col-de-indicadores__sessao-de-nutricao__col --border-l">
+                                <span class="ficha__indicador --display-flex-y-center --border-b">
+                                    Total de crianças observadas na CCD com baixo<br>peso/idade moderado
+                                </span>
+                                <span class="ficha__indicador --display-flex-y-center --border-b">
+                                    Total de crianças observadas na CCD com baixo<br>peso/idade grave
+                                </span>
+                                <span class="ficha__indicador --display-flex-y-center --border-b">
+                                    Total de crianças observadas na CCD com<br>desnutrição aguda moderada
+                                </span>
+                                <span class="ficha__indicador --display-flex-y-center --border-b-grossa">
+                                    Total de crianças observadas na CCD com<br>desnutrição aguda grave
+                                </span>
+                                <span class="ficha__indicador --display-flex-y-center --border-b">
+                                    No de crianças 0-5 meses clinicamente<br>diagnosticadas com anemia
+                                </span>
+                                <span class="ficha__indicador --display-flex-y-center --border-b">
+                                    No de crianças 6-23 meses clinicamente<br>diagnosticadas com anemia
+                                </span>
+                                <span class="ficha__indicador --display-flex-y-center --border-b">
+                                    No de crianças 24-59 meses clinicamente<br>diagnosticadas com anemia
+                                </span>
+                                <span class="ficha__indicador --display-flex-y-center --border-b">
+                                    No de crianças 5-14 anos clinicamente<br>diagnosticadas com anemia
+                                </span>
+                                <span class="ficha__indicador --display-flex-y-center --border-b-grossa">
+                                    Total de crianças com anemia que iniciaram<br>tratamento com sal ferroso
+                                </span>
+                            </div>
+                        </div>
+                        <span class="ficha__indicador --display-flex-y-center --border-b">Número de crianças 6-11 meses suplementadas com vitamina A </span>
+                        <span class="ficha__indicador --display-flex-y-center --border-b">Número de crianças 12-59 meses suplementadas com vitamina A</span>
+                        <span class="ficha__indicador --display-flex-y-center --border-b-grossa">Número de crianças 12-59 meses que receberam desparasitante</span>
+                        <span class="ficha__indicador --display-flex-y-center --border-b">Total de crianças elegíveis para testagem</span>
+                        <span class="ficha__indicador --display-flex-y-center --border-b">Total de crianças testadas</span>
+                        <span class="ficha__indicador --display-flex-y-center --border-b">Total de crianças com teste HIV positivo</span>
+                        <span class="ficha__indicador --display-flex-y-center --border-b">Total de crianças com teste HIV negativo</span>
+                        <span class="ficha__indicador --display-flex-y-center --border-b">Total de crianças com teste HIV indeterminado</span>
+                        <span class="ficha__indicador --display-flex-y-center --border-b">Total de crianças que iniciaram profilaxia com CTZ</span>
+                        <span class="ficha__indicador --display-flex-y-center --border-b">Total de crianças que referem contacto com TB</span>
+                        <span class="ficha__indicador --display-flex-y-center --border-b-grossa">Total de crianças com sinas e sintomas de tuberculose</span>
+                        <span class="ficha__indicador --display-flex-y-center --border-b-grossa">
+                            Total de crianças de 0-59 meses com atraso de desenvolvimento psicomotor identificado<br>pela 1ª vez.
+                        </span>
+                    </div>
+                    <div class="ficha__col-de-inputs ficha__col-de-inputs-pf --border-l-grossa">
+                        <input type=number name="ficha__input" min=0 data-totaleixox=l1-c1c2 data-totaleixoxoutput=l1-c3 data-totaldeconsultas=l1l2-c1c2 data-totaldeconsultasoutput=l3-c3 data-totaleixoy=l1l2-c1 data-totaleixoyoutput=l3-c1 class="--border-b">
+
+                        <input type=number min=0 data-totaleixox=l2-c1c2 data-totaleixoxoutput=l2-c3 data-totaldeconsultas=l1l2-c1c2 data-totaldeconsultasoutput=l3-c3 data-totaleixoy=l1l2-c1 data-totaleixoyoutput=l3-c1 class="--border-b">
+
+                        <input type=number min=0 readonly class="l3-c1 ficha__indicador--realce-gray-light --border-b-grossa">
+
+                        <span class="ficha__indicador--realce-gray-dark"></span>
+
+                        <input type=number min=0 data-totaleixox=l5-c1c2 data-totaleixoxoutput=l5-c3 data-totaldeconsultas=l5-a-l19-c1c2 data-totaldeconsultasoutput=l10-c3 data-totaleixoy=l5-a-l19-c1 data-totaleixoyoutput=l10-c1 data-totaldeconsultasgerais=l5-a-l16-c1 data-totaldeconsultasgeraisoutput=l18-c1 data-totaldetotaldeconsultas=l5-a-l16-c1c2 data-totaldetotaldeconsultasoutput=l18-c3 class="--border-b">
+
+                        <input type=number min=0 data-totaleixox=l6-c1c2 data-totaleixoxoutput=l6-c3 data-totaldeconsultas=l5-a-l19-c1c2 data-totaldeconsultasoutput=l10-c3 data-totaleixoy=l5-a-l19-c1 data-totaleixoyoutput=l10-c1 data-totaldeconsultasgerais=l5-a-l16-c1 data-totaldeconsultasgeraisoutput=l18-c1 data-totaldetotaldeconsultas=l5-a-l16-c1c2 data-totaldetotaldeconsultasoutput=l18-c3 class="--border-b">
+
+                        <input type=number min=0 data-totaleixox=l7-c1c2 data-totaleixoxoutput=l7-c3 data-totaldeconsultas=l5-a-l19-c1c2 data-totaldeconsultasoutput=l10-c3 data-totaleixoy=l5-a-l19-c1 data-totaleixoyoutput=l10-c1 data-totaldeconsultasgerais=l5-a-l16-c1 data-totaldeconsultasgeraisoutput=l18-c1 data-totaldetotaldeconsultas=l5-a-l16-c1c2 data-totaldetotaldeconsultasoutput=l18-c3 class="--border-b">
+
+                        <input type=number min=0 data-totaleixox=l8-c1c2 data-totaleixoxoutput=l8-c3 data-totaldeconsultas=l5-a-l19-c1c2 data-totaldeconsultasoutput=l10-c3 data-totaleixoy=l5-a-l19-c1 data-totaleixoyoutput=l10-c1 data-totaldeconsultasgerais=l5-a-l16-c1 data-totaldeconsultasgeraisoutput=l18-c1 data-totaldetotaldeconsultas=l5-a-l16-c1c2 data-totaldetotaldeconsultasoutput=l18-c3 class="--border-b">
+
+                        <input type=number min=0 data-totaleixox=l9-c1c2 data-totaleixoxoutput=l9-c3 data-totaldeconsultas=l5-a-l19-c1c2 data-totaldeconsultasoutput=l10-c3 data-totaleixoy=l5-a-l19-c1 data-totaleixoyoutput=l10-c1 data-totaldeconsultasgerais=l5-a-l16-c1 data-totaldeconsultasgeraisoutput=l18-c1 data-totaldetotaldeconsultas=l5-a-l16-c1c2 data-totaldetotaldeconsultasoutput=l18-c3 class="--border-b">
+
+                        <input type=number min=0 class="l10-c1 ficha__indicador--realce-gray-light --border-b-grossa" readonly>
+
+                        <span class=ficha__indicador--realce-gray-dark></span>
+
+                        <input type=number min=0 data-totaleixox=l12-c1c2 data-totaleixoxoutput=l12-c3 data-totaldeconsultas=l12l13l14l15l16-c1c2 data-totaldeconsultasoutput=l17-c3 data-totaleixoy=l12l13l14l15l16-c1 data-totaleixoyoutput=l17-c1 data-totaldeconsultasgerais=l5-a-l16-c1 data-totaldeconsultasgeraisoutput=l18-c1 data-totaldetotaldeconsultas=l5-a-l16-c1c2 data-totaldetotaldeconsultasoutput=l18-c3 class="--border-b">
+
+                        <input type=number min=0 data-totaleixox=l13-c1c2 data-totaleixoxoutput=l13-c3 data-totaldeconsultas=l12l13l14l15l16-c1c2 data-totaldeconsultasoutput=l17-c3 data-totaleixoy=l12l13l14l15l16-c1 data-totaleixoyoutput=l17-c1 data-totaldeconsultasgerais=l5-a-l16-c1 data-totaldeconsultasgeraisoutput=l18-c1 data-totaldetotaldeconsultas=l5-a-l16-c1c2 data-totaldetotaldeconsultasoutput=l18-c3 class="--border-b">
+
+                        <input type=number min=0 data-totaleixox=l14-c1c2 data-totaleixoxoutput=l14-c3 data-totaldeconsultas=l12l13l14l15l16-c1c2 data-totaldeconsultasoutput=l17-c3 data-totaleixoy=l12l13l14l15l16-c1 data-totaleixoyoutput=l17-c1 data-totaldeconsultasgerais=l5-a-l16-c1 data-totaldeconsultasgeraisoutput=l18-c1 data-totaldetotaldeconsultas=l5-a-l16-c1c2 data-totaldetotaldeconsultasoutput=l18-c3 class="--border-b">
+                        
+                        <input type=number min=0 data-totaleixox=l15-c1c2 data-totaleixoxoutput=l15-c3 data-totaldeconsultas=l12l13l14l15l16-c1c2 data-totaldeconsultasoutput=l17-c3 data-totaleixoy=l12l13l14l15l16-c1 data-totaleixoyoutput=l17-c1 data-totaldeconsultasgerais=l5-a-l16-c1 data-totaldeconsultasgeraisoutput=l18-c1 data-totaldetotaldeconsultas=l5-a-l16-c1c2 data-totaldetotaldeconsultasoutput=l18-c3 class="--border-b">
+
+                        <input type=number min=0 data-totaleixox=l16-c1c2 data-totaleixoxoutput=l16-c3 data-totaldeconsultas=l12l13l14l15l16-c1c2 data-totaldeconsultasoutput=l17-c3 data-totaleixoy=l12l13l14l15l16-c1 data-totaleixoyoutput=l17-c1 data-totaldeconsultasgerais=l5-a-l16-c1 data-totaldeconsultasgeraisoutput=l18-c1 data-totaldetotaldeconsultas=l5-a-l16-c1c2 data-totaldetotaldeconsultasoutput=l18-c3 class="--border-b">
+
+                        <input type=number min=0 readonly class="l17-c1 ficha__indicador--realce-gray-light --border-b">
+                        <input type=number min=0 readonly class="l18-c1 ficha__indicador--realce-gray-light --border-b-grossa">
+                        <input type=number min=0 data-totaleixox=l19-c1c2 data-totaleixoxoutput=l19-c3 class="--border-b">
+                        <input type=number min=0 data-totaleixox=l20-c1c2 data-totaleixoxoutput=l20-c3 class="--border-b">
+                        <input type=number min=0 data-totaleixox=l21-c1c2 data-totaleixoxoutput=l21-c3 class="--border-b">
+                        <input type=number min=0 data-totaleixox=l22-c1c2 data-totaleixoxoutput=l22-c3 class="--border-b-grossa">
+                        <input type=number min=0 data-totaleixox=l23-c1c2 data-totaleixoxoutput=l23-c3 class="--border-b">
+                        <input type=number min=0 data-totaleixox=l24-c1c2 data-totaleixoxoutput=l24-c3 class="--border-b">
+                        <input type=number min=0 data-totaleixox=l25-c1c2 data-totaleixoxoutput=l25-c3 class="--border-b">
+                        <input type=number min=0 data-totaleixox=l26-c1c2 data-totaleixoxoutput=l26-c3 class="--border-b">
+                        <input type=number min=0 data-totaleixox=l27-c1c2 data-totaleixoxoutput=l27-c3 class="--border-b-grossa">
+                        <input type=number min=0 data-totaleixox=l28-c1c2 data-totaleixoxoutput=l28-c3 class="--border-b">
+                        <input type=number min=0 data-totaleixox=l29-c1c2 data-totaleixoxoutput=l29-c3 class="--border-b">
+                        <input type=number min=0 data-totaleixox=l30-c1c2 data-totaleixoxoutput=l30-c3 class="--border-b-grossa">
+                        <input type=number min=0 data-totaleixox=l31-c1c2 data-totaleixoxoutput=l31-c3 class="--border-b">
+                        <input type=number min=0 data-totaleixox=l32-c1c2 data-totaleixoxoutput=l32-c3 class="--border-b">
+                        <input type=number min=0 data-totaleixox=l33-c1c2 data-totaleixoxoutput=l33-c3 class="--border-b">
+                        <input type=number min=0 data-totaleixox=l34-c1c2 data-totaleixoxoutput=l34-c3 class="--border-b">
+                        <input type=number min=0 data-totaleixox=l35-c1c2 data-totaleixoxoutput=l35-c3 class="--border-b">
+                        <input type=number min=0 data-totaleixox=l36-c1c2 data-totaleixoxoutput=l36-c3 class="--border-b">
+                        <input type=number min=0 data-totaleixox=l37-c1c2 data-totaleixoxoutput=l37-c3 class="--border-b">
+                        <input type=number min=0 data-totaleixox=l38-c1c2 data-totaleixoxoutput=l38-c3 class="--border-b-grossa">
+                        <input type=number min=0 data-totaleixox=l39-c1c2 data-totaleixoxoutput=l39-c3 class="--border-b-grossa">
+                    </div>
+                    <div class="ficha__col-de-inputs ficha__col-de-inputs-bm">
+                        <input type=number min=0 data-totaleixox=l1-c1c2 data-totaleixoxoutput=l1-c3 data-totaldeconsultas=l1l2-c1c2 data-totaldeconsultasoutput=l3-c3 data-totaleixoy=l1l2-c2 data-totaleixoyoutput=l3-c2 class="--border-b">
+
+                        <input type=number min=0 data-totaleixox=l2-c1c2 data-totaleixoxoutput=l2-c3 data-totaldeconsultas=l1l2-c1c2 data-totaldeconsultasoutput=l3-c3 data-totaleixoy=l1l2-c2 data-totaleixoyoutput=l3-c2 class="--border-b">
+
+                        <input type=number min=0 readonly class="l3-c2 ficha__indicador--realce-gray-light --border-b-grossa">
+
+                        <span class=ficha__indicador--realce-gray-dark></span>
+
+                        <input type=number min=0 data-totaleixox=l5-c1c2 data-totaleixoxoutput=l5-c3 data-totaldeconsultas=l5-a-l19-c1c2 data-totaldeconsultasoutput=l10-c3 data-totaleixoy=l5-a-l19-c2 data-totaleixoyoutput=l10-c2 data-totaldeconsultasgerais=l5-a-l16-c2 data-totaldeconsultasgeraisoutput=l18-c2 data-totaldetotaldeconsultas=l5-a-l16-c1c2 data-totaldetotaldeconsultasoutput=l18-c3 class="--border-b">
+
+                        <input type=number min=0 data-totaleixox=l6-c1c2 data-totaleixoxoutput=l6-c3 
+                        data-totaldeconsultas=l5-a-l19-c1c2 data-totaldeconsultasoutput=l10-c3 data-totaleixoy=l5-a-l19-c2 data-totaleixoyoutput=l10-c2 data-totaldeconsultasgerais=l5-a-l16-c2 data-totaldeconsultasgeraisoutput=l18-c2 data-totaldetotaldeconsultas=l5-a-l16-c1c2 data-totaldetotaldeconsultasoutput=l18-c3 class="--border-b">
+
+                        <input type=number min=0 data-totaleixox=l7-c1c2 data-totaleixoxoutput=l7-c3 data-totaldeconsultas=l5-a-l19-c1c2 data-totaldeconsultasoutput=l10-c3 data-totaleixoy=l5-a-l19-c2 data-totaleixoyoutput=l10-c2 data-totaldeconsultasgerais=l5-a-l16-c2 data-totaldeconsultasgeraisoutput=l18-c2 data-totaldetotaldeconsultas=l5-a-l16-c1c2 data-totaldetotaldeconsultasoutput=l18-c3 class="--border-b">
+
+                        <input type=number min=0 data-totaleixox=l8-c1c2 data-totaleixoxoutput=l8-c3 data-totaldeconsultas=l5-a-l19-c1c2 data-totaldeconsultasoutput=l10-c3 data-totaleixoy=l5-a-l19-c2 data-totaleixoyoutput=l10-c2 data-totaldeconsultasgerais=l5-a-l16-c2 data-totaldeconsultasgeraisoutput=l18-c2 data-totaldetotaldeconsultas=l5-a-l16-c1c2 data-totaldetotaldeconsultasoutput=l18-c3 class="--border-b">
+
+                        <input type=number min=0 data-totaleixox=l9-c1c2 data-totaleixoxoutput=l9-c3 data-totaldeconsultas=l5-a-l19-c1c2 data-totaldeconsultasoutput=l10-c3 data-totaleixoy=l5-a-l19-c2 data-totaleixoyoutput=l10-c2 data-totaldeconsultasgerais=l5-a-l16-c2 data-totaldeconsultasgeraisoutput=l18-c2 data-totaldetotaldeconsultas=l5-a-l16-c1c2 data-totaldetotaldeconsultasoutput=l18-c3 class="--border-b">
+                        <input type=number min=0 class="l10-c2 ficha__indicador--realce-gray-light --border-b-grossa" readonly>
+
+                        <span class=ficha__indicador--realce-gray-dark></span>
+
+                        <input type=number min=0 data-totaleixox=l12-c1c2 data-totaleixoxoutput=l12-c3 data-totaldeconsultas=l12l13l14l15l16-c1c2 data-totaldeconsultasoutput=l17-c3 data-totaleixoy=l12l13l14l15l16-c2 data-totaleixoyoutput=l17-c2 data-totaldeconsultasgerais=l5-a-l16-c2 data-totaldeconsultasgeraisoutput=l18-c2 data-totaldetotaldeconsultas=l5-a-l16-c1c2 data-totaldetotaldeconsultasoutput=l18-c3 class="--border-b">
+
+                        <input type=number min=0 data-totaleixox=l13-c1c2 data-totaleixoxoutput=l13-c3 data-totaldeconsultas=l12l13l14l15l16-c1c2 data-totaldeconsultasoutput=l17-c3 data-totaleixoy=l12l13l14l15l16-c2 data-totaleixoyoutput=l17-c2 data-totaldeconsultasgerais=l5-a-l16-c2 data-totaldeconsultasgeraisoutput=l18-c2 data-totaldetotaldeconsultas=l5-a-l16-c1c2 data-totaldetotaldeconsultasoutput=l18-c3 class="--border-b">
+
+                        <input type=number min=0 data-totaleixox=l14-c1c2 data-totaleixoxoutput=l14-c3 data-totaldeconsultas=l12l13l14l15l16-c1c2 data-totaldeconsultasoutput=l17-c3 data-totaleixoy=l12l13l14l15l16-c2 data-totaleixoyoutput=l17-c2 data-totaldeconsultasgerais=l5-a-l16-c2 data-totaldeconsultasgeraisoutput=l18-c2 data-totaldetotaldeconsultas=l5-a-l16-c1c2 data-totaldetotaldeconsultasoutput=l18-c3 class="--border-b">
+
+                        <input type=number min=0 data-totaleixox=l15-c1c2 data-totaleixoxoutput=l15-c3 data-totaldeconsultas=l12l13l14l15l16-c1c2 data-totaldeconsultasoutput=l17-c3 data-totaleixoy=l12l13l14l15l16-c2 data-totaleixoyoutput=l17-c2 data-totaldeconsultasgerais=l5-a-l16-c2 data-totaldeconsultasgeraisoutput=l18-c2 data-totaldetotaldeconsultas=l5-a-l16-c1c2 data-totaldetotaldeconsultasoutput=l18-c3 class="--border-b">
+
+                        <input type=number min=0 data-totaleixox=l16-c1c2 data-totaleixoxoutput=l16-c3 data-totaldeconsultas=l12l13l14l15l16-c1c2 data-totaldeconsultasoutput=l17-c3 data-totaleixoy=l12l13l14l15l16-c2 data-totaleixoyoutput=l17-c2 data-totaldeconsultasgerais=l5-a-l16-c2 data-totaldeconsultasgeraisoutput=l18-c2 data-totaldetotaldeconsultas=l5-a-l16-c1c2 data-totaldetotaldeconsultasoutput=l18-c3 class="--border-b">
+
+                        <input type="number" min="0" readonly class="l17-c2 ficha__indicador--realce-gray-light --border-b">
+                        <input type=number min=0 readonly class="l18-c2 ficha__indicador--realce-gray-light --border-b-grossa">
+                        <input type=number min=0 data-totaleixox=l19-c1c2 data-totaleixoxoutput=l19-c3 class="--border-b">
+                        <input type=number min=0 data-totaleixox=l20-c1c2 data-totaleixoxoutput=l20-c3 class="--border-b">
+                        <input type=number min=0 data-totaleixox=l21-c1c2 data-totaleixoxoutput=l21-c3 class="--border-b">
+                        <input type=number min=0 data-totaleixox=l22-c1c2 data-totaleixoxoutput=l22-c3 class="--border-b-grossa">
+                        <input type=number min=0 data-totaleixox=l23-c1c2 data-totaleixoxoutput=l23-c3 class="--border-b">
+                        <input type=number min=0 data-totaleixox=l24-c1c2 data-totaleixoxoutput=l24-c3 class="--border-b">
+                        <input type=number min=0 data-totaleixox=l25-c1c2 data-totaleixoxoutput=l25-c3 class="--border-b">
+                        <input type=number min=0 data-totaleixox=l26-c1c2 data-totaleixoxoutput=l26-c3 class="--border-b">
+                        <input type=number min=0 data-totaleixox=l27-c1c2 data-totaleixoxoutput=l27-c3 class="--border-b-grossa">
+                        <input type=number min=0 data-totaleixox=l28-c1c2 data-totaleixoxoutput=l28-c3 class="--border-b">
+                        <input type=number min=0 data-totaleixox=l29-c1c2 data-totaleixoxoutput=l29-c3 class="--border-b">
+                        <input type=number min=0 data-totaleixox=l30-c1c2 data-totaleixoxoutput=l30-c3 class="--border-b-grossa">
+                        <input type=number min=0 data-totaleixox=l31-c1c2 data-totaleixoxoutput=l31-c3 class="--border-b -grossa">
+                        <input type=number min=0 data-totaleixox=l32-c1c2 data-totaleixoxoutput=l32-c3 class="--border-b">
+                        <input type=number min=0 data-totaleixox=l33-c1c2 data-totaleixoxoutput=l33-c3 class="--border-b">
+                        <input type=number min=0 data-totaleixox=l34-c1c2 data-totaleixoxoutput=l34-c3 class="--border-b">
+                        <input type=number min=0 data-totaleixox=l35-c1c2 data-totaleixoxoutput=l35-c3 class="--border-b">
+                        <input type=number min=0 data-totaleixox=l36-c1c2 data-totaleixoxoutput=l36-c3 class="--border-b">
+                        <input type=number min=0 data-totaleixox=l37-c1c2 data-totaleixoxoutput=l37-c3 class="--border-b">
+                        <input type=number min=0 data-totaleixox=l38-c1c2 data-totaleixoxoutput=l38-c3 class="--border-b-grossa">
+                        <input type=number min=0 data-totaleixox=l39-c1c2 data-totaleixoxoutput=l39-c3 class="--border-b-grossa">
+                    </div>
+                    <div class="ficha__col-de-inputs ficha__col-de-total --border-r-grossa">
+                        <input type=number min=0 readonly  class="l1-c3 --border-b">
+                        <input type=number min=0 readonly  class="l2-c3 --border-b">
+                        <input type=number min=0 readonly  class="l3-c3 ficha__indicador--realce-gray-light --border-b-grossa">
+                        <span class=ficha__indicador--realce-gray-dark></span>
+                        <input type=number min=0 readonly  class="l5-c3 --border-b">
+                        <input type=number min=0 readonly  class="l6-c3 --border-b">
+                        <input type=number min=0 readonly  class="l7-c3 --border-b">
+                        <input type=number min=0 readonly  class="l8-c3 --border-b">
+                        <input type=number min=0 readonly  class="l9-c3 --border-b">
+                        <input type=number min=0 readonly  class="l10-c3 ficha__indicador--realce-gray-light --border-b-grossa">
+                        <span class=ficha__indicador--realce-gray-dark></span>
+                        <input type=number min=0 readonly  class="l12-c3 --border-b">
+                        <input type=number min=0 readonly  class="l13-c3 --border-b">
+                        <input type=number min=0 readonly  class="l14-c3 --border-b">
+                        <input type=number min=0 readonly  class="l15-c3 --border-b">
+                        <input type=number min=0 readonly  class="l16-c3 --border-b">
+                        <input type=number min=0 readonly  class="l17-c3 ficha__indicador--realce-gray-light --border-b">
+                        <input type=number min=0 readonly  class="l18-c3 ficha__indicador--realce-gray-light --border-b-grossa">
+                        <input type=number min=0 readonly  class="l19-c3 --border-b">
+                        <input type=number min=0 readonly  class="l20-c3 --border-b">
+                        <input type=number min=0 readonly  class="l21-c3 --border-b">
+                        <input type=number min=0 readonly  class="l22-c3 --border-b-grossa">
+                        <input type=number min=0 readonly  class="l23-c3 --border-b">
+                        <input type=number min=0 readonly  class="l24-c3 --border-b">
+                        <input type=number min=0 readonly  class="l25-c3 --border-b">
+                        <input type=number min=0 readonly  class="l26-c3 --border-b">
+                        <input type=number min=0 readonly  class="l27-c3 --border-b-grossa">
+                        <input type=number min=0 readonly  class="l28-c3 --border-b">
+                        <input type=number min=0 readonly  class="l29-c3 --border-b">
+                        <input type=number min=0 readonly  class="l30-c3 --border-b-grossa">
+                        <input type=number min=0 readonly  class="l31-c3 --border-b">
+                        <input type=number min=0 readonly  class="l32-c3 --border-b">
+                        <input type=number min=0 readonly  class="l33-c3 --border-b">
+                        <input type=number min=0 readonly  class="l34-c3 --border-b">
+                        <input type=number min=0 readonly  class="l35-c3 --border-b">
+                        <input type=number min=0 readonly  class="l36-c3 --border-b">
+                        <input type=number min=0 readonly  class="l37-c3 --border-b">
+                        <input type=number min=0 readonly  class="l38-c3 --border-b-grossa">
+                        <input type=number min=0 readonly  class="l39-c3 --border-b-grossa">
+                    </div>
+                </div>
+            </div>
+            <div class="ficha-verso">
+                <div class="verso corpo-da-ficha">
+                    <div class="col1 col-de-enumeracao-das-linhas">
+                        <span>40</span>
+                        <span>41</span>
+                        <span>42</span>
+                        <span>43</span>
+                        <span>44</span>
+                        <span>45</span>
+                        <span>46</span>
+                        <span>47</span>
+                        <span>48</span>
+                        <span>49</span>
+                        <span>50</span>
+                        <span>51</span>
+                        <span>52</span>
+                        <span>53</span>
+                        <span>54</span>
+                        <span>55</span>
+                        <span>56</span>
+                        <span>57</span>
+                        <span>58</span>
+                        <span>59</span>
+                        <span>60</span>
+                        <span>61</span>
+                        <span>62</span>
+                        <span>63</span>
+                        <span>64</span>
+                        <span>65</span>
+                        <span>66</span>
+                        <span>67</span>
+                        <span>68</span>
+                        <span>69</span>
+                        <span>70</span>
+                        <span>71</span>
+                        <span>72</span>
+                        <span class=bounding-reference>73</span>
+                    </div>
+                    <div class="verso col2">
+                        <div>
+                            <span>Novos casos</span>
+                        </div>
+                        <div>
+                            <span>Referência</span>
+                        </div>
+                    </div>
+                    <div class="verso col3">
+                        <div class="subcol subcol1">
+                            <div class=flex-start>
+                                <span class=sem-rotacao>
+                                    Malária<br>
+                                    confirmada<br>(TDR/HTZ)
+                                </span>
+                            </div>
+                            <div>
+                                <span>Malária confirmada e tratada</span>
+                            </div>
+                            <div>
+                                <span>Diarreia</span>
+                            </div>
+                            <div>
+                                <span>Disenteria</span>
+                            </div>
+                            <div>
+                                <span>Pneumonia</span>
+                            </div>
+                            <div class=flex-start>
+                                <span class=sem-rotacao>
+                                    Outras<br>doenças
+                                </span>
+                            </div>
+                        </div>
+                        <div class="subcol subcol2 indicadores">
+                            <span>Total de crianças de 0-59M com resultado do Teste de Malária Positivo (TDR ou HTZ)</span>
+                            <span>Total de crianças de 0-59M com resultado do Teste de Malária Negativo (TDR ou HTZ)</span>
+                            <span>Total de crianças de 5-14A com resultado do Teste para Malária Positivo (TDR ou HTZ)</span>
+                            <span>Total de crianças de 5-14A com resultado do Teste para Malária Negativo (TDR ou HTZ)</span>
+                            <span>
+                                Total de crianças de 0-59 meses com diagnóstico de novo caso de Malária confirmada e<br>tratadas com AL (Coartem)
+                            </span>
+                            <span>
+                                Total de crianças de 0-59 meses com diagnóstico de novo caso de Malária confirmada e<br>tratadas com Artesunato+Amodiaquina (ASAQ)
+                            </span>
+                            <span>
+                                Total de crianças de 0-59 meses com diagnóstico de novo caso de Malária confirmada e<br>tratadas com Artesunato (AS)
+                            </span>
+                            <span>
+                                Total de crianças de 0-59 meses com diagnóstico de novo caso de Malária confirmada e<br>tratadas com Quinino
+                            </span>
+                            <span>
+                                Total de crianças de 5-14 anos com diagnóstico de novo caso de Malária confirmada e trata‐<br>das com AL (Coartem)
+                            </span>
+                            <span>
+                                Total de crianças de 5-14 anos com diagnóstico de novo caso de Malária confirmada e trata‐<br>das com Artesunato+Amodiaquina (ASAQ)
+                            </span>
+                            <span>
+                                Total de crianças de 5-14 anos com diagnóstico de novo caso de Malária confirmada e<br>tratadas com Artesunato (AS)
+                            </span>
+                            <span>
+                                Total de crianças de 5-14 anos meses com diagnóstico de novo caso de Malária confirmada e trata‐<br>das com Quinino
+                            </span>
+                            <span>Total de crianças de 0-59 meses diagnosticadas como novo caso de Diarreia</span>
+                            <span>
+                                Total de crianças de 0-59 meses diagnosticadas como novo caso de Diarreia e tratadas com<br>SRO e ZINCO
+                            </span>
+                            <span>
+                                Total de crianças de 0-59 meses diagnosticadas como novo caso de Diarreia e tratadas só<br>com ZINCO
+                            </span>
+                            <span>
+                                Total de crianças de 0-59 meses diagnosticadas como novo caso de Diarreia e tratadas só<br>com SRO
+                            </span>
+                            <span>Total de crianças de 5-14A diagnosticadas como novo caso de Diarreia</span>
+                            <span>
+                                Total de crianças de 5-14A diagnosticadas como novo caso de Diarreia e tratadas com SRO e<br>ZINCO
+                            </span>
+                            <span>
+                                Total de crianças de 5-14A diagnosticadas como novo caso de Diarreia e tratadas só com<br>ZINCO
+                            </span>
+                            <span>Total de crianças de 5-14A diagnosticadas como novo caso de Diarreia e tratadas só com SRO</span>
+                            <span>Total de crianças de 0-59 meses diagnosticadas como novo caso de Disenteria</span>
+                            <span>
+                                Total de crianças de 0-59 meses diagnosticadas como novo caso de Disenteria e tratadas com<br>Ciprofloxacina
+                            </span>
+                            <span>Total de crianças 5-14A diagnosticadas como novo caso de Disenteria</span>
+                            <span>
+                                Total de crianças 5-14A diagnosticadas como novo caso de Disenteria e tratadas com<br>Ciprofloxacina
+                            </span>
+                            <span>Total de crianças de 0-59 meses diagnosticadas como novo caso de Pneumonia</span>
+                            <span>
+                                Total de crianças de 0-59 meses diagnosticadas como novo caso de Pneumonia e tratadas<br>com Amoxicilina
+                            </span>
+                            <span>Total de crianças 5-14A diagnosticadas como novo caso de Pneumonia</span>
+                            <span>
+                                Total de crianças 5-14A diagnosticadas como novo caso de Pneumonia e tratadas com<br>Amoxicilina
+                            </span>
+                            <span>Total de crianças de 0-59 meses diagnosticadas como novo caso de outras doenças</span>
+                            <span class=border2>Total de crianças de 5-14A diagnosticadas como novo caso de outras doenças</span>
+                        </div>
+                        <div class="subcol subcol3 referencia">
+                            <span>Total de crianças referidas</span>
+                            <span>Total de crianças referidas para Consulta de criança em risco</span>
+                            <span>Total de crianças referidas para Urgência de Pediatria ou Banco de Socorros/Internamento</span>
+                            <span>Total de crianças referidas para Consulta Médica/Especializada/Doença crónica</span>
+                        </div>
+                    </div>
+                    <div class="ficha__col-de-inputs pf">
+                        <input type=number min=0 data-totaleixox=l40-c1c2 data-totaleixoxoutput=l40-c3>
+                        <input type=number min=0 data-totaleixox=l41-c1c2 data-totaleixoxoutput=l41-c3>
+                        <input type=number min=0 data-totaleixox=l42-c1c2 data-totaleixoxoutput=l42-c3>
+                        <input type=number min=0 data-totaleixox=l43-c1c2 data-totaleixoxoutput=l43-c3>
+                        <input type=number min=0 data-totaleixox=l44-c1c2 data-totaleixoxoutput=l44-c3>
+                        <input type=number min=0 data-totaleixox=l45-c1c2 data-totaleixoxoutput=l45-c3>
+                        <input type=number min=0 data-totaleixox=l46-c1c2 data-totaleixoxoutput=l46-c3>
+                        <input type=number min=0 data-totaleixox=l47-c1c2 data-totaleixoxoutput=l47-c3>
+                        <input type=number min=0 data-totaleixox=l48-c1c2 data-totaleixoxoutput=l48-c3>
+                        <input type=number min=0 data-totaleixox=l49-c1c2 data-totaleixoxoutput=l49-c3>
+                        <input type=number min=0 data-totaleixox=l50-c1c2 data-totaleixoxoutput=l50-c3>
+                        <input type=number min=0 data-totaleixox=l51-c1c2 data-totaleixoxoutput=l51-c3>
+                        <input type=number min=0 data-totaleixox=l52-c1c2 data-totaleixoxoutput=l52-c3>
+                        <input type=number min=0 data-totaleixox=l53-c1c2 data-totaleixoxoutput=l53-c3>
+                        <input type=number min=0 data-totaleixox=l54-c1c2 data-totaleixoxoutput=l54-c3>
+                        <input type=number min=0 data-totaleixox=l55-c1c2 data-totaleixoxoutput=l55-c3>
+                        <input type=number min=0 data-totaleixox=l56-c1c2 data-totaleixoxoutput=l56-c3>
+                        <input type=number min=0 data-totaleixox=l57-c1c2 data-totaleixoxoutput=l57-c3>
+                        <input type=number min=0 data-totaleixox=l58-c1c2 data-totaleixoxoutput=l58-c3>
+                        <input type=number min=0 data-totaleixox=l59-c1c2 data-totaleixoxoutput=l59-c3>
+                        <input type=number min=0 data-totaleixox=l60-c1c2 data-totaleixoxoutput=l60-c3>
+                        <input type=number min=0 data-totaleixox=l61-c1c2 data-totaleixoxoutput=l61-c3>
+                        <input type=number min=0 data-totaleixox=l62-c1c2 data-totaleixoxoutput=l62-c3>
+                        <input type=number min=0 data-totaleixox=l63-c1c2 data-totaleixoxoutput=l63-c3>
+                        <input type=number min=0 data-totaleixox=l64-c1c2 data-totaleixoxoutput=l64-c3>
+                        <input type=number min=0 data-totaleixox=l65-c1c2 data-totaleixoxoutput=l65-c3>
+                        <input type=number min=0 data-totaleixox=l66-c1c2 data-totaleixoxoutput=l66-c3>
+                        <input type=number min=0 data-totaleixox=l67-c1c2 data-totaleixoxoutput=l67-c3>
+                        <input type=number min=0 data-totaleixox=l68-c1c2 data-totaleixoxoutput=l68-c3>
+                        <input type=number min=0 data-totaleixox=l69-c1c2 data-totaleixoxoutput=l69-c3 class=border2>
+                        <input type=number min=0 data-totaleixox=l70-c1c2 data-totaleixoxoutput=l70-c3>
+                        <input type=number min=0 data-totaleixox=l71-c1c2 data-totaleixoxoutput=l71-c3>
+                        <input type=number min=0 data-totaleixox=l72-c1c2 data-totaleixoxoutput=l72-c3>
+                        <input type=number min=0 data-totaleixox=l73-c1c2 data-totaleixoxoutput=l73-c3>
+                    </div>
+                    <div class="ficha__col-de-inputs bm">
+                        <input type=number min=0 data-totaleixox=l40-c1c2 data-totaleixoxoutput=l40-c3>
+                        <input type=number min=0 data-totaleixox=l41-c1c2 data-totaleixoxoutput=l41-c3>
+                        <input type=number min=0 data-totaleixox=l42-c1c2 data-totaleixoxoutput=l42-c3>
+                        <input type=number min=0 data-totaleixox=l43-c1c2 data-totaleixoxoutput=l43-c3>
+                        <input type=number min=0 data-totaleixox=l44-c1c2 data-totaleixoxoutput=l44-c3>
+                        <input type=number min=0 data-totaleixox=l45-c1c2 data-totaleixoxoutput=l45-c3>
+                        <input type=number min=0 data-totaleixox=l46-c1c2 data-totaleixoxoutput=l46-c3>
+                        <input type=number min=0 data-totaleixox=l47-c1c2 data-totaleixoxoutput=l47-c3>
+                        <input type=number min=0 data-totaleixox=l48-c1c2 data-totaleixoxoutput=l48-c3>
+                        <input type=number min=0 data-totaleixox=l49-c1c2 data-totaleixoxoutput=l49-c3>
+                        <input type=number min=0 data-totaleixox=l50-c1c2 data-totaleixoxoutput=l50-c3>
+                        <input type=number min=0 data-totaleixox=l51-c1c2 data-totaleixoxoutput=l51-c3>
+                        <input type=number min=0 data-totaleixox=l52-c1c2 data-totaleixoxoutput=l52-c3>
+                        <input type=number min=0 data-totaleixox=l53-c1c2 data-totaleixoxoutput=l53-c3>
+                        <input type=number min=0 data-totaleixox=l54-c1c2 data-totaleixoxoutput=l54-c3>
+                        <input type=number min=0 data-totaleixox=l55-c1c2 data-totaleixoxoutput=l55-c3>
+                        <input type=number min=0 data-totaleixox=l56-c1c2 data-totaleixoxoutput=l56-c3>
+                        <input type=number min=0 data-totaleixox=l57-c1c2 data-totaleixoxoutput=l57-c3>
+                        <input type=number min=0 data-totaleixox=l58-c1c2 data-totaleixoxoutput=l58-c3>
+                        <input type=number min=0 data-totaleixox=l59-c1c2 data-totaleixoxoutput=l59-c3>
+                        <input type=number min=0 data-totaleixox=l60-c1c2 data-totaleixoxoutput=l60-c3>
+                        <input type=number min=0 data-totaleixox=l61-c1c2 data-totaleixoxoutput=l61-c3>
+                        <input type=number min=0 data-totaleixox=l62-c1c2 data-totaleixoxoutput=l62-c3>
+                        <input type=number min=0 data-totaleixox=l63-c1c2 data-totaleixoxoutput=l63-c3>
+                        <input type=number min=0 data-totaleixox=l64-c1c2 data-totaleixoxoutput=l64-c3>
+                        <input type=number min=0 data-totaleixox=l65-c1c2 data-totaleixoxoutput=l65-c3>
+                        <input type=number min=0 data-totaleixox=l66-c1c2 data-totaleixoxoutput=l66-c3>
+                        <input type=number min=0 data-totaleixox=l67-c1c2 data-totaleixoxoutput=l67-c3>
+                        <input type=number min=0 data-totaleixox=l68-c1c2 data-totaleixoxoutput=l68-c3>
+                        <input type=number min=0 data-totaleixox=l69-c1c2 data-totaleixoxoutput=l69-c3 class=border2>
+                        <input type=number min=0 data-totaleixox=l70-c1c2 data-totaleixoxoutput=l70-c3>
+                        <input type=number min=0 data-totaleixox=l71-c1c2 data-totaleixoxoutput=l71-c3>
+                        <input type=number min=0 data-totaleixox=l72-c1c2 data-totaleixoxoutput=l72-c3>
+                        <input type=number min=0 data-totaleixox=l73-c1c2 data-totaleixoxoutput=l73-c3>
+                    </div>
+                    <div class="ficha__col-de-inputs total">
+                        <input type=number class=l40-c3>
+                        <input type=number class=l41-c3>
+                        <input type=number class=l42-c3>
+                        <input type=number class=l43-c3>
+                        <input type=number class=l44-c3>
+                        <input type=number class=l45-c3>
+                        <input type=number class=l46-c3>
+                        <input type=number class=l47-c3>
+                        <input type=number class=l48-c3>
+                        <input type=number class=l49-c3>
+                        <input type=number class=l50-c3>
+                        <input type=number class=l51-c3>
+                        <input type=number class=l52-c3>
+                        <input type=number class=l53-c3>
+                        <input type=number class=l54-c3>
+                        <input type=number class=l55-c3>
+                        <input type=number class=l56-c3>
+                        <input type=number class=l57-c3>
+                        <input type=number class=l58-c3>
+                        <input type=number class=l59-c3>
+                        <input type=number class=l60-c3>
+                        <input type=number class=l61-c3>
+                        <input type=number class=l62-c3>
+                        <input type=number class=l63-c3>
+                        <input type=number class=l64-c3>
+                        <input type=number class=l65-c3>
+                        <input type=number class=l66-c3>
+                        <input type=number class=l67-c3>
+                        <input type=number class=l68-c3>
+                        <input type=number class="border2 l69-c3">
+                        <input type=number class=l70-c3>
+                        <input type=number class=l71-c3>
+                        <input type=number class=l72-c3>
+                        <input type=number class=l73-c3>
+                    </div>
+                </div>
+                <footer class=rodape-da-ficha>
+                    <div>
+                        <label for=data>Data:</label>
+                        <input type=date id=data>
+                    </div>
+                    <div>
+                        <label for=compilador>Compilado por:</label>
+                        <input id=compilador>
+                    </div>
+                    <div>
+                        <label for=assinatura>Assinatura:</label>
+                        <input id=assinatura>
+                    </div>
+                </footer>
+            </div>
+          </div>
+
+            <div class="main__container-de-campo-de-nota layout-row">
+                <textarea class="main__campo-de-nota input-adicional input-adicional--font-light" id="input-comentarios" placeholder="Comentários sobre o resumo (S.O.S)..." rows=3></textarea>
+            </div>
+
+            <div class="reference-container --no-print">
+                <div class="layout-row reference-row">
+                    <span class="reference-row__label">Linha:</span> 
+                    <output class="reference-row__output reference-row__output-indicador --display-flex-xy-center"></output>
+
+                    <span class="reference-row__label">Faixa etária:</span> 
+                    <output class="reference-row__output reference-row__output-idade --display-flex-xy-center --fw-700"></output>
+
+                    <span class="reference-row__label">Sexo:</span> 
+                    <output class="reference-row__output reference-row__output-sexo --display-flex-xy-center --fw-700"></output>
+                </div>
+            </div>
+        </main>
+        
+        <section class="dialog-boxes --no-print">
+            <div class="dialog-box-default dialog-box-alerta-sobre-aqd">
+                <h3 class="dialog-box-default__titulo">Totalizador de Resumo Mensal de CCD</h3>
+                <p class="dialog-box-default__p">
+                    A utilização do totalizador é, de facto, uma garantia de um resumo correctamente totalizado, porém, isso simplesmente, não define a qualidade do resumo. Você é o único responsável pela veracidade, lógica e concordância dos dados preenchidos e, portanto, pela qualidade do resumo. O totalizador só se limita a calcular os totais baseando-se exactamente nos dados que você fornece.
+                </p>
+                <div class="dialog-box-default__btn-container">
+                    <button class="dialog-box-default__btn dialog-box-aqd__btn">Entendi</button>
+                </div>
+            </div>
+
+            <div class="dialog-box-default dialog-box-default--width-s">
+                <h3 class="dialog-box-default__titulo">Totalizador de Resumo Mensal de CCD</h3>
+                <p class="dialog-box-default__p dialog-box--width-s__console --display-flex-y-center">
+                    
+                </p>
+                <div class="dialog-box-default__btn-container">
+                    <button class=dialog-box-default__btn>Fechar <span class="btn__output-autoclose-time"></span></button>
+                </div>
+            </div>
+
+            <div class="dialog-box-ir-para --display-flex-y-center">
+                <input type=text class=dialog-box-ir-para__input-linha max=63 placeholder="Referência da linha (ex.: B.10)">
+                <button class="dialog-box-ir-para__btn-ir" title="Ir para a linha">Ir</button>
+                <button class=dialog-box-ir-para__btn-fechar title=Fechar>×</button>
+            </div>
+            <div class="dialog-box-esvaziar-ficha">
+                <h3 class="dialog-box-esvaziar-ficha__titulo --fw-700">Esvaziar ficha</h3>
+                <p>Tem certeza de que pretende esvaziar a ficha?
+                <div class=dialog-box-esvaziar-ficha__svg-container>
+                    <svg style=width:40px;height:40px>
+                        <linearGradient id=meuGradiente x1=0% x2=0% y1=0% y2=100%>
+                            <stop offset=0% style=stop-color:gray></stop>
+                            <stop offset=100% style=stop-color:#ff0></stop>
+                        </linearGradient>
+                        <polygon fill=url(#meuGradiente) points="20,0 40,40, 0,40" stroke=#333 stroke-width=1></polygon>
+                        <text style=font-weight:700;font-size:28px x=15.335 y=35.5>!</text>
+                    </svg>
+                    <p class="dialog-box-esvaziar-ficha__last-p">Esta acção não pode ser desfeita.
+                </div>
+                <h4 class="dialog-box-esvaziar-ficha__titulo --fw-700">Dados adicionais</h4>
+                <ul class=dialog-box-esvaziar-ficha__ul-dados-adicionais>
+                    <li>
+                        <input type=checkbox checked id="checkbox-prov" data-inputadicionalid=input-provincia>
+                        <label for=checkbox-prov>Província</label>
+                    <li>
+                        <input type=checkbox checked id="checkbox-distrito" data-inputadicionalid=input-distrito>
+                        <label for=checkbox-distrito>Distrito</label>
+                    <li>
+                        <input type=checkbox checked id="checkbox-us" data-inputadicionalid=input-us>
+                        <label for=checkbox-us>Unidade Sanitária</label>
+                    <li>
+                        <input type=checkbox id=checkbox-mes checked data-inputadicionalid=input-mes>
+                        <label for=checkbox-mes>Mês</label>
+                    <li>
+                        <input type=checkbox id=checkbox-ano checked data-inputadicionalid=input-ano>
+                        <label for=checkbox-ano>Ano</label>
+                    <li>
+                        <input type=checkbox checked id="checkbox-nid" data-inputadicionalid=input-nid>
+                        <label for=checkbox-nid>NID da Unidade Sanitária</label>
+                    <li>
+                        <input type=checkbox id=checkbox-nome checked data-inputadicionalid=input-nome>
+                        <label for=checkbox-nome>Nome</label>
+                    <li>
+                        <input type=checkbox id=checkbox-assinatura checked data-inputadicionalid=input-assinatura>
+                        <label for=checkbox-assinatura>
+                            Nome (Assinatura)
+                        </label>
+                    <li>
+                        <input type=checkbox id=checkbox-data checked data-inputadicionalid=input-data>
+                        <label for=checkbox-data>Data</label>
+                    <li>
+                        <input type=checkbox id=checkbox-comentarios checked data-inputadicionalid=input-comentarios>
+                        <label for=checkbox-comentarios>Comentários</label>
+                </ul>
+                <div class=dialog-box-esvaziar-ficha__btns-container>
+                    <button class="dialog-box-esvaziar-ficha__btn dialog-box-esvaziar-ficha__btn-cancelar">Cancelar</button>
+                    <button class="dialog-box-esvaziar-ficha__btn dialog-box-esvaziar-ficha__btn-confirmar">Confirmar</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="sessao-de-artigos --no-print">
+            <article class="artigo artigo-sobre" id="sobre">
+                <h2 class="artigo__titulo artigo__titulo-nivel-1">Visão geral sobre o totalizador</h2>
+                <figure>
+                    <img alt="Totalizador de Resumo Mensal de CCD" src=imagens/totalizador-de-resumo-mensal-de-ccd.png class="artigo__img artigo-sobre__img">
+                </figure>
+                
+                <p>
+                    O <b>Totalizador de Resumo Mensal de CCD</b> é um serviço online gratuito, que auxilia na elaboração, como o nome sugere, do resumo mensal de CCD, por meio do cálculo automático dos totais, com base nos dados preenchidos pelo usuário. Foi criado de acordo com o modelo da ficha de resumo mensal de CCD actualmente vigente no Serviço Nacional de Saúde em Moçambique.
+                </p>
+
+                <h3 class="artigo__titulo artigo__titulo-nivel-2">Objectivos</h3>
+
+                <ul class="artigo__lista artigo__ul">
+                    <li>Calcular correcta e automaticamente os totais;</li>
+                    <li>Preencher automaticamente os totais nas células correspondentes;</li>
+                    <li>Minimizar possíveis erros de totalização, sobretudo por confusão (por exemplo, somar inadvertidamente células não correspondentes ou registar o total da linha A, na linha B);</li>
+                    <li >Expandir o acesso às fichas de resumos mensais, pois os <a href="https://quinamine.github.io/aderito-felix-quiinamine/paginas/portfolio.html" target="_blank">totalizadores</a> também constituem uma fonte universal de algumas fichas de resumos mensais para todos com acesso à internet.</li>
+                </ul>
+
+                <h3 class="artigo__titulo artigo__titulo-nivel-2 ">O que eu preciso dispor para, e como utilizar o totalizador?</h3>
+
+                <ul class="artigo__lista artigo__ul">
+                    <li>Um telemóvel ou computador com acesso à internet.</li>
+                    <li>Ter colhido os dados de todos os indicadores da ficha nas fontes primárias (livro(s) de registo) da sua Unidade Sanitária.</li>
+                    <li>E por fim, preencher os dados nas células correspondentes quanto ao indicador e variáveis (sexo e faixa etária), e consequentemente os respectivos totais são, em tempo real, correcta e automaticamente calculados.</li>
+                </ul>
+
+                <p class="artigo__p--destaque">A utilização do totalizador é, de facto, uma garantia de um resumo correctamente totalizado, porém, isso simplesmente, não define a qualidade do resumo. Você é o único responsável pela veracidade, lógica e concordância dos dados preenchidos e, portanto, pela qualidade do resumo. O totalizador só se limita a calcular os totais baseando-se exactamente nos dados que você fornece.</p>
+
+                <h3 class="artigo__titulo artigo__titulo-nivel-2">Qual é o destino dos dados que eu insiro?</h3>
+
+                <p>São guardados localmente (no navegador que estiver a usar), por meio de um recurso chamado <a href="https://developer.mozilla.org/pt-BR/docs/Web/API/Web_Storage_API" target="_blank">Web Storage</a> e você tem total controle sobre esses, podendo mantê-los ou apagá-los por meio da opção "<b>Esvaziar ficha</b>" no menu do totalizador ou esvaziando o histórico (inclusíve os cookies) do seu navegador.</p>
+
+                <h3 class="artigo__titulo artigo__titulo-nivel-2">Vantagens do totalizador</h3>
+
+                <ul class="artigo__lista artigo__ul">
+                    <li>Calcula automaticamente os totais;</li>
+                    <li>Preenche automaticamente as células correspondentes aos totais;</li>
+                    <li>Fornece resultados (totais) exactos;</li>
+                    <li>Flexibiliza a elaboração do resumo;</li>
+                    <li>Pode ser impresso, inclusíve como uma simples ficha de resumo mensal;</li>
+                    <li >Pode ser guardado como PDF.</li>
+                </ul>
+
+                <h3 class="artigo__titulo artigo__titulo-nivel-2">Limitações do totalizador</h3>
+                    
+                <ul class="artigo__lista artigo__ul">
+                    <li>Não alerta sobre discrepância de dados, portanto, a análise da qualidade e lógica do resumo é inteiramente dependente do usuário;</li>
+                    <li>Disponibilidade remota (é necessário um telemóvel ou computador com acesso à internet para ser acessado).</li>
+                </ul>
+                <button class="artigo__btn-fechar artigo-sobre__btn-fechar" title="Fechar">&times;</button>
+            </article>
+
+            <article class="artigo artigo-ajuda">
+                <h2 class="artigo__titulo artigo__titulo-nivel-1 artigo-ajuda__titulo-nivel-1">Ajuda e Procedimentos</h2>
+
+                <details>
+                    <summary>Realçar totais</summary>
+                    <p>Adiciona um fundo cinza a todas as células dos totais. Estas têm o acesso interdito e a funcionalidade de realçá-las, permite facilmente distinguir estas de outras células. Muito útil em dispositivos móveis.</p>
+                </details>
+                <details>
+                    <summary >Ir para a linha...</summary>
+                    <p>Abre um campo no qual pode digitar um número de linha no intervalo de 1 à 73 e, uma vez digitado o número, a página rola até a linha correspondente ao número.</p>
+                </details>
+                <details>
+                    <summary>Esvaziar ficha</summary>
+                    <p>Comando para limpar as células da ficha após a confirmação da acção na caixa de diálogo que abre.</p>
+                    
+                    <p>Permite também esvaziar campos adicionais (Província, Distrito, US, etc.) de forma seletiva. Para tal, na caixa de diálogo de confirmação, as "checkboxes" dos dados adicionais são, por padrão, marcadas com o sinal de "✔", indicando, desse modo, que o conteúdo contido nos respectivos campos será eliminado, mas caso queira manter a informação de um campo específico, basta desmarcá-lo clicando directamente sobre a ckeckbox ou sobre a sua descrição.</p> 
+
+                    <figure class="details__moldura details-esvaziar-ficha__moldura">
+                        <img src="imagens/caixa-de-dialogo-para-esvaziamento-da-ficha.png" alt="Caixa de diálogo de esvaziamento da ficha" class="artigo__img"/>
+
+                        <figcaption class="details__moldura__legenda"><b>Legenda:</b> Caixa de diálogo de esvaziamento da ficha. Neste caso, os campos de <b>Provínica, Distrito e Unidade Sanitária</b> seriam preservados (por ter suas checkboxes desmarcadas). Todos os outros cujas "checkboxes" estão marcadas, teriam seus campos esvaziados.</figcaption>
+                    </figure>
+
+                </details>
+                <details class="details-salvar-ficha-como-pdf">
+                    <summary>Salvar ficha como PDF</summary>
+                    <h3 class="artigo__titulo artigo__titulo-nivel-2 details__titulo-nivel-2">No computador:</h3>
+                    <ol class="artigo__lista artigo__ol">
+                        <li>
+                            Clique na opção <mark>Imprimir</mark> no menu do totalizador.
+                        <li>
+                            Na janela que abrirá, no campo de <mark>Impressora</mark> ou <mark>Destino</mark>
+                            selecione a opção <mark>Salvar&nbsp;como&nbsp;PDF</mark>.
+                        <li >
+                            Por fim, clique em <mark>Salvar</mark> e escolha um destino no seu computador.
+                    </ol>
+
+                    <h3 class="artigo__titulo artigo__titulo-nivel-2 details__titulo-nivel-2">No celular / tablet:</h3>
+                    <ol class="artigo__lista artigo__ol">
+                        <li>
+                            Toque na opção <mark>Salvar como PDF</mark> no cabeçalho do totalizador.
+                        </li>
+                        <li>
+                            Na janela seguinte, logo abaixo da opção <mark>Tamanho de papel</mark> ou <mark>Paper size</mark> (dependendo do idioma do seu navegador), toque na seta em forma de <mark>V</mark> para expandir as configurações.
+                        </li>
+
+                        <figure class="details__moldura">
+                            <img src="imagens/salvar-ficha-como-pdf-1.png" alt="Como salvar a ficha em PDF no celular" class="artigo__img" />
+                        </figure>
+                           
+                        <li>
+                            No campo de <mark>Tamanho de papel</mark> ou <mark>Paper size</mark>, selecione <mark>ISO A4</mark> e no de <mark>Orientação</mark> ou <mark>Orientation</mark>, selecione <mark>Paisagem</mark> ou <mark>Landscape</mark>.
+                        </li>
+
+                        <figure class="details__moldura">
+                            <img src="imagens/salvar-ficha-como-pdf-2.png" alt="Como salvar a ficha em PDF no celular" class="artigo__img" />
+                        </figure>
+
+                        <li>Por fim, clique no simbolo de disquete e escolha um destino no seu telemóvel para salvar o resumo.</li>
+
+                        <figure class="details__moldura">
+                            <img src="imagens/salvar-ficha-como-pdf-3.png" alt="Como salvar a ficha em PDF no celular" class="artigo__img"/>
+                        </figure>
+                    </ol>
+                </details>
+                <details class="artigo-ajuda__last-details details-motivo-de-red-cells">
+                    <summary>Algumas células mudaram de cor de fundo para vermelho</summary>
+                    <p>As células do totalizador têm um tamanho para conter, visivelmente, 7 algarismos no máximo, isto é, mostram valores até, no máximo, <span class="number-format">9999999</span>. Quando a célula recebe um número com mais de 7 algarismos, dá um alerta ao usuário ficando vermelha e, eventualmente, mostrando uma mensagem de texto com informação sobre a omissão dos algarismos e o real motivo.</p>
+
+                    <p class="artigo__p artigo__p--destaque">Para um país como Moçambique, em que o número de habitantes é de pouco mais de 30 milhões (<a href="https://energypedia.info/wiki/Moçambique:_Informação_sobre_o_País" target="_blank">dados demográficos de 2019</a>), podemos presumir que, actualmente, nenhuma Unidade Sanitária tem um número mensal de dados, de algum indicador de qualquer que seja a sua natureza, acima de <span class="number-format">9999999</span>.</p>
+                </details>
+                <button class="artigo__btn-fechar artigo-ajuda__btn-fechar" title="Fechar">&times;</button>
+            </article>
+        </section>
+        <footer class="footer --no-print">
+            <div class="layout-row footer__row">
+                <nav class=footer__nav>
+                    <h4 class="footer__nav-title">Hiperligações para outros serviços afins</h4>
+                    <ul>
+                        <li>
+                            <a href=https://quinamine.github.io/totalizador-de-resumo-mensal-de-tuberculose/index.html target=_blank class="footer__nav-link">Totalizador de Resumo Mensal de Tuberculose</a>
+                        <li>
+                            <a href=https://quinamine.github.io/totalizador-de-resumo-trimestral-de-apss-e-pp/index.html target=_blank class="footer__nav-link">Totalizador de Resumo Trimestral de APSS/PP</a>
+                        <li>
+                            <a href=https://quinamine.github.io/totalizador-de-resumo-mensal-de-consultas/index.html target=_blank class="footer__nav-link">Totalizador de Resumo Mensal de Consultas</a>
+                        <li>
+                            <a href=https://quinamine.github.io/totalizador-de-resumo-mensal-de-hiv-e-sida/index.html target=_blank class="footer__nav-link">Totalizador de Resumo Mensal de HIV/SIDA</a>
+                        <li>
+                            <a href=https://quinamine.github.io/totalizador-de-resumo-mensal-de-malaria/index.html target=_blank class="footer__nav-link">Totalizador de Resumo Mensal de Malária</a>
+                        <li>
+                            <a href=https://quinamine.github.io/totalizador-de-resumo-mensal-de-prn-ii/index.html target=_blank class="footer__nav-link">Totalizador de Resumo Mensal de PRN II</a>
+                        <li>
+                            <a href=https://quinamin.github.io/totalizador-de-resumo-mensal-de-prn-i/index.html target=_blank class="footer__nav-link">Totalizador de Resumo Mensal de PRN I</a>
+                        <li>
+                            <a href=https://quinamine.github.io/totalizador-de-resumo-mensal-de-saaj/index.html target=_blank class="footer__nav-link">Totalizador de Resumo Mensal de SAAJ</a>
+                        <li>
+                            <a href=https://quinamine.github.io/totalizador-de-resumo-mensal-de-ats/index.html target=_blank class="footer__nav-link">Totalizador de Resumo Mensal de ATS</a>
+                        <li>
+                            <a href=https://quinamine.github.io/calculadora-de-doses-pediatricas/index.html target=_blank class="footer__nav-link">Calculadora de Doses Pediátricas</a>
+                        <li>
+                            <a href=https://quinamine.github.io/tarv-pediatrico/index.html target=_blank class="footer__nav-link">Doseador de Antirretrovirais</a>
+                        <li>
+                            <a href=https://quinamin.github.io/requisicao-balancete/index.html target=_blank class="footer__nav-link">Requisição/Balancete</a>
+                    </ul>
+                </nav>
+                <p class="footer__p footer__p-created-by">
+                    Criado com atenção e 💙 por <a href=https://quinamine.github.io/aderito-felix-quinamine/index.html title="Acessar biografia &raquo;">Adérito Félix Quinamine</a>
+                    | © <span class="footer__current-year"></span> - Totalizador de Resumo Mensal de CCD
+                </p>
+                <a href=#root class=footer__link-back-to-top>Voltar ao topo</a>
+            </div>
+            <p class="footer__p footer__p-available-since">Disponível desde 02/01/2023. Última actualização: Abril/2024.</p>
+        </footer>
+        <div class="desfoque"></div>
+    </body>
+</html>

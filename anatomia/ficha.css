@@ -1,0 +1,366 @@
+﻿.ficha {
+    max-width: var(--layout-width);
+    min-width: var(--layout-width);
+    margin: 30px auto 15px;
+    font-size: 13px;
+}
+
+.ficha__header {
+    display: grid;
+    grid-template-columns: 340px 1fr;
+    font-weight: 700;
+    font-size: 14px
+}
+
+.ficha__header--hide {
+    display: none
+}
+
+.ficha__col-de-emblema {
+    display: flex
+}
+
+.ficha__box-descricao-de-emblema {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 20px
+}
+
+.ficha__span-descricao-de-emblema {
+    line-height: 1.5;
+    display: block;
+    text-transform: uppercase
+}
+
+.ficha__col-de-localizacao {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-column-gap: 15px;
+    margin: 5px 50px -5px 0
+}
+
+.ficha__col-de-localizacao__subcol {
+    max-width: 305px;
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap
+}
+
+.ficha__col-de-localizacao input {
+    flex: 1;
+    margin-left: 4px
+}
+
+.ficha__container-do-titulo {
+    grid-column: 1/4;
+    display: grid;
+    grid-template-columns: 200px 741.5px;
+    align-items: center;
+    font-weight: 700;
+    margin-top: 30px;
+    padding-left: 8px
+}
+
+.ficha__titulo,
+.ficha__mod-sis {
+    font-size: 17.5px;
+    margin: 0;
+    color: var(--text-color)
+}
+
+.ficha__titulo {
+    justify-self: end;
+    line-height: 1.5;
+}
+
+.header-info-dados {
+    min-height: 60px;
+    display: grid;
+    grid-template-columns: 150px;
+    justify-content: end;
+    font-weight: 700;
+}
+
+.header-info-dados__col {
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+}
+
+.header-info-dados__grid-template-col-3 {
+    display: grid;
+    grid-template-columns: repeat(3,50px);
+}
+
+.ficha__body {
+    min-width: 998px;
+    display: grid;
+    grid-template-columns: 50px 160px 636px repeat(3,50px);
+}
+
+.ficha__body span {
+    line-height: 1.3
+}
+
+.ficha__col-de-nums-de-linhas {
+    display: grid;
+    grid-template-rows: repeat(18,24px) repeat(12,44px) repeat(8,24px) 44px
+}
+
+.ficha__col-de-nums-de-linhas span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 2px var(--border-style);
+    transition-duration: 250ms
+}
+
+.ficha__col-row-groups {
+    display: grid;
+    grid-template-columns: 50px 1fr;
+    grid-template-rows: 1fr 44px;
+    font-weight: 700;
+    text-align: center;
+    overflow: hidden;
+}
+
+.ficha__col-row-groups__col-1 {
+    display: grid;
+    grid-template-rows: calc(24px * 18) calc(44px * 4) calc(44px * 5) calc(44px * 3) calc(24px * 8);
+    grid-template-columns: 50px
+}
+
+.ficha__span--rotate {
+    transform: rotate(-90deg);
+    letter-spacing: .5px;
+    text-align: center;
+}
+
+.ficha__col-row-groups__col-2 {
+    display: grid;
+    grid-template-columns: 110px;
+    grid-template-rows: calc(24px*3) calc(24px*15) repeat(2,calc(44px*2)) calc(44px*5) calc(44px*2) 44px calc(24px*6) calc(24px*2)
+}
+
+.ficha__col-row-groups__col-3 {
+    grid-column: 1/3;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr
+}
+
+.ficha__col-de-indicadores {
+    display: grid;
+    grid-template-rows: repeat(18,24px) calc(44px*9) repeat(3,44px) repeat(8,24px)
+}
+
+.ficha__indicador {
+    padding-left: 4px;
+}
+
+.ficha__indicador--realce-gray-light {
+    background-color: var(--gray--light);
+}
+
+.ficha__indicador--realce-gray-dark {
+    background-color: var(--gray--6);
+    color: var(--yt);
+}
+
+.col-de-indicadores__sessao-de-nutricao {
+    display: grid;
+    grid-template-columns: repeat(2,50%)
+}
+
+.col-de-indicadores__sessao-de-nutricao__col {
+    display: grid;
+    grid-template-rows: repeat(9,44px)
+}
+
+.ficha__col-de-inputs {
+    display: grid;
+    grid-template-rows: repeat(18,24px) repeat(12,44px) repeat(8,24px);
+    grid-template-columns: 50px
+}
+
+div.col-de-celulas-de-entrada input,div.col-de-celulas-de-entrada span {
+    border-bottom: 1px solid var(--gray);
+    border-left: 2px solid var(--border-color);
+    text-align: center
+}
+
+div.col-de-celulas-de-entrada.bm input {
+    border-left: 2px solid var(--gray)
+}
+
+div.col-de-celulas-de-entrada input:last-child,div.col-de-enumeracao-das-linhas span:last-child,div.col2 div.subcol3 div,div.col3.indicadores>span:last-child {
+    border-bottom: none!important
+}
+
+div.col2.verso>div:first-child,div.col3.verso div.subcol1>div {
+    border-bottom: 2px solid var(--border-color)
+}
+
+div.ficha.verso {
+    display: block
+}
+
+div.corpo-da-ficha.verso {
+    display: grid;
+    grid-template-columns: repeat(2,50px) calc(110px + 636px) repeat(3,50px)
+}
+
+div.corpo-da-ficha.verso div.col-de-celulas-de-entrada,div.corpo-da-ficha.verso div.col-de-enumeracao-das-linhas {
+    display: grid;
+    grid-template-rows: repeat(4,24px) repeat(8,44px) 24px repeat(3,44px) 24px repeat(2,44px) repeat(2,24px) repeat(3,44px 24px) 44px repeat(6,24px)
+}
+
+div.col3.verso,div.corpo-da-ficha.verso div.col2 {
+    grid-template-rows: 1fr calc(24px*4);
+    display: grid
+}
+
+div.corpo-da-ficha.verso div.col2 {
+    grid-template-columns: 50px
+}
+
+div.col2.verso>div {
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+
+div.col3.verso {
+    grid-template-columns: 110px 1fr
+}
+
+div.col3.verso div.subcol1 {
+    display: grid;
+    grid-template-columns: 110px;
+    grid-template-rows: calc(24px*4) calc(44px*8) 292px repeat(2,136px) 48px
+}
+
+div.col3.verso div.subcol1>div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 4px
+}
+
+div.col3.verso div.subcol div.flex-start {
+    justify-content: flex-start
+}
+
+div.col3.verso div.subcol.indicadores {
+    display: grid;
+    grid-template-rows: repeat(4,24px) repeat(8,44px) 24px repeat(3,44px) 24px repeat(2,44px) repeat(2,24px) repeat(3,44px 24px) 44px repeat(2,24px)
+}
+
+div.col3.verso div.subcol.indicadores span {
+    border-bottom: 1px solid var(--gray);
+    display: flex;
+    align-items: center;
+    padding-left: 4px
+}
+
+div.col3.verso div.subcol.referencia {
+    grid-column: 1/3;
+    display: grid;
+    grid-template-rows: repeat(4,24px)
+}
+
+div.col3.verso div.subcol.referencia span {
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    padding-left: 4px
+}
+
+div.col3.verso div.subcol.referencia span:last-child {
+    border-bottom: none
+}
+
+footer.rodape-da-ficha {
+    display: grid;
+    grid-template-columns: repeat(2,332px) calc(var(--max-width) - 332px*2);
+    margin-top: 20px
+}
+
+footer.rodape-da-ficha div:last-child {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end
+}
+
+footer.rodape-da-ficha div:last-child label {
+    margin-right: 4px
+}
+
+footer.rodape-da-ficha input,footer.rodape-da-ficha label {
+    font-size: 14px
+}
+
+div.nota {
+    margin-bottom: 20px;
+    min-height: 79px
+}
+
+@-moz-document url-prefix() {
+    div.nota {
+        min-height: 96px
+    }
+}
+
+@media screen and (max-width: 998px) {
+    div.linha.nota {
+        padding-left:0;
+        padding-right: 0
+    }
+}
+
+div.nota textarea {
+    font-family: san-serif,Arial,Helvetica;
+    width: 985px;
+    padding: 5px;
+    line-height: 1.5;
+    border: 1px solid var(--border-color)
+}
+
+@media print {
+    div.container {
+        margin-top: 0
+    }
+
+    div.container header.hidden {
+        display: grid
+    }
+
+    div.ficha.fronte {
+        page-break-after: always
+    }
+
+    div.col1.emblema-e-republica,div.container {
+        visibility: visible
+    }
+
+    div.nota.no-print {
+        display: none
+    }
+
+    div.nota textarea {
+        padding: 0
+    }
+}
+
+div.nota textarea.bold {
+    font-weight: 700;
+    border-color: transparent
+}
+
+div.nota textarea:focus {
+    border: 2px solid var(--blue)
+}
+
+input#compilador,input#assinatura {
+    font-weight: 700;
+}
