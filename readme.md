@@ -1,2 +1,2 @@
 # totalizador-de-resumo-mensal-de-ccd
-Serviço online gratuito que auxilia na elaboração do resumo mensal de CCD (Consulta de Criança Doente) totalizando-o automaticamente com base nos dados preenchidos pelo usuário (Profissional de Saúde).
+Serviço online gratuito, que auxilia na elaboração, como o nome sugere, do resumo mensal de CCD, por meio do cálculo automático dos totais, com base nos dados preenchidos pelo usuário. Foi criado de acordo com o modelo da ficha de resumo mensal de CCD actualmente vigente no Serviço Nacional de Saúde em Moçambique.

@@ -5,6 +5,10 @@
     font-size: 13px;
 }
 
+.ficha-fronte {
+    margin-bottom: 15px;
+}
+
 .ficha__header {
     display: grid;
     grid-template-columns: 340px 1fr;
@@ -107,14 +111,6 @@
     grid-template-rows: repeat(18,24px) repeat(12,44px) repeat(8,24px) 44px
 }
 
-.ficha__col-de-nums-de-linhas span {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-bottom: 2px var(--border-style);
-    transition-duration: 250ms
-}
-
 .ficha__col-row-groups {
     display: grid;
     grid-template-columns: 50px 1fr;
@@ -134,6 +130,7 @@
     transform: rotate(-90deg);
     letter-spacing: .5px;
     text-align: center;
+    font-weight: 700;
 }
 
 .ficha__col-row-groups__col-2 {
@@ -180,187 +177,74 @@
 .ficha__col-de-inputs {
     display: grid;
     grid-template-rows: repeat(18,24px) repeat(12,44px) repeat(8,24px);
-    grid-template-columns: 50px
+    grid-template-columns: 50px;
+    overflow: hidden;
 }
 
-div.col-de-celulas-de-entrada input,div.col-de-celulas-de-entrada span {
-    border-bottom: 1px solid var(--gray);
-    border-left: 2px solid var(--border-color);
-    text-align: center
-}
-
-div.col-de-celulas-de-entrada.bm input {
-    border-left: 2px solid var(--gray)
-}
-
-div.col-de-celulas-de-entrada input:last-child,div.col-de-enumeracao-das-linhas span:last-child,div.col2 div.subcol3 div,div.col3.indicadores>span:last-child {
-    border-bottom: none!important
-}
-
-div.col2.verso>div:first-child,div.col3.verso div.subcol1>div {
-    border-bottom: 2px solid var(--border-color)
-}
-
-div.ficha.verso {
-    display: block
-}
-
-div.corpo-da-ficha.verso {
+.ficha__body--verso {
     display: grid;
     grid-template-columns: repeat(2,50px) calc(110px + 636px) repeat(3,50px)
 }
 
-div.corpo-da-ficha.verso div.col-de-celulas-de-entrada,div.corpo-da-ficha.verso div.col-de-enumeracao-das-linhas {
+.ficha-verso__col-de-nums-de-linhas {
     display: grid;
     grid-template-rows: repeat(4,24px) repeat(8,44px) 24px repeat(3,44px) 24px repeat(2,44px) repeat(2,24px) repeat(3,44px 24px) 44px repeat(6,24px)
 }
 
-div.col3.verso,div.corpo-da-ficha.verso div.col2 {
+.ficha-verso__col-de-inputs {
+    display: grid;
+    grid-template-rows: repeat(4,24px) repeat(8,44px) 24px repeat(3,44px) 24px repeat(2,44px) repeat(2,24px) repeat(3,44px 24px) 44px repeat(6,24px)
+}
+
+.ficha-verso__col-novos-casos-e-referencias {
+    display: grid;
+    grid-template-columns: 50px;
     grid-template-rows: 1fr calc(24px*4);
-    display: grid
 }
 
-div.corpo-da-ficha.verso div.col2 {
-    grid-template-columns: 50px
-}
-
-div.col2.verso>div {
-    display: flex;
-    justify-content: center;
-    align-items: center
-}
-
-div.col3.verso {
+.ficha-verso__col-de-diag-e-indicadores {
+    display: grid;
     grid-template-columns: 110px 1fr
 }
 
-div.col3.verso div.subcol1 {
+.ficha-verso__col-de-diagnosticos {
     display: grid;
     grid-template-columns: 110px;
     grid-template-rows: calc(24px*4) calc(44px*8) 292px repeat(2,136px) 48px
 }
 
-div.col3.verso div.subcol1>div {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-left: 4px
+.ficha-verso__container-de-diag {
+    padding-left: 4px;
 }
 
-div.col3.verso div.subcol div.flex-start {
-    justify-content: flex-start
-}
-
-div.col3.verso div.subcol.indicadores {
+.ficha-verso__col-de-indicadores {
     display: grid;
     grid-template-rows: repeat(4,24px) repeat(8,44px) 24px repeat(3,44px) 24px repeat(2,44px) repeat(2,24px) repeat(3,44px 24px) 44px repeat(2,24px)
 }
 
-div.col3.verso div.subcol.indicadores span {
-    border-bottom: 1px solid var(--gray);
-    display: flex;
-    align-items: center;
-    padding-left: 4px
+.ficha__col-de-inputs--verso {
+    grid-template-rows: repeat(4,24px) repeat(8,44px) 24px repeat(3,44px) 24px repeat(2,44px) repeat(2,24px) repeat(3,44px 24px) 44px repeat(2,24px)
 }
 
-div.col3.verso div.subcol.referencia {
+.ficha-verso__col-de-referencias {
     grid-column: 1/3;
     display: grid;
     grid-template-rows: repeat(4,24px)
 }
 
-div.col3.verso div.subcol.referencia span {
-    border-bottom: 1px solid var(--border-color);
-    display: flex;
-    align-items: center;
-    padding-left: 4px
-}
-
-div.col3.verso div.subcol.referencia span:last-child {
-    border-bottom: none
-}
-
-footer.rodape-da-ficha {
+.ficha__rodape {
     display: grid;
-    grid-template-columns: repeat(2,332px) calc(var(--max-width) - 332px*2);
-    margin-top: 20px
+    grid-template-columns: repeat(2,332px) calc(var(--layout-width) - 332px*2);
+    margin-top: 20px;
+    min-height: 20px;
 }
 
-footer.rodape-da-ficha div:last-child {
+.ficha__rodape__col-de-assinatura {
     display: flex;
     align-items: center;
     justify-content: flex-end
 }
 
-footer.rodape-da-ficha div:last-child label {
+.ficha__rodape__label-assinatura {
     margin-right: 4px
-}
-
-footer.rodape-da-ficha input,footer.rodape-da-ficha label {
-    font-size: 14px
-}
-
-div.nota {
-    margin-bottom: 20px;
-    min-height: 79px
-}
-
-@-moz-document url-prefix() {
-    div.nota {
-        min-height: 96px
-    }
-}
-
-@media screen and (max-width: 998px) {
-    div.linha.nota {
-        padding-left:0;
-        padding-right: 0
-    }
-}
-
-div.nota textarea {
-    font-family: san-serif,Arial,Helvetica;
-    width: 985px;
-    padding: 5px;
-    line-height: 1.5;
-    border: 1px solid var(--border-color)
-}
-
-@media print {
-    div.container {
-        margin-top: 0
-    }
-
-    div.container header.hidden {
-        display: grid
-    }
-
-    div.ficha.fronte {
-        page-break-after: always
-    }
-
-    div.col1.emblema-e-republica,div.container {
-        visibility: visible
-    }
-
-    div.nota.no-print {
-        display: none
-    }
-
-    div.nota textarea {
-        padding: 0
-    }
-}
-
-div.nota textarea.bold {
-    font-weight: 700;
-    border-color: transparent
-}
-
-div.nota textarea:focus {
-    border: 2px solid var(--blue)
-}
-
-input#compilador,input#assinatura {
-    font-weight: 700;
 }
