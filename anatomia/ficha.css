@@ -5,6 +5,12 @@
     font-size: 13px;
 }
 
+@media print {
+    .ficha {
+        margin-top: 0;
+    }
+}
+
 .ficha-fronte {
     margin-bottom: 15px;
 }
@@ -14,6 +20,17 @@
     grid-template-columns: 340px 1fr;
     font-weight: 700;
     font-size: 14px
+}
+
+.ficha__header--2 {
+    display: none;
+}
+
+@media print {
+    .ficha__header--2 {
+        display: grid;
+        page-break-before: always;
+    }
 }
 
 .ficha__header--hide {
@@ -48,7 +65,8 @@
     max-width: 305px;
     display: flex;
     align-items: center;
-    flex-wrap: nowrap
+    flex-wrap: nowrap;
+    min-height: 33px;
 }
 
 .ficha__col-de-localizacao input {

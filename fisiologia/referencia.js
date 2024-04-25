@@ -1,1 +1,53 @@
-const referencia={retornarLinha(e){let t=e.parentElement,n=t.children,r;for(let a=0;a<n.length;a++)n[a]===e&&(r=a,t.parentElement.matches(".verso")&&(r+=39));linhaOutput.textContent=r+1},retornarColuna(e){let t=e.parentElement;t.matches(".pf")?colunaOutput.textContent="PF":colunaOutput.textContent="BM"},retornarNulo(){linhaOutput.textContent="",colunaOutput.textContent=""}};let linhaOutput,colunaOutput;window.addEventListener("load",()=>{linhaOutput=document.querySelector(".ref-de-linha"),colunaOutput=document.querySelector(".ref-de-sexo"),celulas_de_entrada.forEach(e=>{e.addEventListener("focusin",()=>{referencia.retornarLinha(e),referencia.retornarColuna(e),e.hasAttribute("readonly")&&referencia.retornarNulo()}),e.addEventListener("focusout",()=>{referencia.retornarNulo()})}),window.addEventListener("scroll",()=>{let e=document.querySelector("div.linha-de-referencia");document.querySelector(".bounding-reference").getBoundingClientRect().bottom<0?e.classList.add("off"):e.classList.remove("off")})});
+"use strict"
+
+const referencia = {
+    retornarLinha(input) {
+        const linhasAfins = document.querySelectorAll(`.${input.parentElement.dataset.linhas} span`);
+        const inputParent__children = input.parentElement.children;
+
+        let inputIndex;
+        for (let i = 0; i < inputParent__children.length; i++) {
+            if(input === inputParent__children[i]) {
+                inputIndex = i;
+            }
+        }
+
+        const linhaOutput = document.querySelector(".reference-row__output--indicador");
+        linhaOutput.value = linhasAfins[inputIndex].textContent;
+        
+    },
+
+    retornarFaixaEtaria(input) {
+        const faixaEtariaOutput = document.querySelector(".reference-row__output--idade");
+
+        let faixaEtaria = input.parentElement.dataset.faixaetaria;
+        faixaEtariaOutput.value = faixaEtaria;
+    },
+
+    retornarSexo(input) {
+        const faixaEtariaOutput = document.querySelector(".reference-row__output--sexo");
+
+        let sexo = input.parentElement.dataset.sexo;
+        faixaEtariaOutput.value = sexo;
+    },
+
+    retornarVazio() {
+        const outputs = document.querySelectorAll(".reference-row__output");
+        for (const o of outputs) o.value = "";
+    }
+}
+
+function events() {
+    const gridInputs = document.querySelectorAll("[data-totalgeraleixox], .grid-extra__input");
+    gridInputs.forEach( gi => {
+        gi.addEventListener("focus", () => {
+            referencia.retornarLinha(gi);
+            referencia.retornarFaixaEtaria(gi);
+            referencia.retornarSexo(gi);
+        });
+    });
+
+    gridInputs.forEach( gi => gi.addEventListener("focusout", referencia.retornarVazio));
+}
+
+window.onload = events;
