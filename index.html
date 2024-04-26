@@ -77,28 +77,28 @@
                   </figure>
                   <div class=ficha__box-descricao-de-emblema>
                       <span class="ficha__span-descricao-de-emblema">República de Moçambique</span>
-                      <span class="ficha__span-descricao-de-emblema">Ministério da Sáude</span>
+                      <span class="ficha__span-descricao-de-emblema">Ministério da Saúde</span>
                   </div>
               </div>
               <div class=ficha__col-de-localizacao>
                     <div class="ficha__col-de-localizacao__subcol">
                         <label for=input-provincia>Província:</label>
-                        <input id=input-provincia list="datalist-provincias" class="input-adicional --border-b --fw-700">
+                        <input id=input-provincia list="datalist-provincias" class="input-nao-celular --border-b --fw-700">
                         <datalist id="datalist-provincias"></datalist>
                     </div>
                     <div class="ficha__col-de-localizacao__subcol">
                         <label for=input-distrito>Distrito:</label>
-                        <input id=input-distrito list="datalist-distritos" class="input-adicional --border-b --fw-700">
+                        <input id=input-distrito list="datalist-distritos" class="input-nao-celular --border-b --fw-700">
                         <datalist id="datalist-distritos"></datalist>
                     </div>
                     <div class="ficha__col-de-localizacao__subcol">
                         <label for=input-us>US:</label>
-                        <input id=input-us list="datalist-us" class="input-adicional --border-b --fw-700">
+                        <input id=input-us list="datalist-us" class="input-nao-celular --border-b --fw-700">
                         <datalist id="datalist-us"></datalist>
                     </div>
                   <div class="ficha__col-de-localizacao__subcol">
                       <label for=input-mes>Mês:</label>
-                      <input id=input-mes list="datalist-meses" class="input-adicional --border-b --fw-700">
+                      <input id=input-mes list="datalist-meses" class="input-nao-celular --border-b --fw-700">
                       <datalist id="datalist-meses"></datalist>
                   </div>
               </div>
@@ -233,18 +233,18 @@
                         <span class="ficha__indicador --display-flex-y-center --border-b">Total de Femininos</span>
                         <span class="ficha__indicador ficha__indicador--realce-gray-light --display-flex-y-center --border-b-thick">Nº Total de Consultas</span>
                         <span class="ficha__indicador ficha__indicador--realce-gray-dark --display-flex-xy-center --border-b">Primeiras Consultas</span>
-                        <span class="ficha__indicador --display-flex-y-center --border-b">0-5 Meses</span>
-                        <span class="ficha__indicador --display-flex-y-center --border-b">6-11 Meses</span>
-                        <span class="ficha__indicador --display-flex-y-center --border-b">12-23 Meses</span>
-                        <span class="ficha__indicador --display-flex-y-center --border-b">24-59 Meses</span>
-                        <span class="ficha__indicador --display-flex-y-center --border-b">5-14 Anos</span>
+                        <span class="ficha__indicador --display-flex-y-center --border-b" data-prefixo="Primeiras Consultas:">0-5 Meses</span>
+                        <span class="ficha__indicador --display-flex-y-center --border-b" data-prefixo="Primeiras Consultas:">6-11 Meses</span>
+                        <span class="ficha__indicador --display-flex-y-center --border-b" data-prefixo="Primeiras Consultas:">12-23 Meses</span>
+                        <span class="ficha__indicador --display-flex-y-center --border-b" data-prefixo="Primeiras Consultas:">24-59 Meses</span>
+                        <span class="ficha__indicador --display-flex-y-center --border-b" data-prefixo="Primeiras Consultas:">5-14 Anos</span>
                         <span class="ficha__indicador ficha__indicador--realce-gray-light --display-flex-y-center --border-b-thick">Total de Primeiras Consultas</span>
                         <span class="ficha__indicador ficha__indicador--realce-gray-dark --display-flex-xy-center --border-b">Consultas Seguintes</span>
-                        <span class="ficha__indicador --display-flex-y-center --border-b">0-5 Meses</span>
-                        <span class="ficha__indicador --display-flex-y-center --border-b">6-11 Meses</span>
-                        <span class="ficha__indicador --display-flex-y-center --border-b">12-23 Meses</span>
-                        <span class="ficha__indicador --display-flex-y-center --border-b">24-59 Meses</span>
-                        <span class="ficha__indicador --display-flex-y-center --border-b">5-14 Anos</span>
+                        <span class="ficha__indicador --display-flex-y-center --border-b" data-prefixo="Consultas Seguintes:">0-5 Meses</span>
+                        <span class="ficha__indicador --display-flex-y-center --border-b" data-prefixo="Consultas Seguintes:">6-11 Meses</span>
+                        <span class="ficha__indicador --display-flex-y-center --border-b" data-prefixo="Consultas Seguintes:">12-23 Meses</span>
+                        <span class="ficha__indicador --display-flex-y-center --border-b" data-prefixo="Consultas Seguintes:">24-59 Meses</span>
+                        <span class="ficha__indicador --display-flex-y-center --border-b" data-prefixo="Consultas Seguintes:">5-14 Anos</span>
                         <span class="ficha__indicador ficha__indicador--realce-gray-light --display-flex-y-center --border-b">Total de Consultas Seguintes</span>
                         <span class="ficha__indicador ficha__indicador--realce-gray-light --display-flex-y-center --border-b-thick">TOTAL DE CONSULTAS dos 0-14 anos (1ªs e Consultas Seguintes)</span>
 
@@ -255,13 +255,13 @@
                                 <span class="ficha__indicador --display-flex-y-center --border-b">Desnutrição Aguda moderada</span>
                                 <span class="ficha__indicador --display-flex-y-center --border-b-thick">Desnutrição Aguda grave</span>
                                 <span class="ficha__indicador --display-flex-y-center --border-b">
-                                    Anemia em crianças 0-5 meses por<br>diagnóstico clínico
+                                    Anemia em crianças 0-5 meses por<br> diagnóstico clínico
                                 </span>
                                 <span class="ficha__indicador --display-flex-y-center --border-b">
-                                    Anemia em crianças 6-23 meses por<br>diagnóstico clínico
+                                    Anemia em crianças 6-23 meses por<br> diagnóstico clínico
                                 </span>
                                 <span class="ficha__indicador --display-flex-y-center --border-b">
-                                    Anemia em crianças 24-59 meses por<br>diagnóstico clínico
+                                    Anemia em crianças 24-59 meses por<br> diagnóstico clínico
                                 </span>
                                 <span class="ficha__indicador --display-flex-y-center --border-b">
                                     Anemia em crianças 5-14 anos por diag‐<br>nóstico clínico
@@ -276,44 +276,44 @@
                                     Total de crianças observadas na CCD com baixo<br>peso/idade grave
                                 </span>
                                 <span class="ficha__indicador --display-flex-y-center --border-b">
-                                    Total de crianças observadas na CCD com<br>desnutrição aguda moderada
+                                    Total de crianças observadas na CCD com<br> desnutrição aguda moderada
                                 </span>
                                 <span class="ficha__indicador --display-flex-y-center --border-b-thick">
-                                    Total de crianças observadas na CCD com<br>desnutrição aguda grave
+                                    Total de crianças observadas na CCD com<br> desnutrição aguda grave
                                 </span>
                                 <span class="ficha__indicador --display-flex-y-center --border-b">
-                                    No de crianças 0-5 meses clinicamente<br>diagnosticadas com anemia
+                                    Nº de crianças 0-5 meses clinicamente<br> diagnosticadas com anemia
                                 </span>
                                 <span class="ficha__indicador --display-flex-y-center --border-b">
-                                    No de crianças 6-23 meses clinicamente<br>diagnosticadas com anemia
+                                    Nº de crianças 6-23 meses clinicamente<br> diagnosticadas com anemia
                                 </span>
                                 <span class="ficha__indicador --display-flex-y-center --border-b">
-                                    No de crianças 24-59 meses clinicamente<br>diagnosticadas com anemia
+                                    Nº de crianças 24-59 meses clinicamente<br> diagnosticadas com anemia
                                 </span>
                                 <span class="ficha__indicador --display-flex-y-center --border-b">
-                                    No de crianças 5-14 anos clinicamente<br>diagnosticadas com anemia
+                                    Nº de crianças 5-14 anos clinicamente<br> diagnosticadas com anemia
                                 </span>
                                 <span class="ficha__indicador --display-flex-y-center --border-b-thick">
-                                    Total de crianças com anemia que iniciaram<br>tratamento com sal ferroso
+                                    Total de crianças com anemia que iniciaram<br> tratamento com sal ferroso
                                 </span>
                             </div>
                         </div>
                         <span class="ficha__indicador --display-flex-y-center --border-b">Número de crianças 6-11 meses suplementadas com vitamina A </span>
                         <span class="ficha__indicador --display-flex-y-center --border-b">Número de crianças 12-59 meses suplementadas com vitamina A</span>
                         <span class="ficha__indicador --display-flex-y-center --border-b-thick">Número de crianças 12-59 meses que receberam desparasitante</span>
-                        <span class="ficha__indicador --display-flex-y-center --border-b">Total de crianças elegíveis para testagem</span>
-                        <span class="ficha__indicador --display-flex-y-center --border-b">Total de crianças testadas</span>
-                        <span class="ficha__indicador --display-flex-y-center --border-b">Total de crianças com teste HIV positivo</span>
-                        <span class="ficha__indicador --display-flex-y-center --border-b">Total de crianças com teste HIV negativo</span>
-                        <span class="ficha__indicador --display-flex-y-center --border-b">Total de crianças com teste HIV indeterminado</span>
-                        <span class="ficha__indicador --display-flex-y-center --border-b">Total de crianças que iniciaram profilaxia com CTZ</span>
+                        <span class="ficha__indicador --display-flex-y-center --border-b" data-prefixo="HIV:">Total de crianças elegíveis para testagem</span>
+                        <span class="ficha__indicador --display-flex-y-center --border-b" data-prefixo="HIV:">Total de crianças testadas</span>
+                        <span class="ficha__indicador --display-flex-y-center --border-b" data-prefixo="HIV:">Total de crianças com teste HIV positivo</span>
+                        <span class="ficha__indicador --display-flex-y-center --border-b" data-prefixo="HIV:">Total de crianças com teste HIV negativo</span>
+                        <span class="ficha__indicador --display-flex-y-center --border-b" data-prefixo="HIV:">Total de crianças com teste HIV indeterminado</span>
+                        <span class="ficha__indicador --display-flex-y-center --border-b" data-prefixo="HIV:">Total de crianças que iniciaram profilaxia com CTZ</span>
                         <span class="ficha__indicador --display-flex-y-center --border-b">Total de crianças que referem contacto com TB</span>
                         <span class="ficha__indicador --display-flex-y-center --border-b-thick">Total de crianças com sinas e sintomas de tuberculose</span>
                         <span class="ficha__indicador --display-flex-y-center --border-b-thick">
-                            Total de crianças de 0-59 meses com atraso de desenvolvimento psicomotor identificado<br>pela 1ª vez.
+                            Total de crianças de 0-59 meses com atraso de desenvolvimento psicomotor identificado<br> pela 1ª vez.
                         </span>
                     </div>
-                    <div class="ficha__col-de-inputs ficha__col-de-inputs-pf --border-l-thick">
+                    <div class="ficha__col-de-inputs ficha__col-de-inputs-pf --border-l-thick" data-col="PF">
                         <input type=number name="ficha__input" min=0 data-totaleixox=l1-c1c2 data-totaleixoxoutput=l1-c3 data-totaldeconsultas=l1l2-c1c2 data-totaldeconsultasoutput=l3-c3 data-totaleixoy=l1l2-c1 data-totaleixoyoutput=l3-c1 class="--border-b">
 
                         <input type=number min=0 data-totaleixox=l2-c1c2 data-totaleixoxoutput=l2-c3 data-totaldeconsultas=l1l2-c1c2 data-totaldeconsultasoutput=l3-c3 data-totaleixoy=l1l2-c1 data-totaleixoyoutput=l3-c1 class="--border-b">
@@ -370,7 +370,7 @@
                         <input type=number min=0 data-totaleixox=l38-c1c2 data-totaleixoxoutput=l38-c3 class="--border-b-thick">
                         <input type=number min=0 data-totaleixox=l39-c1c2 data-totaleixoxoutput=l39-c3 class="--border-b-thick">
                     </div>
-                    <div class="ficha__col-de-inputs ficha__col-de-inputs-bm --border-l-thick">
+                    <div class="ficha__col-de-inputs ficha__col-de-inputs-bm --border-l-thick" data-col="BM">
                         <input type=number min=0 data-totaleixox=l1-c1c2 data-totaleixoxoutput=l1-c3 data-totaldeconsultas=l1l2-c1c2 data-totaldeconsultasoutput=l3-c3 data-totaleixoy=l1l2-c2 data-totaleixoyoutput=l3-c2 class="--border-b">
 
                         <input type=number min=0 data-totaleixox=l2-c1c2 data-totaleixoxoutput=l2-c3 data-totaldeconsultas=l1l2-c1c2 data-totaldeconsultasoutput=l3-c3 data-totaleixoy=l1l2-c2 data-totaleixoyoutput=l3-c2 class="--border-b">
@@ -473,7 +473,7 @@
 
             <div class="ficha-verso">
                 <div class="ficha__body ficha__body--verso --border-r-thick">
-                    <div class="ficha-verso__col-de-nums-de-linhas --border-l-thick">
+                    <div class="ficha__col-de-nums-de-linhas ficha__col-de-nums-de-linhas--verso --border-l-thick">
                         <span class="--display-flex-xy-center --border-b-thick">40</span>
                         <span class="--display-flex-xy-center --border-b-thick">41</span>
                         <span class="--display-flex-xy-center --border-b-thick">42</span>
@@ -543,22 +543,22 @@
                                 </span>
                             </div>
                         </div>
-                        <div class="ficha-verso__col-de-indicadores --border-l-thick">
+                        <div class="ficha__col-de-indicadores ficha__col-de-indicadores--verso --border-l-thick">
                             <span class="ficha__indicador --display-flex-y-center --border-b">Total de crianças de 0-59M com resultado do Teste de Malária Positivo (TDR ou HTZ)</span>
                             <span class="ficha__indicador --display-flex-y-center --border-b">Total de crianças de 0-59M com resultado do Teste de Malária Negativo (TDR ou HTZ)</span>
                             <span class="ficha__indicador --display-flex-y-center --border-b">Total de crianças de 5-14A com resultado do Teste para Malária Positivo (TDR ou HTZ)</span>
                             <span class="ficha__indicador --display-flex-y-center --border-b">Total de crianças de 5-14A com resultado do Teste para Malária Negativo (TDR ou HTZ)</span>
                             <span class="ficha__indicador --display-flex-y-center --border-b">
-                                Total de crianças de 0-59 meses com diagnóstico de novo caso de Malária confirmada e<br>tratadas com AL (Coartem)
+                                Total de crianças de 0-59 meses com diagnóstico de novo caso de Malária confirmada e<br> tratadas com AL (Coartem)
                             </span>
                             <span class="ficha__indicador --display-flex-y-center --border-b">
-                                Total de crianças de 0-59 meses com diagnóstico de novo caso de Malária confirmada e<br>tratadas com Artesunato+Amodiaquina (ASAQ)
+                                Total de crianças de 0-59 meses com diagnóstico de novo caso de Malária confirmada e<br> tratadas com Artesunato+Amodiaquina (ASAQ)
                             </span>
                             <span class="ficha__indicador --display-flex-y-center --border-b">
-                                Total de crianças de 0-59 meses com diagnóstico de novo caso de Malária confirmada e<br>tratadas com Artesunato (AS)
+                                Total de crianças de 0-59 meses com diagnóstico de novo caso de Malária confirmada e<br> tratadas com Artesunato (AS)
                             </span>
                             <span class="ficha__indicador --display-flex-y-center --border-b">
-                                Total de crianças de 0-59 meses com diagnóstico de novo caso de Malária confirmada e<br>tratadas com Quinino
+                                Total de crianças de 0-59 meses com diagnóstico de novo caso de Malária confirmada e<br> tratadas com Quinino
                             </span>
                             <span class="ficha__indicador --display-flex-y-center --border-b">
                                 Total de crianças de 5-14 anos com diagnóstico de novo caso de Malária confirmada e trata‐<br>das com AL (Coartem)
@@ -567,44 +567,44 @@
                                 Total de crianças de 5-14 anos com diagnóstico de novo caso de Malária confirmada e trata‐<br>das com Artesunato+Amodiaquina (ASAQ)
                             </span>
                             <span class="ficha__indicador --display-flex-y-center --border-b">
-                                Total de crianças de 5-14 anos com diagnóstico de novo caso de Malária confirmada e<br>tratadas com Artesunato (AS)
+                                Total de crianças de 5-14 anos com diagnóstico de novo caso de Malária confirmada e<br> tratadas com Artesunato (AS)
                             </span>
                             <span class="ficha__indicador --display-flex-y-center --border-b">
                                 Total de crianças de 5-14 anos meses com diagnóstico de novo caso de Malária confirmada e trata‐<br>das com Quinino
                             </span>
                             <span class="ficha__indicador --display-flex-y-center --border-b">Total de crianças de 0-59 meses diagnosticadas como novo caso de Diarreia</span>
                             <span class="ficha__indicador --display-flex-y-center --border-b">
-                                Total de crianças de 0-59 meses diagnosticadas como novo caso de Diarreia e tratadas com<br>SRO e ZINCO
+                                Total de crianças de 0-59 meses diagnosticadas como novo caso de Diarreia e tratadas com<br> SRO e ZINCO
                             </span>
                             <span class="ficha__indicador --display-flex-y-center --border-b">
-                                Total de crianças de 0-59 meses diagnosticadas como novo caso de Diarreia e tratadas só<br>com ZINCO
+                                Total de crianças de 0-59 meses diagnosticadas como novo caso de Diarreia e tratadas só<br> com ZINCO
                             </span>
                             <span class="ficha__indicador --display-flex-y-center --border-b">
-                                Total de crianças de 0-59 meses diagnosticadas como novo caso de Diarreia e tratadas só<br>com SRO
+                                Total de crianças de 0-59 meses diagnosticadas como novo caso de Diarreia e tratadas só<br> com SRO
                             </span>
                             <span class="ficha__indicador --display-flex-y-center --border-b">Total de crianças de 5-14A diagnosticadas como novo caso de Diarreia</span>
                             <span class="ficha__indicador --display-flex-y-center --border-b">
-                                Total de crianças de 5-14A diagnosticadas como novo caso de Diarreia e tratadas com SRO e<br>ZINCO
+                                Total de crianças de 5-14A diagnosticadas como novo caso de Diarreia e tratadas com SRO e<br> ZINCO
                             </span>
                             <span class="ficha__indicador --display-flex-y-center --border-b">
-                                Total de crianças de 5-14A diagnosticadas como novo caso de Diarreia e tratadas só com<br>ZINCO
+                                Total de crianças de 5-14A diagnosticadas como novo caso de Diarreia e tratadas só com<br> ZINCO
                             </span>
                             <span class="ficha__indicador --display-flex-y-center --border-b">Total de crianças de 5-14A diagnosticadas como novo caso de Diarreia e tratadas só com SRO</span>
                             <span class="ficha__indicador --display-flex-y-center --border-b">Total de crianças de 0-59 meses diagnosticadas como novo caso de Disenteria</span>
                             <span class="ficha__indicador --display-flex-y-center --border-b">
-                                Total de crianças de 0-59 meses diagnosticadas como novo caso de Disenteria e tratadas com<br>Ciprofloxacina
+                                Total de crianças de 0-59 meses diagnosticadas como novo caso de Disenteria e tratadas com<br> Ciprofloxacina
                             </span>
                             <span class="ficha__indicador --display-flex-y-center --border-b">Total de crianças 5-14A diagnosticadas como novo caso de Disenteria</span>
                             <span class="ficha__indicador --display-flex-y-center --border-b">
-                                Total de crianças 5-14A diagnosticadas como novo caso de Disenteria e tratadas com<br>Ciprofloxacina
+                                Total de crianças 5-14A diagnosticadas como novo caso de Disenteria e tratadas com<br> Ciprofloxacina
                             </span>
                             <span class="ficha__indicador --display-flex-y-center --border-b">Total de crianças de 0-59 meses diagnosticadas como novo caso de Pneumonia</span>
                             <span class="ficha__indicador --display-flex-y-center --border-b">
-                                Total de crianças de 0-59 meses diagnosticadas como novo caso de Pneumonia e tratadas<br>com Amoxicilina
+                                Total de crianças de 0-59 meses diagnosticadas como novo caso de Pneumonia e tratadas<br> com Amoxicilina
                             </span>
                             <span class="ficha__indicador --display-flex-y-center --border-b">Total de crianças 5-14A diagnosticadas como novo caso de Pneumonia</span>
                             <span class="ficha__indicador --display-flex-y-center --border-b">
-                                Total de crianças 5-14A diagnosticadas como novo caso de Pneumonia e tratadas com<br>Amoxicilina
+                                Total de crianças 5-14A diagnosticadas como novo caso de Pneumonia e tratadas com<br> Amoxicilina
                             </span>
                             <span class="ficha__indicador --display-flex-y-center --border-b">Total de crianças de 0-59 meses diagnosticadas como novo caso de outras doenças</span>
                             <span class="ficha__indicador --display-flex-y-center --border-b-thick">Total de crianças de 5-14A diagnosticadas como novo caso de outras doenças</span>
@@ -616,7 +616,7 @@
                             <span class="ficha__indicador --display-flex-y-center --border-b-thick">Total de crianças referidas para Consulta Médica/Especializada/Doença crónica</span>
                         </div>
                     </div>
-                    <div class="ficha__col-de-inputs ficha__col-de-inputs--verso ficha__col-de-inputs-pf --border-l-thick">
+                    <div class="ficha__col-de-inputs ficha__col-de-inputs--verso ficha__col-de-inputs-pf --border-l-thick" data-col="PF">
                         <input type=number min=0 data-totaleixox=l40-c1c2 data-totaleixoxoutput=l40-c3 class="--border-b">
                         <input type=number min=0 data-totaleixox=l41-c1c2 data-totaleixoxoutput=l41-c3 class="--border-b">
                         <input type=number min=0 data-totaleixox=l42-c1c2 data-totaleixoxoutput=l42-c3 class="--border-b">
@@ -652,7 +652,7 @@
                         <input type=number min=0 data-totaleixox=l72-c1c2 data-totaleixoxoutput=l72-c3 class="--border-b">
                         <input type=number min=0 data-totaleixox=l73-c1c2 data-totaleixoxoutput=l73-c3 class="--border-b-thick">
                     </div>
-                    <div class="ficha__col-de-inputs ficha__col-de-inputs--verso ficha__col-de-inputs-bm --border-l-thick">
+                    <div class="ficha__col-de-inputs ficha__col-de-inputs--verso ficha__col-de-inputs-bm --border-l-thick" data-col="BM">
                         <input type=number min=0 data-totaleixox=l40-c1c2 data-totaleixoxoutput=l40-c3 class="--border-b">
                         <input type=number min=0 data-totaleixox=l41-c1c2 data-totaleixoxoutput=l41-c3 class="--border-b">
                         <input type=number min=0 data-totaleixox=l42-c1c2 data-totaleixoxoutput=l42-c3 class="--border-b">
@@ -728,31 +728,31 @@
                 <footer class=ficha__rodape>
                     <div>
                         <label for=input-data>Data:</label>
-                        <input type=date id=input-data class="input-adicional --border-b --fw-700">
+                        <input type=date id=input-data class="input-nao-celular --border-b --fw-700">
                     </div>
                     <div>
                         <label for=input-nome>Compilado por:</label>
-                        <input id=input-nome class="input-adicional --border-b --fw-700">
+                        <input id=input-nome class="input-nao-celular --border-b --fw-700">
                     </div>
                     <div class="ficha__rodape__col-de-assinatura">
                         <label for=input-assinatura class="ficha__rodape__label-assinatura">Assinatura:</label>
-                        <input id=input-assinatura class="input-adicional --border-b --fw-700">
+                        <input id=input-assinatura class="input-nao-celular --border-b --fw-700">
                     </div>
                 </footer>
             </div>
           </div>
 
             <div class="main__container-de-campo-de-nota layout-row">
-                <textarea class="main__campo-de-nota input-adicional" id="input-comentarios" placeholder="Comentários sobre o resumo (S.O.S)..." rows=3></textarea>
+                <textarea class="main__campo-de-nota input-nao-celular" id="input-comentarios" placeholder="Comentários sobre o resumo (S.O.S)..." rows=3></textarea>
             </div>
 
             <div class="reference-container --no-print">
                 <div class="layout-row reference-row">
                     <span class="reference-row__label">Indicador:</span> 
-                    <output class="reference-row__output reference-row__output--indicador --display-flex-xy-center"></output>
+                    <output class="reference-row__output reference-row__output--indicador --display-flex-y-center"></output>
 
                     <span class="reference-row__label">Coluna:</span> 
-                    <output class="reference-row__output reference-row__output--idade --display-flex-xy-center --fw-700"></output>
+                    <output class="reference-row__output reference-row__output--coluna --display-flex-xy-center --fw-700"></output>
                 </div>
             </div>
         </main>
@@ -811,6 +811,9 @@
                         <input type=checkbox id=checkbox-mes checked data-inputadicionalid=input-mes>
                         <label for=checkbox-mes>Mês</label>
                     <li>
+                        <input type=checkbox id=checkbox-data checked data-inputadicionalid=input-data>
+                        <label for=checkbox-data>Data</label>
+                    <li>
                         <input type=checkbox id=checkbox-nome checked data-inputadicionalid=input-nome>
                         <label for=checkbox-nome>Nome</label>
                     <li>
@@ -818,9 +821,6 @@
                         <label for=checkbox-assinatura>
                             Assinatura
                         </label>
-                    <li>
-                        <input type=checkbox id=checkbox-data checked data-inputadicionalid=input-data>
-                        <label for=checkbox-data>Data</label>
                     <li>
                         <input type=checkbox id=checkbox-comentarios checked data-inputadicionalid=input-comentarios>
                         <label for=checkbox-comentarios>Comentários</label>
@@ -840,7 +840,7 @@
                 </figure>
                 
                 <p>
-                    O <b>Totalizador de Resumo Mensal de CCD</b> é um serviço online gratuito, que auxilia na elaboração, como o nome sugere, do resumo mensal de CCD, por meio do cálculo automático dos totais, com base nos dados preenchidos pelo usuário. Foi criado de acordo com o modelo da ficha de resumo mensal de CCD actualmente vigente no Serviço Nacional de Saúde em Moçambique.
+                    O <b>Totalizador de Resumo Mensal de CCD</b> é um serviço online gratuito, que auxilia na elaboração, como o nome sugere, do resumo mensal de CCD (Consulta da Criança Doente), por meio do cálculo automático dos totais, com base nos dados preenchidos pelo usuário. Foi criado de acordo com o modelo da ficha de resumo mensal de CCD actualmente vigente no Serviço Nacional de Saúde em Moçambique.
                 </p>
 
                 <h3 class="artigo__titulo artigo__titulo--nivel-2">Objectivos</h3>
@@ -891,7 +891,7 @@
 
                 <details>
                     <summary>Realçar totais</summary>
-                    <p>Adiciona um fundo cinza a todas as células dos totais. Estas têm o acesso interdito e a funcionalidade de realçá-las, permite facilmente distinguir estas de outras células. Muito útil em dispositivos móveis.</p>
+                    <p>Adiciona um fundo amarelo a todas as células dos totais. Estas têm o acesso interdito e a funcionalidade de realçá-las, permite facilmente distinguir estas de outras células. Muito útil em dispositivos móveis.</p>
                 </details>
                 <details>
                     <summary >Ir para a linha...</summary>
@@ -929,7 +929,8 @@
                             Toque na opção <mark>Salvar como PDF</mark> no cabeçalho do totalizador.
                         </li>
                         <li>
-                            Na janela seguinte, logo abaixo da opção <mark>Tamanho de papel</mark> ou <mark>Paper size</mark> (dependendo do idioma do seu navegador), toque na seta em forma de <mark>V</mark> para expandir as configurações.
+                            Na janela seguinte, se não vir a opção <mark>Guardar como PDF</mark>, toque na seta <svg style="width: 24px; height: 18px;  border-radius: 4px; background-color: #dce4f4; position: relative; bottom: -5px;">
+                                <polygon points="6,6 18,6 12,12" fill="#888888"></svg> ao lado de <mark><b>Selec. impressora</b></mark> para expandir a opção.
                         </li>
 
                         <figure class="details__moldura">
@@ -937,17 +938,11 @@
                         </figure>
                            
                         <li>
-                            No campo de <mark>Tamanho de papel</mark> ou <mark>Paper size</mark>, selecione <mark>ISO A4</mark> e no de <mark>Orientação</mark> ou <mark>Orientation</mark>, selecione <mark>Paisagem</mark> ou <mark>Landscape</mark>.
+                          De seguida, selecione a opção <mark>Guardar como PDF</mark> e por fim, toque no simbolo de disquete e escolha um destino no seu celular para salvar o resumo.
                         </li>
 
                         <figure class="details__moldura">
                             <img src="imagens/salvar-ficha-como-pdf-2.png" alt="Como salvar a ficha em PDF no celular" class="artigo__img" />
-                        </figure>
-
-                        <li>Por fim, clique no simbolo de disquete e escolha um destino no seu telemóvel para salvar o resumo.</li>
-
-                        <figure class="details__moldura">
-                            <img src="imagens/salvar-ficha-como-pdf-3.png" alt="Como salvar a ficha em PDF no celular" class="artigo__img"/>
                         </figure>
                     </ol>
                 </details>

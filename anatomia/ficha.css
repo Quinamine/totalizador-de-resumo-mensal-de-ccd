@@ -129,6 +129,11 @@
     grid-template-rows: repeat(18,24px) repeat(12,44px) repeat(8,24px) 44px
 }
 
+.ficha__col-de-nums-de-linhas span.--highlight {
+    background-color: var(--orange);
+    color: var(--yt);
+}
+
 .ficha__col-row-groups {
     display: grid;
     grid-template-columns: 50px 1fr;
@@ -199,18 +204,18 @@
     overflow: hidden;
 }
 
+
+/* VERSO DA FICHA */
+
 .ficha__body--verso {
-    display: grid;
     grid-template-columns: repeat(2,50px) calc(110px + 636px) repeat(3,50px)
 }
 
-.ficha-verso__col-de-nums-de-linhas {
-    display: grid;
+.ficha__col-de-nums-de-linhas--verso {
     grid-template-rows: repeat(4,24px) repeat(8,44px) 24px repeat(3,44px) 24px repeat(2,44px) repeat(2,24px) repeat(3,44px 24px) 44px repeat(6,24px)
 }
 
-.ficha-verso__col-de-inputs {
-    display: grid;
+.ficha__col-de-inputs--verso {
     grid-template-rows: repeat(4,24px) repeat(8,44px) 24px repeat(3,44px) 24px repeat(2,44px) repeat(2,24px) repeat(3,44px 24px) 44px repeat(6,24px)
 }
 
@@ -235,8 +240,7 @@
     padding-left: 4px;
 }
 
-.ficha-verso__col-de-indicadores {
-    display: grid;
+.ficha__col-de-indicadores--verso {
     grid-template-rows: repeat(4,24px) repeat(8,44px) 24px repeat(3,44px) 24px repeat(2,44px) repeat(2,24px) repeat(3,44px 24px) 44px repeat(2,24px)
 }
 

@@ -17,7 +17,7 @@ const menu = {
         return {
             dialogBox: document.querySelector(".dialog-box-ir-para"),
             inputNumLinha: document.querySelector(".dialog-box-ir-para__input-linha"),
-            numerosDeLinha: document.querySelectorAll(".ficha__num-de-linha"),
+            numerosDeLinha: document.querySelectorAll(".ficha__col-de-nums-de-linhas span"),
 
             abrirDialogBox() { 
                 menu.irParaLinha().dialogBox.classList.add("--open");
@@ -31,8 +31,8 @@ const menu = {
             },
 
             goToLn(numLinha) {
-                if(numLinha < 1 || numLinha > 53) {
-                    const lnNoFound = "Sem correspondência. Certifique-se de que o número digitado esteja no intervalo de 1 à 53."
+                if(numLinha < 1 || numLinha > 73) {
+                    const lnNoFound = "Sem correspondência. Certifique-se de que o número digitado esteja no intervalo de 1 à 73."
                     alertarSobre(lnNoFound);
                     this.removeLnHighlight();
 
@@ -41,8 +41,8 @@ const menu = {
 
                     this.highlightLnFound(this.numerosDeLinha[numLinha]);
 
-                    if(window.innerWidth > 1304) {
-                        numLinha -= 3;
+                    if(window.innerWidth > 998) {
+                        numLinha -= 2;
                      }
                    
                     numLinha > 3 ? 
@@ -69,7 +69,7 @@ const menu = {
         return {  
             dialogBox: document.querySelector(".dialog-box-esvaziar-ficha"),
             abrirDialogBox() { 
-                const gridInputs  = document.querySelectorAll("[data-totalgeraleixox], [readonly], .grid-extra__input");
+                const gridInputs  = document.querySelectorAll("[data-totaleixox], [readonly]");
 
                 let inputFilled = 0;
                 for(const input of gridInputs) {
@@ -93,7 +93,7 @@ const menu = {
             },
 
             confirmar() {
-                const gridInputs  = document.querySelectorAll("[data-totalgeraleixox], [readonly], .grid-extra__input");
+                const gridInputs  = document.querySelectorAll("[data-totaleixox], [readonly]");
                 const dadosAdicionais__checkboxes = document.querySelectorAll("[data-inputadicionalid]");
        
                 for (let i = 0; i < gridInputs.length; i++) {
@@ -129,6 +129,7 @@ const menu = {
 
         newFichaHeader.classList.add("ficha__header--2");
         fichaVerso.insertAdjacentElement("beforebegin", newFichaHeader),
+        resetarIdsDeInputsClonados();
         window.print()
     },
 

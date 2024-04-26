@@ -2,7 +2,7 @@
 
 const backup = {
     saveGridInputs() {
-        const gridInputs = document.querySelectorAll("[totaleixox]");
+        const gridInputs = document.querySelectorAll("[data-totaleixox]");
 
         for (let i = 0; i < gridInputs.length; i++) {
             
@@ -15,7 +15,7 @@ const backup = {
     },
     
     saveExtraInputs() {
-        const extraInputs = document.querySelectorAll(".input-adicional");
+        const extraInputs = document.querySelectorAll(".input-nao-celular");
         extraInputs.forEach( extraInput => {
             extraInput.addEventListener("input", () => localStorage.setItem(`${keyPrefix}-${extraInput.id}`, extraInput.value));
             extraInput.value = localStorage.getItem(`${keyPrefix}-${extraInput.id}`);
@@ -69,7 +69,6 @@ const totalizador = {
         return soma;
     },
 }
-
 
 function escutarEventos() {
     const gridInputs = document.querySelectorAll("[data-totaleixox]");

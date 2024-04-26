@@ -735,7 +735,7 @@ const moz = {
         distritos: ["Boane", "Magude", "Manhiça", "Marracuene", "Matola", "Matutuíne", "Moamba", "Namaacha"],
 
         boane: {
-            us: ["CS Beleluane", "CS Boane", "CS Campoane", "CS Escola prática de Formação de Sargentos", "CS Josina Machel", "CS Mabanja", "CS Mahanhane", "CS Mahubo", "CS Massaca", "CS Mulotana", "CS Picoco", "PS Águas de Maputo", "PS Casa Gaiato", "PS Matola-Rio", "PS Pequenos Libombos"],
+            us: ["CS Beleluane", "CS Boane", "CS Campoane", "CS Escola Prática de Formação de Sargentos", "CS Josina Machel", "CS Mabanja", "CS Mahanhane", "CS Mahubo", "CS Massaca", "CS Mulotana", "CS Picoco", "PS Águas de Maputo", "PS Casa Gaiato", "PS Matola-Rio", "PS Pequenos Libombos"],
             codigos: ["01100210", "01100206", "01100207", "01100217", "01100219", "01100211", "01100205", "01100208", "01100209", "01100218", "01100216", "01100215", "01100214", "01100212", "01100213"]
         },
         magude: {
@@ -743,7 +743,7 @@ const moz = {
             codigos: ["01100315", "01100312", "01100314", "01100306", "01100310", "01100311", "01100313", "01100308", "01100309"]
         },
         manhica: {
-            us: ["CS 3 de Fevereiro", "CS Calanga", "CS Chibucutso", "CS Escola Pratica do Exército de Munguine", "CS Ilha Josina", "CS Malavela", "CS Maluana", "CS Manhiça", "CS Maragra", "CS Mirona", "CS Munguine", "CS Nwamatibjana", "CS Taninga", "CS Xinavane", "HD Manhiça", "HR Xinavane", "PS Chibututuine"],
+            us: ["CS 3 de Fevereiro", "CS Calanga", "CS Chibucutso", "CS Escola Prática do Exército de Munguine", "CS Ilha Josina", "CS Malavela", "CS Maluana", "CS Manhiça", "CS Maragra", "CS Mirona", "CS Munguine", "CS Nwamatibjana", "CS Taninga", "CS Xinavane", "HD Manhiça", "HR Xinavane", "PS Chibututuine"],
 
             codigos: ["01100415", "01100410", "01100417", "01100420", "01100414", "01100408", "01100409", "01100402", "01100406", "01100416", "01100411", "01100413", "01100412", "01100419", "01100407", "01100400", "01100418"]
         },
@@ -889,9 +889,9 @@ window.addEventListener("load", () => {
     sugerirMes();
 
     const inputProv = document.getElementById("input-provincia");
-    inputProv.addEventListener("input", () => listarDistritos());
+    inputProv.addEventListener("input", listarDistritos);
     
     const inputDistrito = document.getElementById("input-distrito");
-    inputDistrito.addEventListener("input", () => listarUSs());
+    inputDistrito.addEventListener("input", listarUSs);
 });
 

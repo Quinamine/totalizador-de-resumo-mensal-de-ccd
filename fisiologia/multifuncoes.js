@@ -112,18 +112,27 @@ function clonarFichaHeaders() {
 
     fichaVerso.insertAdjacentElement("beforebegin", newFichaHeader),
     fichaVerso.insertAdjacentElement("afterbegin", newHeaderInfoDados);
+    resetarIdsDeInputsClonados();
+}
+
+function resetarIdsDeInputsClonados() {
+    const inputsClonados = document.querySelectorAll(".ficha__header--2 input");
+
+    for (const input of inputsClonados) {
+        input.id = ""
+    }
 }
 
 let btnAutoCloseLoop;
 window.addEventListener("load", () => {
     const readonlyInputs = document.querySelectorAll("[readonly]");
-    readonlyInputs.forEach ( input => input.addEventListener("click", () => {
+    readonlyInputs.forEach ( inputTarget => inputTarget.addEventListener("click", () => {
         const readonlyInputsMsg = "Os totais estão inacessíveis para assegurar que não sejam modificados.";
         alertarSobre(readonlyInputsMsg);
     }));
 
-    const gridInputs = document.querySelectorAll("[data-totalgeraleixox]");
-    gridInputs.forEach (gi => gi.addEventListener("input", () => destacarCelulasSaturadas()));
+    const gridInputs = document.querySelectorAll("[data-totaleixox]");
+    gridInputs.forEach (gi => gi.addEventListener("input", destacarCelulasSaturadas));
     destacarCelulasSaturadas();
 
     

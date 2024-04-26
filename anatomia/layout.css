@@ -25,7 +25,7 @@
     --orange: #faa032;
     --yellow: yellow;
     --brown: brown;
-    --reference-bgc: var(--black--alpha-8);
+    --reference-bgc: var(--blue--light);
 
     /* Tamanhos */
     --layout-width: 998px;
@@ -88,7 +88,11 @@
 }
 
 .--border-b {
-    border-bottom: 1px var(--border-style);
+    border-bottom: 1px solid var(--gray);
+}
+
+.input-nao-celular.--border-b {
+    border-color: var(--cor-de-borda);
 }
 
 .--border-l {
@@ -302,7 +306,7 @@
 }
 
 input[data-totalgeraleixox]:focus,
-.input-adicional:focus {
+.input-nao-celular:focus {
     border-bottom: 2px solid var(--blue);
 }
 /* Campo de Nota */
@@ -330,6 +334,7 @@ input[data-totalgeraleixox]:focus,
     width: 986px;
     padding: 5px;
     border: 1px var(--border-style);
+    height: 55px;
 }
 
 .main__campo-de-nota:focus {
@@ -447,9 +452,9 @@ input[data-totalgeraleixox]:focus,
 
 .reference-row {
     display: grid;
-    grid-template-columns: 53px 293px 43px 70px;
+    grid-template-columns: 53px 500px 45px 50px;
     align-items: center;
-    min-height: 26px;
+    min-height: 28px;
     font-size: 12px;
 }
 
@@ -459,8 +464,7 @@ input[data-totalgeraleixox]:focus,
     margin-left: 4px;
     min-height: 100%;
     color: var(--yt);
-    padding: 0 2px;
-    text-align: center;
+    padding: 2px 4px;
     max-width: 100%;
     overflow: hidden;
 }
@@ -469,9 +473,9 @@ input[data-totalgeraleixox]:focus,
     color: var(--yt);
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 675px) {
     .reference-row {
-        grid-template-columns: 230px 65px;
+        grid-template-columns: 1fr 50px;
         grid-column-gap: 3px;
     }
 
@@ -482,10 +486,6 @@ input[data-totalgeraleixox]:focus,
     .reference-row__label {
         display: none;
     }
-}
-
-.reference-row__label {
-    color: var(--yt);
 }
 
 /* Manipulacao com JS */
@@ -625,9 +625,23 @@ input[data-totalgeraleixox]:focus,
     background-color: var(--cor-de-realce);
     border-left: 3px solid var(--cor-de-link);
     font-weight: 700;
-    color: #555;
+    color: var(--gray--5);
     box-shadow: 0 4px 9px var(--gray--a);
     border-radius: 3px;
+    padding-left: 48px;
+    position: relative;
+}
+
+.artigo__p--destaque::before {
+    content: "i";
+    font-size: 16px;
+    padding: 0 10px;
+    border-radius: 50%;
+    border: 1px solid var(--purple);
+    background-color: var(--blue--light);
+    color: var(--yt);
+    position: absolute;
+    left: 12px;
 }
 
 .artigo__lista {

@@ -1,34 +1,35 @@
 "use strict"
 
 const referencia = {
-    retornarLinha(input) {
-        const linhasAfins = document.querySelectorAll(`.${input.parentElement.dataset.linhas} span`);
-        const inputParent__children = input.parentElement.children;
+    retornarIndicador(inputTarget) {
+        const inputParent__childreen = inputTarget.parentElement.children;
+        const indicadores = document.querySelectorAll(".ficha__indicador");
+        const indicadorOutput = document.querySelector(".reference-row__output--indicador");
+
 
         let inputIndex;
-        for (let i = 0; i < inputParent__children.length; i++) {
-            if(input === inputParent__children[i]) {
-                inputIndex = i;
-            }
+        for (let i in inputParent__childreen) {
+            if(inputTarget === inputParent__childreen[i]) inputIndex = i;
         }
-
-        const linhaOutput = document.querySelector(".reference-row__output--indicador");
-        linhaOutput.value = linhasAfins[inputIndex].textContent;
         
+        let eInputDoVerso = inputTarget.parentElement.matches(".ficha__col-de-inputs--verso");
+        if(inputIndex > 16 && !eInputDoVerso) inputIndex = Number(inputIndex) + 9;
+        if(eInputDoVerso) { 
+            inputIndex = Number(inputIndex) + 48;
+        }
+        let indicador = indicadores[inputIndex].textContent;
+        indicadorOutput.value = indicador;
+        if(indicadores[inputIndex].dataset.prefixo) {
+            let prefixo = indicadores[inputIndex].dataset.prefixo;
+            indicadorOutput.value = `${prefixo} ${indicador}`;
+        }
     },
 
-    retornarFaixaEtaria(input) {
-        const faixaEtariaOutput = document.querySelector(".reference-row__output--idade");
+    retornarColuna(inputTarget) {
+        const faixaEtariaOutput = document.querySelector(".reference-row__output--coluna");
 
-        let faixaEtaria = input.parentElement.dataset.faixaetaria;
-        faixaEtariaOutput.value = faixaEtaria;
-    },
-
-    retornarSexo(input) {
-        const faixaEtariaOutput = document.querySelector(".reference-row__output--sexo");
-
-        let sexo = input.parentElement.dataset.sexo;
-        faixaEtariaOutput.value = sexo;
+        let coluna = inputTarget.parentElement.dataset.col;
+        faixaEtariaOutput.value = coluna;
     },
 
     retornarVazio() {
@@ -38,12 +39,11 @@ const referencia = {
 }
 
 function events() {
-    const gridInputs = document.querySelectorAll("[data-totalgeraleixox], .grid-extra__input");
+    const gridInputs = document.querySelectorAll("[data-totaleixox]");
     gridInputs.forEach( gi => {
         gi.addEventListener("focus", () => {
-            referencia.retornarLinha(gi);
-            referencia.retornarFaixaEtaria(gi);
-            referencia.retornarSexo(gi);
+            referencia.retornarIndicador(gi);
+            referencia.retornarColuna(gi);
         });
     });
 
