@@ -29,7 +29,7 @@ function alertarSobre(msg) {
 }
 
 function destacarCelulasSaturadas() {
-    const celulas = document.querySelectorAll("[data-totalgeraleixox], [readonly]");
+    const celulas = document.querySelectorAll("[data-totaleixox], [readonly]");
 
     let celulasSaturadas = 0;
     for(const c of celulas) {
@@ -46,7 +46,7 @@ function destacarCelulasSaturadas() {
     
     if(celulasSaturadas > 0) {
         setTimeout(() => {
-            motivoDeSaturacao = document.querySelector(".details-motivo-de-red-cells");
+            motivoDeSaturacao = document.querySelector(".artigo__details-motivo-de-red-cells");
 
             menu.abrirArtigo("ajuda");
             motivoDeSaturacao.setAttribute("open", "");
@@ -56,7 +56,7 @@ function destacarCelulasSaturadas() {
 }
 
 function removerDestaqueDeRedCells() {
-    const celulas = document.querySelectorAll("[data-totalgeraleixox], [readonly]");
+    const celulas = document.querySelectorAll("[data-totaleixox], [readonly]");
 
     for (const c of celulas) c.classList.remove("celula-saturada");
 }

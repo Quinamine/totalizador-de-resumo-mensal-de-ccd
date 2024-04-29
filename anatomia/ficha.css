@@ -1,6 +1,5 @@
 ﻿.ficha {
-    max-width: var(--layout-width);
-    min-width: var(--layout-width);
+    width: var(--layout-width);
     margin: 30px auto 15px;
     font-size: 13px;
 }
@@ -131,7 +130,6 @@
 
 .ficha__col-de-nums-de-linhas span.--highlight {
     background-color: var(--orange);
-    color: var(--yt);
 }
 
 .ficha__col-row-groups {
