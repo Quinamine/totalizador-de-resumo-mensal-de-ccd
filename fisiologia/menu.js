@@ -116,7 +116,7 @@ const menu = {
 
     imprimirFicha() {
         const comentarios = document.querySelector(".main__campo-de-nota");
-        comentarios.value === "" ? comentarios.classList.add("--no-print") : comentarios.classList.remove("--no-print");
+        comentarios.value === "" ? comentarios.parentElement.classList.add("--no-print") : comentarios.classList.remove("--no-print");
 
         //Clonar HEADER DE LOCALIZACAO
         const fichaHeader2 = document.querySelector(".ficha__header--2");

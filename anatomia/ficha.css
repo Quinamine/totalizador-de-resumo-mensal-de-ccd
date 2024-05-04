@@ -108,7 +108,7 @@
     grid-template-rows: repeat(2, 1fr);
 }
 
-.header-info-dados__grid-template-col-3 {
+.header-info-dados__grid-template-cols-3 {
     display: grid;
     grid-template-columns: repeat(3,50px);
 }

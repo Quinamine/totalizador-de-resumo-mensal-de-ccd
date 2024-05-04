@@ -2,14 +2,14 @@
 
 const referencia = {
     retornarIndicador(inputTarget) {
-        const inputParent__childreen = inputTarget.parentElement.children;
+        const inputTargetAndSiblings = inputTarget.parentElement.children;
         const indicadores = document.querySelectorAll(".ficha__indicador");
         const indicadorOutput = document.querySelector(".reference-row__output--indicador");
 
 
         let inputIndex;
-        for (let i in inputParent__childreen) {
-            if(inputTarget === inputParent__childreen[i]) inputIndex = i;
+        for (let i in inputTargetAndSiblings) {
+            if(inputTarget === inputTargetAndSiblings[i]) inputIndex = i;
         }
         
         let eInputDoVerso = inputTarget.parentElement.matches(".ficha__col-de-inputs--verso");
