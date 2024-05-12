@@ -1,3 +1,5 @@
+"use strict"
+
 var keyPrefix = "trmccd";
 
 function desfoqueDoFundo(accao) {
@@ -46,7 +48,7 @@ function destacarCelulasSaturadas() {
     
     if(celulasSaturadas > 0) {
         setTimeout(() => {
-            motivoDeSaturacao = document.querySelector(".artigo__details-motivo-de-red-cells");
+            const motivoDeSaturacao =  document.querySelector(".artigo__details-motivo-de-red-cells");
 
             menu.abrirArtigo("ajuda");
             motivoDeSaturacao.setAttribute("open", "");
@@ -76,7 +78,7 @@ const aqd = {
 
 function actualizarAno() {
     const tempo = new Date();
-    anoActual = tempo.getFullYear();
+    let anoActual = tempo.getFullYear();
 
     if(anoActual < 2023) anoActual = 2023;
 
