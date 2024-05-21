@@ -2,21 +2,21 @@
 
 const backup = {
     saveGridInputs() {
-        const gridInputs = document.querySelectorAll("[data-totaleixox]");
+        const inputsCelulares = document.querySelectorAll("[data-totaleixox]");
 
-        for (let i = 0; i < gridInputs.length; i++) {
+        for (let i = 0; i < inputsCelulares.length; i++) {
             
-            gridInputs[i].addEventListener("input", () => {
-                localStorage.setItem(`${keyPrefix}-input${i}`, gridInputs[i].value);
+            inputsCelulares[i].addEventListener("input", () => {
+                localStorage.setItem(`${keyPrefix}-input${i}`, inputsCelulares[i].value);
             });
-            gridInputs[i].value = localStorage.getItem(`${keyPrefix}-input${i}`);
+            inputsCelulares[i].value = localStorage.getItem(`${keyPrefix}-input${i}`);
         }
         
     },
     
     saveExtraInputs() {
-        const extraInputs = document.querySelectorAll(".input-nao-celular");
-        extraInputs.forEach( extraInput => {
+        const inputsNaoCelulares = document.querySelectorAll(".input-nao-celular");
+        inputsNaoCelulares.forEach( extraInput => {
             extraInput.addEventListener("input", () => localStorage.setItem(`${keyPrefix}-${extraInput.id}`, extraInput.value));
             extraInput.value = localStorage.getItem(`${keyPrefix}-${extraInput.id}`);
         });
@@ -25,39 +25,47 @@ const backup = {
 
 const totalizador = {
     filtrarEtotalizarCelulas(inputTarget) {
-        inputTarget.classList.add(`${inputTarget.dataset.totaleixox}`);
+        let classNameDosOperandos = inputTarget.dataset.totaleixox;
+        inputTarget.classList.add(`${classNameDosOperandos}`);
 
-        // Subtotal eixo x
-        const totatEixox = document.querySelectorAll(`.${inputTarget.dataset.totaleixox}`);
-        const totatEixoxOutput = document.querySelector(`.${inputTarget.dataset.totaleixoxoutput}`);
-        totatEixoxOutput.value = this.somar(totatEixox);     
+        let operandos = document.querySelectorAll(`.${classNameDosOperandos}`);
+        let celulaDeSaida = document.querySelector(`.${inputTarget.dataset.totaleixoxoutput}`);
+        celulaDeSaida.value = this.somar(operandos);     
 
         if(inputTarget.dataset.totaleixoy) {
-            inputTarget.classList.add(`${inputTarget.dataset.totaleixoy}`);
-            const totalEixoy = document.querySelectorAll(`.${inputTarget.dataset.totaleixoy}`);
-            const totalEixoyOutput = document.querySelector(`.${inputTarget.dataset.totaleixoyoutput}`);
-            totalEixoyOutput.value = this.somar(totalEixoy);
+            classNameDosOperandos = inputTarget.dataset.totaleixoy;
+            inputTarget.classList.add(`${classNameDosOperandos}`);
+
+            operandos = document.querySelectorAll(`.${classNameDosOperandos}`);
+            celulaDeSaida = document.querySelector(`.${inputTarget.dataset.totaleixoyoutput}`);
+            celulaDeSaida.value = this.somar(operandos);  
         }
     
         if(inputTarget.dataset.totaldeconsultas) {
-            inputTarget.classList.add(`${inputTarget.dataset.totaldeconsultas}`);
-            const totalDeConsultas = document.querySelectorAll(`.${inputTarget.dataset.totaldeconsultas}`);
-            const totalDeConsultasOutput = document.querySelector(`.${inputTarget.dataset.totaldeconsultasoutput}`);
-            totalDeConsultasOutput.value = this.somar(totalDeConsultas);
+            classNameDosOperandos = inputTarget.dataset.totaldeconsultas;
+            inputTarget.classList.add(`${classNameDosOperandos}`);
+
+            operandos = document.querySelectorAll(`.${classNameDosOperandos}`);
+            celulaDeSaida = document.querySelector(`.${inputTarget.dataset.totaldeconsultasoutput}`);
+            celulaDeSaida.value = this.somar(operandos);
         }
     
         if(inputTarget.dataset.totaldeconsultas0a14anos) {
-            inputTarget.classList.add(`${inputTarget.dataset.totaldeconsultas0a14anos}`);
-            const totalDeConsultas0a14anos = document.querySelectorAll(`.${inputTarget.dataset.totaldeconsultas0a14anos}`);
-            const totalDeConsultas0a14anosOutput = document.querySelector(`.${inputTarget.dataset.totaldeconsultas0a14anosoutput}`);
-            totalDeConsultas0a14anosOutput.value = this.somar(totalDeConsultas0a14anos);
+            classNameDosOperandos = inputTarget.dataset.totaldeconsultas0a14anos;
+            inputTarget.classList.add(`${classNameDosOperandos}`);
+
+            operandos = document.querySelectorAll(`.${classNameDosOperandos}`);
+            celulaDeSaida = document.querySelector(`.${inputTarget.dataset.totaldeconsultas0a14anosoutput}`);
+            celulaDeSaida.value = this.somar(operandos);
         }
 
         if(inputTarget.dataset.totalgeraldeconsultas0a14anos) {
-            inputTarget.classList.add(`${inputTarget.dataset.totalgeraldeconsultas0a14anos}`);
-            const totalGeralDeConsultas0a14anos = document.querySelectorAll(`.${inputTarget.dataset.totalgeraldeconsultas0a14anos}`);
-            const totalGeralDeConsultas0a14anosOutput = document.querySelector(`.${inputTarget.dataset.totalgeraldeconsultas0a14anosoutput}`);
-            totalGeralDeConsultas0a14anosOutput.value = this.somar(totalGeralDeConsultas0a14anos);
+            classNameDosOperandos = inputTarget.dataset.totalgeraldeconsultas0a14anos;
+            inputTarget.classList.add(`${classNameDosOperandos}`);
+
+            operandos = document.querySelectorAll(`.${classNameDosOperandos}`);
+            celulaDeSaida = document.querySelector(`.${inputTarget.dataset.totalgeraldeconsultas0a14anosoutput}`);
+            celulaDeSaida.value = this.somar(operandos);
         }
     },
     
@@ -71,10 +79,10 @@ const totalizador = {
 }
 
 function escutarEventos() {
-    const gridInputs = document.querySelectorAll("[data-totaleixox]");
-    gridInputs.forEach( gi => {
-        gi.addEventListener("input", () => totalizador.filtrarEtotalizarCelulas(gi));
-        gi.value !== "" && totalizador.filtrarEtotalizarCelulas(gi);
+    const inputsCelulares = document.querySelectorAll("[data-totaleixox]");
+    inputsCelulares.forEach( inputCelular => {
+        inputCelular.addEventListener("input", () => totalizador.filtrarEtotalizarCelulas(inputCelular));
+        inputCelular.value !== "" && totalizador.filtrarEtotalizarCelulas(inputCelular);
     });
 }
 

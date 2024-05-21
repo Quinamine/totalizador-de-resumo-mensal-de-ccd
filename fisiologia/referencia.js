@@ -39,15 +39,15 @@ const referencia = {
 }
 
 function events() {
-    const gridInputs = document.querySelectorAll("[data-totaleixox]");
-    gridInputs.forEach( gi => {
-        gi.addEventListener("focus", () => {
-            referencia.retornarIndicador(gi);
-            referencia.retornarColuna(gi);
+    const inputsCelulares = document.querySelectorAll("[data-totaleixox]");
+    inputsCelulares.forEach( inputCelular => {
+        inputCelular.addEventListener("focus", () => {
+            referencia.retornarIndicador(inputCelular);
+            referencia.retornarColuna(inputCelular);
         });
     });
 
-    gridInputs.forEach( gi => gi.addEventListener("focusout", referencia.retornarVazio));
+    inputsCelulares.forEach( inputCelular => inputCelular.addEventListener("focusout", referencia.retornarVazio));
 }
 
 window.onload = events;
