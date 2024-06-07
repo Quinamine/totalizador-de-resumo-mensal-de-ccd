@@ -103,6 +103,14 @@
     font-weight: 700;
 }
 
+@media screen {
+    .header-info-dados {
+        position: sticky;
+        top: 0;
+        background-color: var(--yt);
+    }
+}
+
 .header-info-dados__col {
     display: grid;
     grid-template-rows: repeat(2, 1fr);
