@@ -25,7 +25,7 @@ O **Totalizador de Resumo Mensal de CCD** é um serviço online gratuito que aux
 
 >[!NOTE]
 >
-> A utilização do totalizador é, de facto, uma garantia de um resumo correctamente totalizado, porém, isso simplesmente não define a qualidade do resumo. Você é o único responsável pela veracidade, lógica e concordância dos dados preenchidos e, portanto, pela qualidade do resumo. O totalizador só se limita a calcular os totais baseando-se exactamente nos dados que você fornece.
+> O totalizador garante um resumo mensal correctamente totalizado, contudo, a qualidade de um resumo não se garante com apenas uma correcta totalização. Factores dependententes do usuário (Profissional de Saúde) como preenchimento correcto dos livros de registo, colheita de dados abrangente a todas as fontes primárias (livros de registo) com informação do mês ou período em alusão, entre outros, influenciam sobremaneira na qualidade de um resmo mensal.
 
 
 ## Qual é o destino dos dados que eu insiro?
