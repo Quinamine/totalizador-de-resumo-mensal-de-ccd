@@ -4,7 +4,7 @@ const referencia = {
     retornarIndicador(inputTarget) {
         const inputTargetAndSiblings = inputTarget.parentElement.children;
         const indicadores = document.querySelectorAll(".ficha__indicador");
-        const indicadorOutput = document.querySelector(".reference-row__output--indicador");
+        const indicadorOutput = document.querySelector(".reference__output--indicador");
 
 
         let inputIndex;
@@ -26,14 +26,14 @@ const referencia = {
     },
 
     retornarColuna(inputTarget) {
-        const faixaEtariaOutput = document.querySelector(".reference-row__output--coluna");
+        const faixaEtariaOutput = document.querySelector(".reference__output--coluna");
 
         let coluna = inputTarget.parentElement.dataset.col;
         faixaEtariaOutput.value = coluna;
     },
 
     retornarVazio() {
-        const outputs = document.querySelectorAll(".reference-row__output");
+        const outputs = document.querySelectorAll(".reference__output");
         for (const o of outputs) o.value = "";
     }
 }
