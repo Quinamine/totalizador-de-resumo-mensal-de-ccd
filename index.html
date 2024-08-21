@@ -22,7 +22,6 @@
         <script src="fisiologia/multifuncoes.js"></script>
         <script src="fisiologia/db.js"></script>
         <script src="fisiologia/referencia.js"></script>
-        
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-KFTJDFWWPQ"></script>
         <script>
             window.dataLayer = window.dataLayer || [];
@@ -36,34 +35,34 @@
     <body id="body" ontouchstart="">
         <header class="header --no-print">
             <div class="layout-row layout-row--of-header layout-row--no-padding">
-                <a href="index.html" id="logo">
-                    Totalizador de Resumo <span class="logo__snippet--hide-on-screen-til-359px">Mensal</span>
-                    de <abbr title="Consulta da Criança Doente" class="header__child--cursor">CCD</abbr>
-                </a>
+                <a href="index.html" id="logo">Totalizador de Resumo <span class="logo__snippet--hide-on-screen-til-359px">Mensal</span> de <abbr title="Consulta da Criança Doente" class="header__child--cursor">CCD</abbr></a>
                 <div role="navigation" class="header__menu --display-flex-y-center">
                     <ul class="header__menu__ul --display-flex-y-center">
                         <li class="header__menu__li header__menu__li--realcar-totais">
                             <input type=checkbox id="checkbox-realcar-totais" class="header__menu__checkbox --cursor-pointer">
-                            <label for="checkbox-realcar-totais" class="header__menu__label --display-flex-y-center --cursor-pointer">
-                                Realçar&nbsp;totais
-                            </label>
+                            <label for="checkbox-realcar-totais" class="header__menu__label --display-flex-y-center --cursor-pointer">Realçar&nbsp;totais</label>
+                        </li>
                         <li class="header__menu__li">
                             <button class="header__menu__btn header__menu__btn--ir-para">Ir para a linha...</button>
+                        </li>
                         <li class="header__menu__li">
                             <button class="header__menu__btn header__menu__btn--esvaziar-ficha">Esvaziar ficha</button>
+                        </li>
                         <li class="header__menu__li">
                             <button class="header__menu__btn header__menu__btn--imprimir">
                                 <span class="header__menu__item--hide-on-mobile --cursor-pointer">Imprimir</span>
                                 <span class="header__menu__item--hide-on-desktop --cursor-pointer">Salvar&nbsp;como&nbsp;PDF</span>
                             </button>
+                        </li>
                         <li class="header__menu__li header__menu__item--hide-on-mobile">
                             <button class="header__menu__btn header__menu__btn--sobre">Sobre</button>
+                        </li>
                         <li class="header__menu__li">
-                            <button class="header__menu__btn header__menu__btn--ajuda">
-                                Ajuda
-                            </button>
+                            <button class="header__menu__btn header__menu__btn--ajuda">Ajuda</button>
+                        </li>
                         <li class="header__menu__li header__menu__item--hide-on-desktop">
                             <button class="header__menu__btn header__menu__btn--partilhar">Partilhar...</button>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -247,7 +246,6 @@
                         <span class="ficha__indicador --display-flex-y-center --border-b" data-prefixo="Consultas Seguintes:">5-14 Anos</span>
                         <span class="ficha__indicador ficha__indicador--realce-gray-light --display-flex-y-center --border-b">Total de Consultas Seguintes</span>
                         <span class="ficha__indicador ficha__indicador--realce-gray-light --display-flex-y-center --border-b-thick">TOTAL DE CONSULTAS dos 0-14 anos (1ªs e Consultas Seguintes)</span>
-
                         <div class=col-de-indicadores__seccao-de-nutricao>
                             <div class=col-de-indicadores__seccao-de-nutricao__col>
                                 <span class="ficha__indicador --display-flex-y-center --border-b">Baixo peso/Idade moderado</span>
@@ -315,37 +313,21 @@
                     </div>
                     <div class="ficha__col-de-inputs ficha__col-de-inputs-pf --border-l-thick" data-col="PF">
                         <input type=number name="ficha__input" min=0 data-totaleixox=l1-c1c2 data-totaleixoxoutput=l1-c3 data-totaldeconsultas=l1l2-c1c2 data-totaldeconsultasoutput=l3-c3 data-totaleixoy=l1l2-c1 data-totaleixoyoutput=l3-c1 class="--border-b">
-
                         <input type=number min=0 data-totaleixox=l2-c1c2 data-totaleixoxoutput=l2-c3 data-totaldeconsultas=l1l2-c1c2 data-totaldeconsultasoutput=l3-c3 data-totaleixoy=l1l2-c1 data-totaleixoyoutput=l3-c1 class="--border-b">
-
                         <input type=number min=0 readonly class="l3-c1 ficha__indicador--realce-gray-light --border-b-thick">
-
                         <span class="ficha__indicador--realce-gray-dark"></span>
-
                         <input type=number min=0 data-totaleixox=l5-c1c2 data-totaleixoxoutput=l5-c3 data-totaldeconsultas=l5-a-l19-c1c2 data-totaldeconsultasoutput=l10-c3 data-totaleixoy=l5-a-l19-c1 data-totaleixoyoutput=l10-c1 data-totaldeconsultas0a14anos=l5-a-l16-c1 data-totaldeconsultas0a14anosoutput=l18-c1 data-totalGeralDeConsultas0a14anos=l5-a-l16-c1c2 data-totalGeralDeConsultas0a14anosoutput=l18-c3 class="--border-b">
-
                         <input type=number min=0 data-totaleixox=l6-c1c2 data-totaleixoxoutput=l6-c3 data-totaldeconsultas=l5-a-l19-c1c2 data-totaldeconsultasoutput=l10-c3 data-totaleixoy=l5-a-l19-c1 data-totaleixoyoutput=l10-c1 data-totaldeconsultas0a14anos=l5-a-l16-c1 data-totaldeconsultas0a14anosoutput=l18-c1 data-totalGeralDeConsultas0a14anos=l5-a-l16-c1c2 data-totalGeralDeConsultas0a14anosoutput=l18-c3 class="--border-b">
-
                         <input type=number min=0 data-totaleixox=l7-c1c2 data-totaleixoxoutput=l7-c3 data-totaldeconsultas=l5-a-l19-c1c2 data-totaldeconsultasoutput=l10-c3 data-totaleixoy=l5-a-l19-c1 data-totaleixoyoutput=l10-c1 data-totaldeconsultas0a14anos=l5-a-l16-c1 data-totaldeconsultas0a14anosoutput=l18-c1 data-totalGeralDeConsultas0a14anos=l5-a-l16-c1c2 data-totalGeralDeConsultas0a14anosoutput=l18-c3 class="--border-b">
-
                         <input type=number min=0 data-totaleixox=l8-c1c2 data-totaleixoxoutput=l8-c3 data-totaldeconsultas=l5-a-l19-c1c2 data-totaldeconsultasoutput=l10-c3 data-totaleixoy=l5-a-l19-c1 data-totaleixoyoutput=l10-c1 data-totaldeconsultas0a14anos=l5-a-l16-c1 data-totaldeconsultas0a14anosoutput=l18-c1 data-totalGeralDeConsultas0a14anos=l5-a-l16-c1c2 data-totalGeralDeConsultas0a14anosoutput=l18-c3 class="--border-b">
-
                         <input type=number min=0 data-totaleixox=l9-c1c2 data-totaleixoxoutput=l9-c3 data-totaldeconsultas=l5-a-l19-c1c2 data-totaldeconsultasoutput=l10-c3 data-totaleixoy=l5-a-l19-c1 data-totaleixoyoutput=l10-c1 data-totaldeconsultas0a14anos=l5-a-l16-c1 data-totaldeconsultas0a14anosoutput=l18-c1 data-totalGeralDeConsultas0a14anos=l5-a-l16-c1c2 data-totalGeralDeConsultas0a14anosoutput=l18-c3 class="--border-b">
-
                         <input type=number min=0 class="l10-c1 ficha__indicador--realce-gray-light --border-b-thick" readonly>
-
                         <span class=ficha__indicador--realce-gray-dark></span>
-
                         <input type=number min=0 data-totaleixox=l12-c1c2 data-totaleixoxoutput=l12-c3 data-totaldeconsultas=l12l13l14l15l16-c1c2 data-totaldeconsultasoutput=l17-c3 data-totaleixoy=l12l13l14l15l16-c1 data-totaleixoyoutput=l17-c1 data-totaldeconsultas0a14anos=l5-a-l16-c1 data-totaldeconsultas0a14anosoutput=l18-c1 data-totalGeralDeConsultas0a14anos=l5-a-l16-c1c2 data-totalGeralDeConsultas0a14anosoutput=l18-c3 class="--border-b">
-
                         <input type=number min=0 data-totaleixox=l13-c1c2 data-totaleixoxoutput=l13-c3 data-totaldeconsultas=l12l13l14l15l16-c1c2 data-totaldeconsultasoutput=l17-c3 data-totaleixoy=l12l13l14l15l16-c1 data-totaleixoyoutput=l17-c1 data-totaldeconsultas0a14anos=l5-a-l16-c1 data-totaldeconsultas0a14anosoutput=l18-c1 data-totalGeralDeConsultas0a14anos=l5-a-l16-c1c2 data-totalGeralDeConsultas0a14anosoutput=l18-c3 class="--border-b">
-
                         <input type=number min=0 data-totaleixox=l14-c1c2 data-totaleixoxoutput=l14-c3 data-totaldeconsultas=l12l13l14l15l16-c1c2 data-totaldeconsultasoutput=l17-c3 data-totaleixoy=l12l13l14l15l16-c1 data-totaleixoyoutput=l17-c1 data-totaldeconsultas0a14anos=l5-a-l16-c1 data-totaldeconsultas0a14anosoutput=l18-c1 data-totalGeralDeConsultas0a14anos=l5-a-l16-c1c2 data-totalGeralDeConsultas0a14anosoutput=l18-c3 class="--border-b">
-                        
                         <input type=number min=0 data-totaleixox=l15-c1c2 data-totaleixoxoutput=l15-c3 data-totaldeconsultas=l12l13l14l15l16-c1c2 data-totaldeconsultasoutput=l17-c3 data-totaleixoy=l12l13l14l15l16-c1 data-totaleixoyoutput=l17-c1 data-totaldeconsultas0a14anos=l5-a-l16-c1 data-totaldeconsultas0a14anosoutput=l18-c1 data-totalGeralDeConsultas0a14anos=l5-a-l16-c1c2 data-totalGeralDeConsultas0a14anosoutput=l18-c3 class="--border-b">
-
                         <input type=number min=0 data-totaleixox=l16-c1c2 data-totaleixoxoutput=l16-c3 data-totaldeconsultas=l12l13l14l15l16-c1c2 data-totaldeconsultasoutput=l17-c3 data-totaleixoy=l12l13l14l15l16-c1 data-totaleixoyoutput=l17-c1 data-totaldeconsultas0a14anos=l5-a-l16-c1 data-totaldeconsultas0a14anosoutput=l18-c1 data-totalGeralDeConsultas0a14anos=l5-a-l16-c1c2 data-totalGeralDeConsultas0a14anosoutput=l18-c3 class="--border-b">
-
                         <input type=number min=0 readonly class="l17-c1 ficha__indicador--realce-gray-light --border-b">
                         <input type=number min=0 readonly class="l18-c1 ficha__indicador--realce-gray-light --border-b-thick">
                         <input type=number min=0 data-totaleixox=l19-c1c2 data-totaleixoxoutput=l19-c3 class="--border-b">
@@ -372,37 +354,22 @@
                     </div>
                     <div class="ficha__col-de-inputs ficha__col-de-inputs-bm --border-l-thick" data-col="BM">
                         <input type=number min=0 data-totaleixox=l1-c1c2 data-totaleixoxoutput=l1-c3 data-totaldeconsultas=l1l2-c1c2 data-totaldeconsultasoutput=l3-c3 data-totaleixoy=l1l2-c2 data-totaleixoyoutput=l3-c2 class="--border-b">
-
                         <input type=number min=0 data-totaleixox=l2-c1c2 data-totaleixoxoutput=l2-c3 data-totaldeconsultas=l1l2-c1c2 data-totaldeconsultasoutput=l3-c3 data-totaleixoy=l1l2-c2 data-totaleixoyoutput=l3-c2 class="--border-b">
-
                         <input type=number min=0 readonly class="l3-c2 ficha__indicador--realce-gray-light --border-b-thick">
-
                         <span class=ficha__indicador--realce-gray-dark></span>
-
                         <input type=number min=0 data-totaleixox=l5-c1c2 data-totaleixoxoutput=l5-c3 data-totaldeconsultas=l5-a-l19-c1c2 data-totaldeconsultasoutput=l10-c3 data-totaleixoy=l5-a-l19-c2 data-totaleixoyoutput=l10-c2 data-totaldeconsultas0a14anos=l5-a-l16-c2 data-totaldeconsultas0a14anosoutput=l18-c2 data-totalGeralDeConsultas0a14anos=l5-a-l16-c1c2 data-totalGeralDeConsultas0a14anosoutput=l18-c3 class="--border-b">
-
                         <input type=number min=0 data-totaleixox=l6-c1c2 data-totaleixoxoutput=l6-c3 
                         data-totaldeconsultas=l5-a-l19-c1c2 data-totaldeconsultasoutput=l10-c3 data-totaleixoy=l5-a-l19-c2 data-totaleixoyoutput=l10-c2 data-totaldeconsultas0a14anos=l5-a-l16-c2 data-totaldeconsultas0a14anosoutput=l18-c2 data-totalGeralDeConsultas0a14anos=l5-a-l16-c1c2 data-totalGeralDeConsultas0a14anosoutput=l18-c3 class="--border-b">
-
                         <input type=number min=0 data-totaleixox=l7-c1c2 data-totaleixoxoutput=l7-c3 data-totaldeconsultas=l5-a-l19-c1c2 data-totaldeconsultasoutput=l10-c3 data-totaleixoy=l5-a-l19-c2 data-totaleixoyoutput=l10-c2 data-totaldeconsultas0a14anos=l5-a-l16-c2 data-totaldeconsultas0a14anosoutput=l18-c2 data-totalGeralDeConsultas0a14anos=l5-a-l16-c1c2 data-totalGeralDeConsultas0a14anosoutput=l18-c3 class="--border-b">
-
                         <input type=number min=0 data-totaleixox=l8-c1c2 data-totaleixoxoutput=l8-c3 data-totaldeconsultas=l5-a-l19-c1c2 data-totaldeconsultasoutput=l10-c3 data-totaleixoy=l5-a-l19-c2 data-totaleixoyoutput=l10-c2 data-totaldeconsultas0a14anos=l5-a-l16-c2 data-totaldeconsultas0a14anosoutput=l18-c2 data-totalGeralDeConsultas0a14anos=l5-a-l16-c1c2 data-totalGeralDeConsultas0a14anosoutput=l18-c3 class="--border-b">
-
                         <input type=number min=0 data-totaleixox=l9-c1c2 data-totaleixoxoutput=l9-c3 data-totaldeconsultas=l5-a-l19-c1c2 data-totaldeconsultasoutput=l10-c3 data-totaleixoy=l5-a-l19-c2 data-totaleixoyoutput=l10-c2 data-totaldeconsultas0a14anos=l5-a-l16-c2 data-totaldeconsultas0a14anosoutput=l18-c2 data-totalGeralDeConsultas0a14anos=l5-a-l16-c1c2 data-totalGeralDeConsultas0a14anosoutput=l18-c3 class="--border-b">
                         <input type=number min=0 class="l10-c2 ficha__indicador--realce-gray-light --border-b-thick" readonly>
-
                         <span class=ficha__indicador--realce-gray-dark></span>
-
                         <input type=number min=0 data-totaleixox=l12-c1c2 data-totaleixoxoutput=l12-c3 data-totaldeconsultas=l12l13l14l15l16-c1c2 data-totaldeconsultasoutput=l17-c3 data-totaleixoy=l12l13l14l15l16-c2 data-totaleixoyoutput=l17-c2 data-totaldeconsultas0a14anos=l5-a-l16-c2 data-totaldeconsultas0a14anosoutput=l18-c2 data-totalGeralDeConsultas0a14anos=l5-a-l16-c1c2 data-totalGeralDeConsultas0a14anosoutput=l18-c3 class="--border-b">
-
                         <input type=number min=0 data-totaleixox=l13-c1c2 data-totaleixoxoutput=l13-c3 data-totaldeconsultas=l12l13l14l15l16-c1c2 data-totaldeconsultasoutput=l17-c3 data-totaleixoy=l12l13l14l15l16-c2 data-totaleixoyoutput=l17-c2 data-totaldeconsultas0a14anos=l5-a-l16-c2 data-totaldeconsultas0a14anosoutput=l18-c2 data-totalGeralDeConsultas0a14anos=l5-a-l16-c1c2 data-totalGeralDeConsultas0a14anosoutput=l18-c3 class="--border-b">
-
                         <input type=number min=0 data-totaleixox=l14-c1c2 data-totaleixoxoutput=l14-c3 data-totaldeconsultas=l12l13l14l15l16-c1c2 data-totaldeconsultasoutput=l17-c3 data-totaleixoy=l12l13l14l15l16-c2 data-totaleixoyoutput=l17-c2 data-totaldeconsultas0a14anos=l5-a-l16-c2 data-totaldeconsultas0a14anosoutput=l18-c2 data-totalGeralDeConsultas0a14anos=l5-a-l16-c1c2 data-totalGeralDeConsultas0a14anosoutput=l18-c3 class="--border-b">
-
                         <input type=number min=0 data-totaleixox=l15-c1c2 data-totaleixoxoutput=l15-c3 data-totaldeconsultas=l12l13l14l15l16-c1c2 data-totaldeconsultasoutput=l17-c3 data-totaleixoy=l12l13l14l15l16-c2 data-totaleixoyoutput=l17-c2 data-totaldeconsultas0a14anos=l5-a-l16-c2 data-totaldeconsultas0a14anosoutput=l18-c2 data-totalGeralDeConsultas0a14anos=l5-a-l16-c1c2 data-totalGeralDeConsultas0a14anosoutput=l18-c3 class="--border-b">
-
                         <input type=number min=0 data-totaleixox=l16-c1c2 data-totaleixoxoutput=l16-c3 data-totaldeconsultas=l12l13l14l15l16-c1c2 data-totaldeconsultasoutput=l17-c3 data-totaleixoy=l12l13l14l15l16-c2 data-totaleixoyoutput=l17-c2 data-totaldeconsultas0a14anos=l5-a-l16-c2 data-totaldeconsultas0a14anosoutput=l18-c2 data-totalGeralDeConsultas0a14anos=l5-a-l16-c1c2 data-totalGeralDeConsultas0a14anosoutput=l18-c3 class="--border-b">
-
                         <input type="number" min="0" readonly class="l17-c2 ficha__indicador--realce-gray-light --border-b">
                         <input type=number min=0 readonly class="l18-c2 ficha__indicador--realce-gray-light --border-b-thick">
                         <input type=number min=0 data-totaleixox=l19-c1c2 data-totaleixoxoutput=l19-c3 class="--border-b">
@@ -470,7 +437,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="ficha-verso">
                 <div class="ficha__body ficha__body--verso --border-r-thick">
                     <div class="ficha__col-de-nums-de-linhas ficha__col-de-nums-de-linhas--verso --border-l-thick">
@@ -741,50 +707,40 @@
                 </footer>
             </div>
           </div>
-
             <div class="layout-row layout-row--report-comments layout-row--no-padding">
                 <textarea class="main__campo-de-comentarios input-nao-celular" id="input-comentarios" placeholder="Comentários sobre o resumo (se necessário)." rows=3></textarea>
             </div>
-
             <div class="reference --no-print">
                 <div class="layout-row layout-row--of-reference">
                     <span class="reference__label">Indicador:</span> 
                     <output class="reference__output reference__output--indicador --display-flex-y-center"></output>
-
                     <span class="reference__label">Coluna:</span> 
                     <output class="reference__output reference__output--coluna --display-flex-xy-center --fw-700"></output>
                 </div>
             </div>
         </main>
-        
         <section class="dialog-boxes --no-print">
             <div class="dialog-box-default dialog-box-default--sobre-aqd">
                 <h3 class="dialog-box-default__title">Totalizador de Resumo Mensal de <abbr title="Consulta da Criança Doente">CCD</abbr></h3>
-                <p class="dialog-box-default__p">
-                    O totalizador garante um resumo mensal correctamente totalizado, contudo, a qualidade de um resumo não se garante com apenas uma correcta totalização. Factores dependententes do usuário (Profissional de Saúde) como preenchimento correcto dos livros de registo, colheita de dados abrangente a todas as fontes primárias (livros de registo) com informação do mês ou período em alusão, entre outros, influenciam sobremaneira na qualidade de um resumo mensal.
-                </p>
+                <p class="dialog-box-default__p">O totalizador garante um resumo mensal correctamente totalizado, contudo, a qualidade de um resumo não se garante com apenas uma correcta totalização. Factores dependententes do usuário (Profissional de Saúde) como preenchimento correcto dos livros de registo, colheita de dados abrangente a todas as fontes primárias (livros de registo) com informação do mês ou período em alusão, entre outros, influenciam sobremaneira na qualidade de um resumo mensal.</p>
                 <div class="dialog-box-default__btn-container">
                     <button class="dialog-box-default__btn dialog-box-default__btn--aqd">Entendi</button>
                 </div>
             </div>
-
             <div class="dialog-box-default dialog-box-default--small">
                 <h3 class="dialog-box-default__title">Totalizador de Resumo Mensal de <abbr title="Consulta da Criança Doente">CCD</abbr></h3>
-                <p class="dialog-box-default__p dialog-box-default__p--js-console --display-flex-y-center">
-                    
-                </p>
+                <p class="dialog-box-default__p dialog-box-default__p--js-console --display-flex-y-center"></p>
                 <div class="dialog-box-default__btn-container">
                     <button class=dialog-box-default__btn>Fechar <span class="dialog-box-default__output-autoclose-loop"></span></button>
                 </div>
             </div>
-
             <div class="dialog-box-ir-para --display-flex-y-center">
                 <input type=number min=1 class=dialog-box-ir-para__input-linha max=73 placeholder="Ir para a linha (número da linha)">
                 <button class="dialog-box-ir-para__btn dialog-box-ir-para__btn--fechar" title=Fechar>&times;</button>
             </div>
             <div class="dialog-box-esvaziar-ficha">
                 <h3 class="dialog-box-esvaziar-ficha__titulo --fw-700">Esvaziar ficha</h3>
-                <p class="dialog-box-esvaziar-ficha__p--first">Tem certeza de que deseja esvaziar a ficha?
+                <p class="dialog-box-esvaziar-ficha__p--first">Tem certeza de que deseja esvaziar a ficha?</p>
                 <div class=dialog-box-esvaziar-ficha__svg-container>
                     <svg style=width:40px;height:40px>
                         <linearGradient id=meuGradiente x1=0% x2=0% y1=0% y2=100%>
@@ -794,36 +750,42 @@
                         <polygon fill=url(#meuGradiente) points="20,0 40,40, 0,40" stroke=#333 stroke-width=1></polygon>
                         <text style=font-weight:700;font-size:28px x=15.335 y=35.5>!</text>
                     </svg>
-                    <p class="dialog-box-esvaziar-ficha__p--last">Esta acção não pode ser desfeita.
+                    <p class="dialog-box-esvaziar-ficha__p--last">Esta acção não pode ser desfeita.</p>
                 </div>
                 <h4 class="dialog-box-esvaziar-ficha__titulo --fw-700">Incluindo:</h4>
                 <ul class=dialog-box-esvaziar-ficha__ul-dados-adicionais>
                     <li>
                         <input type=checkbox checked id="checkbox-prov" data-for=input-provincia>
                         <label for=checkbox-prov>Província</label>
+                    </li>
                     <li>
                         <input type=checkbox checked id="checkbox-distrito" data-for=input-distrito>
                         <label for=checkbox-distrito>Distrito</label>
+                    </li>
                     <li>
                         <input type=checkbox checked id="checkbox-us" data-for=input-us>
                         <label for=checkbox-us>US</label>
+                    </li>
                     <li>
                         <input type=checkbox id=checkbox-mes checked data-for=input-mes>
                         <label for=checkbox-mes>Mês</label>
+                    </li>
                     <li>
                         <input type=checkbox id=checkbox-data checked data-for=input-data>
                         <label for=checkbox-data>Data</label>
+                    </li>
                     <li>
                         <input type=checkbox id=checkbox-nome checked data-for=input-nome>
                         <label for=checkbox-nome>Nome</label>
+                    </li>
                     <li>
                         <input type=checkbox id=checkbox-assinatura checked data-for=input-assinatura>
-                        <label for=checkbox-assinatura>
-                            Assinatura
-                        </label>
+                        <label for=checkbox-assinatura>Assinatura</label>
+                    </li>
                     <li>
                         <input type=checkbox id=checkbox-comentarios checked data-for=input-comentarios>
                         <label for=checkbox-comentarios>Comentários</label>
+                    </li>
                 </ul>
                 <div class=dialog-box-esvaziar-ficha__btns-container>
                     <button class="dialog-box-esvaziar-ficha__btn dialog-box-esvaziar-ficha__btn--cancelar">Cancelar</button>
@@ -838,35 +800,23 @@
                 <figure>
                     <img alt="Totalizador de Resumo Mensal de CCD" src=imagens/totalizador-de-resumo-mensal-de-ccd.png class="artigo__img artigo__img--center">
                 </figure>
-                
-                <p>
-                    O <strong>Totalizador de Resumo Mensal de <abbr title="Consulta da Criança Doente">CCD</abbr></strong> é um serviço online gratuito que auxilia na elaboração, como o nome sugere, do resumo mensal de CCD (Consulta da Criança Doente), por meio do cálculo automático dos totais com base nos dados preenchidos pelo usuário. Foi criado de acordo com o modelo da ficha de resumo mensal de <abbr title="Consulta da Criança Doente">CCD</abbr> actualmente vigente no Serviço Nacional de Saúde em Moçambique.
-                </p>
-
+                <p>O <strong>Totalizador de Resumo Mensal de <abbr title="Consulta da Criança Doente">CCD</abbr></strong> é um serviço online gratuito que auxilia na elaboração, como o nome sugere, do resumo mensal de CCD (Consulta da Criança Doente), por meio do cálculo automático dos totais com base nos dados preenchidos pelo usuário. Foi criado de acordo com o modelo da ficha de resumo mensal de <abbr title="Consulta da Criança Doente">CCD</abbr> actualmente vigente no Serviço Nacional de Saúde em Moçambique.</p>
                 <h3 class="artigo__titulo artigo__titulo--nivel-2">Objectivos</h3>
-
                 <ul class="artigo__lista artigo__lista--ul">
                     <li>Auxiliar os Profissionais de Saúde na totalização do resumo mensal de <abbr title="Consulta da Criança Doente">CCD</abbr> com exatidão e prontidão;</li>
                     <li>Minimizar possíveis erros de totalização (por exemplo, somar involuntariamente células não correspondentes ou registar o total da linha A, na linha B);</li>
                     <li >Expandir o acesso à ficha de resumo mensal de <abbr title="Consulta da Criança Doente">CCD</abbr>.</li>
                 </ul>
-
                 <h3 class="artigo__titulo artigo__titulo--nivel-2 ">O que eu preciso dispor para, e como utilizar o totalizador?</h3>
-
                 <ul class="artigo__lista artigo__lista--ul">
                     <li>Um celular ou computador com acesso à internet;</li>
                     <li>Ter colhido os dados de todos os indicadores da ficha nas fontes primárias (livro(s) de registo) da sua Unidade Sanitária;</li>
                     <li>E por fim, preencher os dados nas células correspondentes em função das variáveis (indicador, sexo e faixa etária) e consequentemente os respectivos totais são, em tempo real, correcta e automaticamente calculados.</li>
                 </ul>
-
                 <p class="artigo__p--destaque">O totalizador garante um resumo mensal correctamente totalizado, contudo, a qualidade de um resumo não se garante com apenas uma correcta totalização. Factores dependententes do usuário (Profissional de Saúde) como preenchimento correcto dos livros de registo, colheita de dados abrangente a todas as fontes primárias (livros de registo) com informação do mês ou período em alusão, entre outros, influenciam sobremaneira na qualidade de um resumo mensal.</p>
-
                 <h3 class="artigo__titulo artigo__titulo--nivel-2">Qual é o destino dos dados que eu insiro?</h3>
-
                 <p>São guardados no seu celular ou computador, por meio de um recurso chamado <a href="https://developer.mozilla.org/pt-BR/docs/Web/API/Web_Storage_API" target="_blank">Web Storage</a> e você tem total controle sobre os dados, podendo mantê-los ou apagá-los por meio da opção "<b>Esvaziar ficha</b>" no menu do totalizador ou excluindo os dados de navegação (histórico) do navegador.</p>
-
                 <h3 class="artigo__titulo artigo__titulo--nivel-2">Vantagens do totalizador</h3>
-
                 <ul class="artigo__lista artigo__lista--ul">
                     <li>Calcula automaticamente os totais;</li>
                     <li>Preenche automaticamente as células correspondentes aos totais;</li>
@@ -875,18 +825,14 @@
                     <li>Pode ser impresso, inclusíve como uma simples ficha de resumo mensal;</li>
                     <li >Pode ser guardado como PDF.</li>
                 </ul>
-
-                <h3 class="artigo__titulo artigo__titulo--nivel-2">Limitações do totalizador</h3>
-                    
+                <h3 class="artigo__titulo artigo__titulo--nivel-2">Limitações do totalizador</h3>  
                 <ul class="artigo__lista artigo__lista--ul">
                     <li>Não alerta sobre discrepância de dados, portanto, a análise da concordância dos dados é inteiramente dependente do usuário.</li>
                 </ul>
                 <button class="artigo__btn-x artigo__btn-x--fechar-sobre" title="Fechar">&times;</button>
             </article>
-
             <article class="artigo artigo--ajuda layout-row layout-row--no-padding">
                 <h2 class="artigo__titulo artigo__titulo--nivel-1 artigo__titulo--ajuda-e-procedimentos">Ajuda e Procedimentos</h2>
-
                 <details class="artigo__details">
                     <summary class="details__summary">Realçar totais</summary>
                     <p>Adiciona cor de fundo amarela às células dos totais. Essas têm o acesso interdito e a funcionalidade de realçá-las, permite distinguí-las facilmente das outras células. Muito útil em celulares.</p>
@@ -901,7 +847,6 @@
                     <p>Comando para limpar parcial ou totalmente a ficha após confirmação da acção na caixa de diálogo subsequente.</p>
                     <figure class="details__moldura details__moldura--margin-l">
                         <img src="imagens/caixa-de-dialogo-para-esvaziamento-da-ficha.png" alt="Caixa de diálogo para esvaziamento da ficha" class="artigo__img"/>
-
                         <figcaption class="details__moldura__legenda"><b>Legenda:</b> Caixa de diálogo para esvaziamento da ficha. Neste caso, os campos de <b>Província, Distrito e US</b> seriam preservados (por ter suas checkboxes desmarcadas). Todos os outros cujas "checkboxes" estão marcadas seriam esvaziados.</figcaption>
                     </figure>
 
@@ -910,32 +855,18 @@
                     <summary class="details__summary">Salvar ficha como PDF</summary>
                     <h3 class="artigo__titulo artigo__titulo--nivel-2 artigo__titulo--cor-discreta">No computador:</h3>
                     <ol class="artigo__lista artigo__lista--ol">
-                        <li>
-                            Clique na opção <mark class="details__mark">Imprimir</mark> no menu do totalizador.
-                        <li>
-                            Na janela que abrirá, no campo de <mark class="details__mark">Impressora</mark> ou <mark class="details__mark">Destino</mark>
-                            selecione a opção <mark class="details__mark">Salvar&nbsp;como&nbsp;PDF</mark>.
-                        <li >
-                            Por fim, clique em <mark class="details__mark">Salvar</mark> e escolha um destino no seu computador.
+                        <li> Clique na opção <mark class="details__mark">Imprimir</mark> no menu do totalizador.</li>
+                        <li>Na janela que abrirá, no campo de <mark class="details__mark">Impressora</mark> ou <mark class="details__mark">Destino</mark>, selecione a opção <mark class="details__mark">Salvar&nbsp;como&nbsp;PDF</mark>.</li>
+                        <li>Por fim, clique em <mark class="details__mark">Salvar</mark> e escolha um destino no seu computador.</li>
                     </ol>
-
                     <h3 class="artigo__titulo artigo__titulo--nivel-2 artigo__titulo--cor-discreta">No celular / tablet:</h3>
                     <ol class="artigo__lista artigo__lista--ol">
-                        <li>
-                            Toque na opção <mark class="details__mark">Salvar como PDF</mark> no cabeçalho do totalizador.
-                        </li>
-                        <li>
-                            Na janela seguinte, se não vir a opção <mark class="details__mark">Guardar como PDF</mark>, toque em<mark class="details__mark"><b>Selec. impressora</b></mark>.
-                        </li>
-
+                        <li>Toque na opção <mark class="details__mark">Salvar como PDF</mark> no cabeçalho do totalizador.</li>
+                        <li>Na janela seguinte, se não vir a opção <mark class="details__mark">Guardar como PDF</mark>, toque em<mark class="details__mark"><b>Selec. impressora</b></mark>.</li>
                         <figure class="details__moldura">
                             <img src="imagens/salvar-ficha-como-pdf-1.png" alt="Como salvar a ficha em PDF no celular" class="artigo__img" />
-                        </figure>
-                           
-                        <li>
-                          De seguida, selecione ou mantenha a opção <mark class="details__mark">Guardar como PDF</mark> e por fim, toque no simbolo em forma de disquete e escolha um destino no seu celular para salvar o resumo.
-                        </li>
-
+                        </figure>                         
+                        <li>De seguida, selecione ou mantenha a opção <mark class="details__mark">Guardar como PDF</mark> e por fim, toque no simbolo em forma de disquete e escolha um destino no seu celular para salvar o resumo.</li>
                         <figure class="details__moldura">
                             <img src="imagens/salvar-ficha-como-pdf-2.png" alt="Como salvar a ficha em PDF no celular" class="artigo__img" />
                         </figure>
@@ -944,12 +875,9 @@
                 <details class="artigo__details artigo__details--border-b artigo__details--motivo-de-celulas-vermelhas">
                     <summary class="details__summary">Algumas células mudaram de cor de fundo para vermelho</summary>
                     <p>As células do totalizador têm um tamanho para conter visivelmente 7 algarismos no máximo, isto é, mostram valores até <span class="number-format">9999999</span>. Quando uma célula recebe um número com mais de 7 algarismos, dá um alerta ficando vermelha e abrindo esta mensagem de texto para alertá-lo sobre a omissão dos algarismos e o real motivo.</p>
-
                     <p class="artigo__p--destaque">Para um país como Moçambique, onde o número de habitantes é de pouco mais de 30 milhões (<a href="https://energypedia.info/wiki/Moçambique:_Informação_sobre_o_País" target="_blank">dados demográficos de 2019</a>), podemos presumir que nenhuma Unidade Sanitária actualmente tem um número mensal de dados de algum indicador, de qualquer que seja a sua natureza, acima de <span class="number-format">9999999</span>.</p>
                 </details>
-
                 <p class="artigo-ajuda__p--contactar-suporte">Se os tópicos acima não cobrem a sua dúvida. Pode ainda solicitar suporte por <a href="mailto:quinamine.aderitofelix@gmail.com?subject=Totalizador%20de%20Resumo%20Mensal%20de%20CCD">Email</a> ou <a href="https://wa.me/258846709901/?text=Olá%2C+Quinamine!+Sobre+o+*totalizador+de+resumo+mensal+de+CCD*%2C+tenho+a+seguinte+dúvida%3A%20">WhatsApp</a>.</p>
-
                 <button class="artigo__btn-x artigo__btn-x--fechar-ajuda" title="Fechar">&times;</button>
             </article>
         </section>
@@ -958,48 +886,20 @@
                 <nav class=footer__nav>
                     <h4 class="footer__nav__title">Hiperligações para outros serviços afins</h4>
                     <ul>
-                        <li>
-                            <a href=https://quinamine.github.io/totalizador-de-resumo-mensal-de-tuberculose/index.html target=_blank class="footer__nav__link">Totalizador de Resumo Mensal de Tuberculose</a>
-                        </li>
-                        <li>
-                            <a href=https://quinamine.github.io/totalizador-de-mapa-resumo-mensal-de-caixa/index.html target=_blank class="footer__nav__link">Totalizador de Mapa Resumo Mensal de Caixa</a>
-                        </li>
-                        <li>
-                            <a href=https://quinamine.github.io/totalizador-de-resumo-trimestral-de-apss-e-pp/index.html target=_blank class="footer__nav__link">Totalizador de Resumo Trimestral de APSS/PP</a>
-                        </li>
-                        <li>
-                            <a href=https://quinamine.github.io/totalizador-de-resumo-mensal-de-consultas/index.html target=_blank class="footer__nav__link">Totalizador de Resumo Mensal de Consultas</a>
-                        </li>
-                        <li>
-                            <a href=https://quinamine.github.io/totalizador-de-resumo-mensal-de-hiv-e-sida/index.html target=_blank class="footer__nav__link">Totalizador de Resumo Mensal de HIV/SIDA</a>
-                        </li>
-                        <li>
-                            <a href=https://quinamine.github.io/totalizador-de-resumo-mensal-de-malaria/index.html target=_blank class="footer__nav__link">Totalizador de Resumo Mensal de Malária</a>
-                        </li>
-                        <li>
-                            <a href=https://quinamine.github.io/totalizador-de-resumo-mensal-de-prn-ii/index.html target=_blank class="footer__nav__link">Totalizador de Resumo Mensal de PRN II</a>
-                        </li>
-                        <li>
-                            <a href=https://quinamine.github.io/totalizador-de-resumo-mensal-de-prn-i/index.html target=_blank class="footer__nav__link">Totalizador de Resumo Mensal de PRN I</a>
-                        </li>
-                        <li>
-                            <a href=https://quinamine.github.io/totalizador-de-resumo-mensal-de-saaj/index.html target=_blank class="footer__nav__link">Totalizador de Resumo Mensal de SAAJ</a>
-                        </li>
-                        <li>
-                            <a href=https://quinamine.github.io/totalizador-de-resumo-mensal-de-ats/index.html target=_blank class="footer__nav__link">Totalizador de Resumo Mensal de ATS</a>
-                        </li>
-                        <li>
-                            <a href=https://quinamine.github.io/calculadora-de-doses-pediatricas/index.html target=_blank class="footer__nav__link">Calculadora de Doses Pediátricas</a>
-                        </li>
-                        <li>
-                            <a href=https://quinamine.github.io/requisicao-balancete/index.html target=_blank class="footer__nav__link">Requisição/Balancete</a>
-                        </li>
-                        <li>
-                            <a href=https://quinamine.github.io/tarv-pediatrico/index.html target=_blank class="footer__nav__link">Tarv Pediátrico</a>
-                        </li>
-                        <li>
-                            <a href=https://quinamine.github.io/tat-pediatrico/index.html target=_blank class="footer__nav__link">TAT Pediátrico</a>
-                        </li>
+                        <li><a href=https://quinamine.github.io/totalizador-de-resumo-mensal-de-tuberculose/index.html target=_blank class="footer__nav__link">Totalizador de Resumo Mensal de Tuberculose</a></li>
+						<li><a href=https://quinamine.github.io/totalizador-de-mapa-resumo-mensal-de-caixa/index.html target=_blank class="footer__nav__link">Totalizador de Mapa Resumo Mensal de Caixa</a></li>
+                        <li><a href=https://quinamine.github.io/totalizador-de-resumo-trimestral-de-apss-e-pp/index.html target=_blank class="footer__nav__link">Totalizador de Resumo Trimestral de APSS/PP</a></li>
+                        <li><a href=https://quinamine.github.io/totalizador-de-resumo-mensal-de-consultas/index.html target=_blank class="footer__nav__link">Totalizador de Resumo Mensal de Consultas</a></li>
+                        <li><a href=https://quinamine.github.io/totalizador-de-resumo-mensal-de-hiv-e-sida/index.html target=_blank class="footer__nav__link">Totalizador de Resumo Mensal de HIV/SIDA</a></li>
+                        <li><a href=https://quinamine.github.io/totalizador-de-resumo-mensal-de-malaria/index.html target=_blank class="footer__nav__link">Totalizador de Resumo Mensal de Malária</a></li>
+                        <li><a href=https://quinamine.github.io/totalizador-de-resumo-mensal-de-prn-ii/index.html target=_blank class="footer__nav__link">Totalizador de Resumo Mensal de PRN II</a></li>
+                        <li><a href=https://quinamine.github.io/totalizador-de-resumo-mensal-de-prn-i/index.html target=_blank class="footer__nav__link">Totalizador de Resumo Mensal de PRN I</a></li>
+                        <li><a href=https://quinamine.github.io/totalizador-de-resumo-mensal-de-saaj/index.html target=_blank class="footer__nav__link">Totalizador de Resumo Mensal de SAAJ</a></li>
+                        <li><a href=https://quinamine.github.io/totalizador-de-resumo-mensal-de-ats/index.html target=_blank class="footer__nav__link">Totalizador de Resumo Mensal de ATS</a></li>
+                        <li><a href=https://quinamine.github.io/calculadora-de-doses-pediatricas/index.html target=_blank class="footer__nav__link">Calculadora de Doses Pediátricas</a></li>
+                        <li><a href=https://quinamine.github.io/requisicao-balancete/index.html target=_blank class="footer__nav__link">Requisição/Balancete</a></li>
+                        <li><a href=https://quinamine.github.io/tarv-pediatrico/index.html target=_blank class="footer__nav__link">Tarv Pediátrico</a></li>
+                        <li><a href=https://quinamine.github.io/tat-pediatrico/index.html target=_blank class="footer__nav__link">TAT Pediátrico</a></li>
                     </ul>
                 </nav>
                 <p class="footer__p footer__p--created-by">
