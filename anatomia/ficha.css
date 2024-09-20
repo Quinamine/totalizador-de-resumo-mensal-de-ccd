@@ -93,6 +93,9 @@
         background-color: var(--yt);
         z-index: 99;
     }
+    .body-com-topo-propaganda .header-info-dados {
+        top: 36px;
+    }
 }
 .header-info-dados__col {
     display: grid;
