@@ -206,10 +206,10 @@ function eventos() {
     // PARTILHAR 
     const data = {
         title: "Totalizador de Resumo Mensal de CCD",
-        text: "Totaliza automaticamente o resumo mensal de Consulta da Criança Doente com base nos dados inseridos pelo usuário. Foi desenvolvido de acordo com o modelo da respectiva ficha de resumo mensal actualmente vigente no Serviço Nacional de Saúde em Moçambique.",
+        text: "Totaliza automaticamente o resumo mensal de Consulta da Criança Doente com base nos valores dos indicadores inseridos pelo usuário. Foi desenvolvido de acordo com o modelo da respectiva ficha de resumo mensal actualmente vigente no Serviço Nacional de Saúde em Moçambique.",
         url: "https://quinamine.github.io/totalizador-de-resumo-mensal-de-ccd/index.html"
     }
-    const btnPartilhar = document.querySelector(".header__menu__btn--partilhar");
+    const btnPartilhar = document.querySelector(".main__btn-fixed--share");
     btnPartilhar.addEventListener("click", () => {
         try {
             navigator.share(data).then(()=>console.log("Totalizador partilhado com sucesso."))
