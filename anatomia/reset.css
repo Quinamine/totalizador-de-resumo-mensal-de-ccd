@@ -80,6 +80,6 @@ img {
     max-width: 100%;
 }
 ::selection {
-    background-color: var(--gray--6);
+    background-color: var(--gray-six);
     color: var(--yt)
 }
