@@ -103,6 +103,9 @@ const menu = {
     imprimirFicha() {
         const comentarios = document.querySelector(".obs__input");
         comentarios.textContent === "" ? comentarios.parentElement.classList.add("--no-print") : comentarios.parentElement.classList.remove("--no-print");
+        const urlOutput = document.querySelector(".ficha__url-pub");
+        const url = location.href;
+        urlOutput.innerHTML = `Totalizado por computador. Totalizador disponível em: <span class="ficha__url-pub__link">${url}</span>`;
         //Clonar HEADER DE LOCALIZACAO
         const fichaHeader2 = document.querySelector(".ficha__header--2");
         const ficha = document.querySelector(".ficha");
